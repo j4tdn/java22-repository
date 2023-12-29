@@ -1,0 +1,4 @@
+1. chương trình Java
+- class
+  + Attributes(global variables)
+  + methods local variables
