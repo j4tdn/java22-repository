@@ -1,6 +1,5 @@
 package contronlling;
 
-import java.nio.file.Watchable;
 import java.util.Random;
 
 public class Ex02SwitchCase {

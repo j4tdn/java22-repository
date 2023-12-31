@@ -1,0 +1,34 @@
+A. Lý  thuyết 
+Chương trình hướng đối tượng OOP
+--> Chia bài toán thành nhiều đối tượng
+--> Đối tượng: thuộc tín và phương thức
+
+B. Thực hành
+?làm thế nào để tạo ra đối tượng, dối tượng là gì
+
+	class: là 1 khái niệm trừu tượng tập hợp các Object
+		Table: chiều cao, kích cở, ...
+	
+	
+	object: là 1 khái niệm mô tả thực thể trong thế giới thực ,
+		 có giá trị cụ thể có thể phân biệt vs đối tượng khác
+		 - mỗi dối tượng là 1 ô nhớ trên HEAP
+		 Table: là 1 đối tượng trong phòng như bàn, ghế, quạt ...
+		 
+? vì sao các thuộc tín trong class theo OOP nên cho private rồi sử dụng get/set  thông tin
+ mà không dùng public để code ngắn gọc
+  		 1*- nếu để public thì tt được phép truy cập cho mọi nơi và nó ko đúng vs idea của OOP,
+  		mà giống vs FOP
+  		 --> FOP: public toàn bộ
+  		 --> OOP: nếu lỗi thì lỗi cho từng đối tượng không ảnh hưởng các đối tượng hàm của class khác 
+  		- public cho get/set khác với public cho thuộc tín
+  		 --> public cho atribute: bên ngoài được phép gọi đến
+  		 						- cấu trúc bên trúc dữ liệu thuộc tín
+  		 						- giá trị thuộc tín
+  		 --> public cho method: bên ngoài được phép gọi đến hàm
+  		 						- tùy thuộc vào chức năng mà mik cho phép bên ngoài get 
+  		 						toàn bộ/1 phần/cập nhật dữ liệu của thuộc tín
+  		 2*--> truy cập get/set 1 phần, toàn bộ dữ liệu thuộc tính mà hoàn toàn không biết được giá trị 
+  		 thực tế là bao nhiêu 
+  		 3*-->  không được phép cập nhật cấu trúc dữ liệu của thuộc tín trong class
+  		 

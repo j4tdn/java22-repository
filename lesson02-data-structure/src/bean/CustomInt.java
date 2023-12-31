@@ -4,7 +4,7 @@ public class CustomInt {
 	public int value;
 	
 	public CustomInt(int value) {
-		this.value = value;
+		this.value = value;m
 	}
 	
 	@Override
