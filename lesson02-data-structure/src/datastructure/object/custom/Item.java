@@ -6,7 +6,7 @@ public class Item {
 	//khi bien co kdl item-> bien do luon co 3 thong tin
 	public int id;
 	char name;
-	double salePrice;
+	public double salePrice;
 	
 	//ham khoi tao mac dinh(khong co tham so truyen vao)
 	//dung de khoi tao 1 doi tuong(ô nhớ) trên vùng nhớ
@@ -20,12 +20,11 @@ public class Item {
 	//Override
 	@Override
 	public String toString() {
-		return this.id + ","+ this.name + ","+ this.salePrice;
+		return "\n" + this.id + ","+ this.name +","+ this.salePrice ;
 		
 	}
 
 	public Item(int pid, char pname, double psalePrice) {
-		super();
 		this.id = pid;
 		this.name = pname;
 		this.salePrice = psalePrice;
