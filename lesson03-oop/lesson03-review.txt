@@ -1,0 +1,28 @@
+A. Lý thuyết 
+ - Chương trình hướng đối tượng -OOP
+ 	+Chia bài toán thành nhiều đối tượng
+ 	+Đối tượng : thuộc tính và phương thức riêng
+ 	
+ B.Thực hành
+ 	? Làm sao để tạo ra đối tượng, đối tượng là gì ?
+ 		- Là một thực thể bào gồm các thuộc tính và phương thức
+ 		- 
+ 		-Class là một lớp chỉ tập một nhóm đối tượng có chung tính chất
+ 		
+ Vì sao các thuộc tính trong class theo OOP nên cho Private rồi cho các để get/set thông tin mà không dùng
+ public để cho code được ngắn gọn ?
+ 	-Nếu để public thì các thuộc tính sẽ được truy cập từ mọi nơi thì sẽ như data FOP
+ không đúng với ideal của OOP (quản lý dữ liệu cho từng đối tượng)
+ 	--> FOP : public all 
+ 	--> OOP : private --> quản lý riêng cho từng object
+ 			: nếu lỗi thì lỗi cho từng đối tượng, không ảnh hưởng đến các đối tượng khác..
+ 	+ public cho getter/ setter khác với public cho attribute
+ 	--> publuc attribute: bên ngoài gọi đến được trức tiếp thuộc tính biết:
+ 		+Cấu trúc dữ liệu thuộc tính
+ 		+Giá trị của thuộc tính
+ 		
+ 	--> Khi dùng getter/setter
+ 		+Bên ngoài truy cập thông qua hàm
+ 		+tùy chức năng mà cho phép get toàn bộ hay một phần.
+ 		+Không được phép cập nhật cấu trúc dữ liệu của thuộc tính trong class
+ 		
