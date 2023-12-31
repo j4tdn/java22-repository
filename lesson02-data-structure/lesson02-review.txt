@@ -1,0 +1,7 @@
+1. Chương trình JAVA
+- class
+  + attributes(global variables)
+  + methods
+    local variables
+    
+  + main method --> nơi bắt đầu và kết thúc của 1 chương trình Java
