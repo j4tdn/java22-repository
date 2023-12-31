@@ -1,0 +1,24 @@
+javac Java21FirstApp.java
+java Java21FirstApp
+
+
+JDK 11
+java Java21FirstApp.java
+
+--> Code: notepad
+--> Run : cmd
+
+Hạn chế
++ notepad: không gợi ý code
++        : để xem chương trình bị lỗi biên dịch hay ko
+           --> phải run lệnh javac, khó sửa lỗi
++        : ko hỗ trợ format, plugins ...    
++ cmd    : mất thời gian chạy từng file
+
+--> Editor Code for Java: Eclipse, NetBean, Intellij, Visual Code
+
+Intellij: Community, Enterprice(>500$)
+
+Eclipse(VS Code): Core, Web
+
+NetBean: Core, Desktop App
