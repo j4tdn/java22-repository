@@ -27,6 +27,14 @@ public class Ex01BasicDemoPrimitive {
 //		int[] numbews = fetchData();
 //		int[] numbers = new int[] {47,86,95,15,34};
 		int[] numbers = {47,86,95,15,34};
+		//BT0 --> Tìm những phần tử lẻ trong mảng
+		for(int i = 0; i< numbers.length; i++) {
+			int currentNumber = numbers[i];
+			if(currentNumber%2 != 0) {
+				System.out.println("lẻ --> " + currentNumber);
+			}
+		}
+		
 		//BT1 --> Lấy 1 phần tử ngẫu nhiên trong mẳng numbers
 		Random rd = new Random();
 		int randomValue = numbers[rd.nextInt(numbers.length)];
