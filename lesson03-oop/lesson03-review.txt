@@ -1,0 +1,42 @@
+FOP: Chia bài toán thành các hàm
+     Chứa dữ liệu chung, không có access modifier, hàm nào dùng cũng được
+OOP: Chia bài toán thành các đối tượng
+     Mỗi đối tượng quản lý thuộc tính, phương thức riêng
+     Thông qua access modifier
+
+A. Lý thuyết
+Chương trình OOP
+--> Chia bài toán thành nhiều đối tượng
+--> Đối tượng: thuộc tính, phương thức
+
+B. Thực hành: Làm tn để tạo ra đối tượng, định nghĩa đối tượng.
+
+VD: Table --> Class(ID, ChatLieu, size) 
+--> Tạo ra các đối tượng Ban1, Ban2...
+
+Table --> Object
+--> Thuộc class Stuff(ì, name, position)
+--> Ban, Ghe, Cap, MayQuat
+
+TruongHoc
++SinhVien
++GiangVien
++NhanVien
+---------------
+1. Vì sao các thuộc tính trong class theo OOP nên set private rồi dùng
+get/set để lấy/đổi thông tin mà không dùng public để code cho gọn?
++Nếu để public --> các thuộc tính được phép truy cập từ mọi nơi,
+giống data của FOP, không đúng idea của OOP(quản lí dữ liệu cho
+từng đối tượng)
+--> FOP: public all --> public cho toàn bộ
+--> OOP: private --> quản lí riêng cho từng object
+         nếu lỗi thì lỗi cho từng đối tượng, không ảnh hưởng
+         tới các đối tượng hàm của của các class khác
++public cho get/set method khác với public cho attribute
+--> public attribute: bên ngoài gọi đến được trực tiếp thuộc tính biết được
+   + cấu trúc dữ liệu của tt
+   + giá trị của tt
+--> public getter/setter: bên ngoài truy cập thông qua hàm
+   + tùy chức năng mà mình cho phép bên ngoài get toàn bộ/ 1 phần/ câp nhật toàn bộ/ một phần
+   mà k biết giá trị thực tế của tt là bao nhiêu
+--> không được phép cập nhật ctdl của thuộc tính trong class 
