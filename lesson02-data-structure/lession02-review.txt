@@ -1,0 +1,17 @@
+1. Chương trình Java
+- class 
++ atributes(global variables)
++ methods
+	local variables
+	
++ main method --> nơi bắt đầu và kết thúc của 1 chương trình java
+
+Attibute
+Mathod
+	-->access modifier:
+	+ private
+	+ public
+	+ no-define
+	
+2. kiểu dữ liệu
+	- Nguyên thủy(primitive data type)
