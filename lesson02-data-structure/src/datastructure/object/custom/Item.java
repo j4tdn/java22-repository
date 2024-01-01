@@ -3,7 +3,7 @@ package datastructure.object.custom;
 public class Item {
     int id;
 	char name;
-	double salesPrice;
+	public double salesPrice;
 	
 	public Item(){
 		

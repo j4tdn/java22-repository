@@ -1,1 +1,46 @@
- 
+1. Chương trình JAVA
+- class
+  + attributes(global variables)
+  + methods
+    local variables
+    
+  + main method --> nơi bắt đầu và kết thúc của 1 chương trình Java
+  
+  Attribute
+  Method
+    --> access modifier: 
+    + private: sử dụng trong phạm vi của class hiện tại(chứa nó)
+    + public: sử dụng mọi nơi(class khác cùng hoặc khác package - trong dự án)
+    + no-define: package scope(có thể sử dụng ở class khác nhưng mà phải cùng vs package của class chứa nó)
+    
+2. Kiểu dữ liệu
+- Nguyên thủy(primitive data type)
+  VD: int, double, string
+  + Giá trị: lưu trữ ở STACK
+  
+- Đối tượng(object type)
+  VD1: Integer, Double, String: KDL có sắn của Java --> 100% nó là class có duy nhất 1 thuộc tính bên trong
+       --> Immutable Object
+       
+  VD2: Item, Store, Employee: KDL do mình tự tạo ra phù hợp với bài toán
+       --> Mutable hoặc Immutable do bài toán
+  
+  + Giá trị: lưu trữ ở HEAP
+  
+- Biến
+  + Luôn được lưu trữ ở STACK
+  
+3. Từ khóa final
+Là final ở STACK, ko thể cập nhật giá trị của biến ở STACK
+
+4. Toán tử trong lập trình
+- ++ -- / %
+- || && !
+
+5. Tạo dữ liệu
++ Nhập xuất với Scanner
++ Tạo dữ liệu ngẫu nhiên với Random
+
+6. Cấu trúc điều kiện
+
+7. Cấu trúc vòng lặp 
