@@ -1,0 +1,84 @@
+FOP: Chia bài toán thành các hàm
+   : Chứa dữ liệu chung, common data
+   : Không có access modifier, hàm nào dùng cũng được
+
+OOP: Chia bài toán thành các đối tượng(class)
+   : Mỗi đối tượng(class) quản lý thuộc tính, phương thức riêng
+   : Thông qua access modifier
+
+A. Lý thuyết
+2 Chương trình hướng đối tượng - OOP
+3 --> Chia bài toán thành nhiều đối tượng
+4 --> Đối tượng: thuộc tính và phương thức
+
+B. Thực hành
+? Làm sao để tạo ra đối tượng, đối tượng là gì ?
+
+Table --> Class (Id, Chatlieu, Kichthuoc)
+--> tạo ra các đối tượng Ban1, Ban2, Ban3
+
+Table --> Object
+--> Thuộc class Stuff(id, name, position)
+--> Ban, Ghe, Cap, MayQuat
+
+Truonghoc
++ Sinh vien
++ Giang vien
++ Nhân vien
+
+CoSoDuLieuQuocGia
++ CongDan
+
+
+
+------------------------------------------------
+1. Vì sao các thuộc tính trong class OOP nên cho private rồi sử dụng getter,setter
+để get/set thông tin mà không dùng public để code ngắn gọn?
+
+1*+ Nếu để public --> các thuộc tính được phép truy cập từ mọi nơi giống như
+data của FOP, không đúng với idea của OOP(quản lý dữ liệu cho từng đối tượng)
+  --> FOP: public all -->public cho toàn bộ
+  --> OOP: private --> quản lý riêng cho từng object
+  		 : nếu lỗi thì lỗi cho từng đối tượng ko ảnh hưởng các đối tượng hàm của class khác
++ public cho getter/setter method khác với public cho attribute
+ --> public attribute: bên ngoài gọi đến dc trực tiếp thuộc tính biết được
+     + cấu trúc dữ liệu của thuộc tính
+     + giá trị của thuộc tính
+     
+ --> public getter/setter: bên ngoài truy cập thông tin qua hàm
+ 	+ tuỳ chức năng mà mình cho phép bên ngoài get toàn bộ/1 phần/ cập nhật dữ liệu của thuộc tính
+ 	
+2* --> truy cập get.set 1 phần, toàn bộ dữ liệu của thuộc tính mà hoàn toàn
+ko bik dc giá trị thực tế của thuộc tính là bao nhiêu
+
+3* --> ko dc phép cập nhật ctdl của thuộc tính trong class
+
+VD: nhân viên nhận lương ở CongTy
+
+Class Company{
+	private double balance; //quỹ lương của công ty
+	private String name; //tên công ty 
+	private List<Employee> employees = new ArrayList<>(); //dynamic list
+	
+	//c1.setName("Ct A"); //private
+	
+	//c1.name = new String("Ct B"); //public
+	//c1.employees = List.of(); //fixed-size list
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	void paySal(employee){
+		balance = balance - employee.getSalary();
+	}
+	
+}
+
+Class Employee{
+	String name; //tên nhân viên
+	double salary; //mức lương
+	double money; //100.000.000
+}	
+
+//giải lập cuối tháng
