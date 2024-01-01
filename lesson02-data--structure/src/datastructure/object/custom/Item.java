@@ -9,7 +9,7 @@ public class Item {
 	
 	int id;
 	char name;
-	double salesPrice;
+	public double salesPrice;
 	
 	//hàm khởi tạo mặc đinh(ko có tham số truyền vào): dùng để khởi tạo đối tượng(ô nhớ) trên vùng nhớ heap
 	//ô nhớ phải có đầy đủ thông tin của các thuộc tính trong class Item
@@ -34,7 +34,7 @@ public class Item {
 	
 	@Override
 	public String toString() {
-		return this.id + ", " + this.name + ", " + this.salesPrice;
+		return "\n" + this.id + ", " + this.name + ", " + this.salesPrice;
 	}
 			
 }
