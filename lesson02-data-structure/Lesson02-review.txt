@@ -1,0 +1,38 @@
+1.1.Chuong trinh JAVA
+- class
+    +attributes(global variable)
+    +method
+        local variable
+    + main method --> noi bat dau va ket thuc cua 1 chuong trinh Java
+   
+   Method
+   + no-define: package scope( co the su dung o class khac nhung phai cung package cua class chua no)
+   
+   2. Kieu du lieu
+   - nguyen thuy( primitive data type)
+   VD: int, double, string
+   + gia tri luu tru o stack
+   - Doi tuong(object type)
+   VD1: Integer, Double, String: KDL co san cua Java--> 100% co la class co duy nhat 1 thuoc tinh ben trong
+   ---> Immutable Object
+   VD2: Item, Store, Employee: KDL do mình tự tạo ra phù hợp với bài toán
+   ---> Mutable hoặc Immutable do bài toán
+   + giá trị: lưu ở HEAP
+   
+   - Biến
+   + Luôn được lưu trữ ở STACK
+   
+   3. Tu khoa Final
+   - la final o Stack, ko the cap nhat gia tri cua bien o STACK
+   
+   4. toan tu trong lap trinh
+   
+   5. Tao du lieu
+   + nhap xuat voi Scanner
+   + tao du lieu ngau nhien  voi random
+   
+   6. Cau truc dieu kien
+   
+   7. Cau truc vong lap
+   
+   
