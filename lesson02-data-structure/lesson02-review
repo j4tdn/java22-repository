@@ -1,0 +1,41 @@
+Chuong trinh JAVA
+-class
++ attributes(global variables)
++ methods
+	local variables
++ main method --> noi bat dau va ket thuc cua chuong trinh JAVA
+
+Attribute
+Method
+	--> access modifier: 
+	+private: su dung trong pham vi cua Class hien tai (chua no)
+	+public: su dung moi noi (Class khac cung hoacc khac package - trong du an)
+	+ no-define: package scope(co the su dung o class khac nhung ma phai cung voi package cua class chua no)
+	
+2. Kieu du lieu: 
+- Nguyen thuy(primitive data type)
+VD: INteger, Double, String: KDL co san cua JAVA --> 100% no la class co duy nhat 1 thuoc tinh ben trong
+	--> Immutable Object
+VD: Item, Store, Employee: KDL do minh tu tao ra phu hop voi bai toan
+	--> Mutable hoac Immutable do bai toan
+- Doi tuong (object type)
+	+ gia tri: luu tru o HEAP
+	
+- Bien 
+	+ luon duoc luu tru o STACK
+	
+3. Tu khoa final 
+La final o STACK, ko the cap nhat gia tri cua bien o STACK
+
+4. Toan tu trong lap trinh 
+- ++ -- / %
+- || && !
+
+5. tao du lieu 
++ Nhap xuat voi Scanner
++ tao du lieu ngau nhien voi Random
+
+6. Cau truc dieu kien 
+
+7. Cau truc vong lap 
+

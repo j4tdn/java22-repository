@@ -1,0 +1,74 @@
+FOP: chia bai toan thanh cac ham
+	: CHua du lieu chungg, common data
+	: Khong co access modifier, ham nao dung cx duoc
+OOP : Chia bai toan thanh cac doi tuong
+	: Moi doi tuong quan ly thuoc tinh, phuong thuc rieng
+	: Thong qua access modifier
+
+
+
+
+
+
+A. Ly thuyet
+chuong trinh huong doi tuong - oop
+
+chia bai toan thanh nhieu doi tuong
+doi tuong: thuoc tinh va phuong thuc
+
+
+B.thuc hanh
+? Lam sao de tao ra doi tuong, doi tuong la gi ?
+
+Table --> Class(ID, chatlieu, kichthuoc, )
+	---> tao ra cac doi tuong Ban1, Ban2, Ban3
+	
+	
+Table --> Object
+--> thuoc class Stuff(id, name, position)
+--> Ban, ghe, cap, mayquat
+
+
+
+
+
+
+1. vi sao cac thuoc tinh trong class theo oop nen cho private roi su dung getter/setter 
+de get/set thong tin ma ko dung public de code ngan gon hon 
+
++ neu de public --> cac thuoc tinh duoc phep truy cap tu moi noi, giong nhu data cua FOP
+ko dung voi idea cua OOP(quan ly du lieu cho rieng tung doi tuong)
+--> FOP: public all --> public cho toan bo
+--> OOP: private --> quan ly rieng cho tung object 
+		: neu loi thi loi cho tung doi tuong ko anh huong cac doi tuong ham cua class khac
++ public cho getter/setter method khac voi public cho attribute
+--> public attribute: ben ngoai goi den duoc truc tiep thuoc tinh biet duoc:
+	+ cau truc du lieu cua thuoc tinh
+	+gia tri cua thuoc tinh
+	
+--> public getter/setter: ben ngoai truy cap thong qua ham
+	+ tuy chuc nang ma minh cho phep ben ngoai get toan bo/1 phan/ cap nhat du lieu cua thuoc tinh
+	
+--> truy cap get/set 1  phan toan bo du lieu cua thuoc tinh ma hoan toan ko biet
+duoc gia tri thuc te cua thuoc tinh la bao nhieu
+
+--> khong duoc phep cap nhat cau truc du lieu cua thuoc tinh trong class
+VD: nhan vien nhan luong o cong ty
+	
+	
+class company {
+	private double balance; //quy luong cua cong ty
+	private String name; //ten cong ty
+	private List<Employees> employees = new ArrayList<>(); //dynamic 
+	
+	
+	void paySal(employee) {
+	balance = balance - employee.getSalary()
+}
+class employee {
+	String name; // ten nhan vien
+	double salary; //mmuc luong
+	
+	double money; //100
+	
+}
