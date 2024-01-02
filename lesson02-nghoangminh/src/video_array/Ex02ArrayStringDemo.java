@@ -1,4 +1,4 @@
-package baitap;
+package video_array;
 
 import java.util.Arrays;
 import java.util.Random;
