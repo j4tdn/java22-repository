@@ -4,6 +4,7 @@ public class Item {
     public int id;
     public char name;
     public double salesPrice;
+	public int price;
     // ham khoi tao mac dinh, se tu mat di khi co ham khoi tao khac
     public Item() {
     	
