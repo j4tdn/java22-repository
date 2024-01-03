@@ -20,7 +20,7 @@ public class Ex01 {
 	public static boolean isMultipleOfTwo() {
 		Scanner sc = new Scanner(System.in);
 		int i = 0;
-
+		
 		while (i < 5) {
 
 				System.out.println(" Nhập số nguyên dương n: ");
