@@ -5,7 +5,7 @@ public class Item {
 	//khi tao bien co KDL item --> bien do luon chua 3 thong tin
 	
 	public int id;
-	char name;
+	public char name;
 	public double salesPrice;
 	
 	//ham khoi tao mac dinh ko co tham so truyen vao
@@ -15,7 +15,7 @@ public class Item {
 	
 	// ham khoi tao mac dinh se tu mat di khi minh co ham khoi tao khac
 	
-	public Item() {
+	public Item(double d, float f) {
 		// khoi tao o nho o heap --this dai dien cho o nho vua tao ra
 		// return this
 	}
