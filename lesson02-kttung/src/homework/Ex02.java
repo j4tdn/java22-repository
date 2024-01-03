@@ -22,7 +22,7 @@ public class Ex02 {
 	public static boolean isPowerOfTwo() {
 		Scanner sc = new Scanner(System.in);
 		int i = 0;
-		
+
 		while (i < 5) {
 
 				System.out.println(" Nhập số nguyên dương n: ");
