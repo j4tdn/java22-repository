@@ -6,7 +6,7 @@ public class Ex01BasicCarDemo {
 	
 	public static void main(String[] args) {
 		
-		Car c1 = new Car("1", "mg5", "yellow", 880d);
+		Car c1 = new Car("1", "mg5", "yellow", 800d);
 		Car c2 = new Car("2", "raize", "orange", 540d);
 		Car c3 = new Car("3", "vf8", "blue", 720d);
 		
