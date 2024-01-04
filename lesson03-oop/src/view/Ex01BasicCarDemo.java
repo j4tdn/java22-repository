@@ -5,6 +5,10 @@ import bean.Car;
 public class Ex01BasicCarDemo {
 
 	public static void main(String[] args) {
+		//biến: STACK
+		//giá trị biến KDL nguyên thủy: STACK
+		//                 đối tượng : HEAP
+		
 		//class Car(id, model, color, salePrice)
 		
 		//tạo ra 3 đối tượng cho class Car
