@@ -1,0 +1,63 @@
+FOP--> Functional
+OOP--> Object
+AOP--> Aspect
+
+lập trình hướng chức năng ( cấu trúc - hàm - thủ tục)
+---> gồm nhiều hệ thống con nhỏ hơn
+
+---LTrinh hướng Chức năng( functinal approach)
+system = agorithms + data structure
+---Ltrinh huong doi tuong( Object-oritented approaches)
+system = nhieu objects
+Object = agorithms + datastructure
+
+-- lap trinh huong doi tuong
+--> chia thanh cac doi tuong thuc the
+
+-- Doi tuong 
+- class la 1 khai niem chi tap hop cac object
++ tinh chat: thuoc tinh
++ Hanh vi: phuong thuc
+--- moi object co gia tri cua thuoc tinh, phuong thuc khac nhau
+
+-- phan biet class va object
+-- Lam sao de tao ra doi tuong, doi tuong la gi?
+Table ---> Class(ID, ChatLieu, KichThuoc)
+---> Tao ra doi tuong Ban1, Ban2, Ban3,...
+
+Table ---> Object
+----> Thuộc class Stuff( id, name, possition)
+---> Ban, Ghe, Cap, MayQuat
+---------------------------
+1. Vi sao cac thuoc tinh trong class theo OOP nen cho private rồi sử dụng get/set thông tin mà không dùng public để code ngắn gọn?
++Nếu để Public --> thuộc tính này giống data của FOP, không đúng với idea của OOp ( quản lý dữ liệu cho từng đối tượng)
+ ---> FOP: public all
+ ---> OOP: private ---> qly tiêng cho từng object
+                       : nếu lỗi thì lỗi cho từng đối tượng ko ảnh hưởng các đối tượng hàm của class khác
+ + public cho getter/setter method khác với public cho attribute
+ ---> public attribute: bên ngoài gọi đến được trực tiếp thuộc tính, biết được
+              + cấu trúc dữ liệu của thuộc tính
+              + giá trị của thuộc tính
+ ---> public getter/setter: bên ngoài truy cập thông qua hàm
+                + tùy chức năng mà mình cho phép bên ngoài get toàn bộ/1 phần/ cập nhật dữ  liệu của thuộc tính
+  
+ ---> get/set 1 phan cua thuoc tinh ma ko biet duoc gia tri thuc te cua thuoc tinh la bao nhieu
+  
+  
+  VD: Class Company {
+  double balance;//  quyx luowng cuar cty
+  String name;
+  void paySal( employee){
+  balance = alance -employee.getsalary()
+  }
+  }
+  
+  
+     Class Employee {
+     String name;
+     double salary;
+     double money; /// 100.000.000
+     }
+     
+     
+     // giai lap cuoi thang 
