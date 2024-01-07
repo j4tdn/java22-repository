@@ -1,0 +1,13 @@
+package baitap;
+ 
+public class Ex09 {
+	public static void main(String[] args) {
+		int a = 2000;
+		int count = 0 ;
+		int number = 1;
+		
+		
+	}
+
+	
+}

@@ -1,0 +1,28 @@
+package baitap;
+ 
+public class Ex09 {
+	public static void main(String[] args) {
+		int a = 2000;
+		int count = 0 ;
+		int number = 1;
+		while (count < a) {
+			if(checksonguyento(number)) {
+				
+			}
+		}
+		
+	}
+public static boolean checksonguyento(int number ) {
+	if (n <= 1) {
+        return false;
+    }
+    for (int i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+}
+	
+}

@@ -1,0 +1,45 @@
+package baitap;
+
+import java.util.Scanner;
+
+public class Ex08 {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int number;
+
+		while (true) {
+			
+
+			if (scanner.hasNextInt()) {
+				number = scanner.nextInt();
+
+				if (number > 0) {
+					break;
+				} else {
+					System.out.println("Số không nằm trong khoảng cho phép, vui lòng nhập lại.");
+				}
+			} else {
+				System.out.println("Vui lòng nhập lại số nguyên.");
+				scanner.next();
+			}
+		}
+		checksonguyento(number);
+	}
+	public static boolean checksonguyento(int number) {
+	    if (number < 2) {
+	        System.out.println("number không phải là số nguyên tố");
+	        return false;
+	    }
+
+	    for (int i = 2; i <= Math.sqrt(number); i++) {
+	        if (number % i == 0) {
+	            System.out.println("number không phải là số nguyên tố");
+	            return false;
+	        }
+	    }
+
+	    System.out.println("number là số nguyên tố");
+	    return true;
+	}
+
+}
