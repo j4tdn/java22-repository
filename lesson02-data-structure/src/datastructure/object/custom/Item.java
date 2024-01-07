@@ -30,7 +30,7 @@ public class Item {
 	//override (định nghĩa lại) hàm toString 
 	@Override
 	public String toString() {
-		return this.id + ", " + this.name + ", " + this.salesPrice;
+		return "\n" + this.id + ", " + this.name + ", " + this.salesPrice;
 	}
 	
 }
