@@ -9,12 +9,6 @@ public class Ex01BasicCarDemo {
 		
 		// tạo ra 3 đối tượng cho class Car
 		
-		// Biến: 100% nằm ở STACK
-		
-		// Giá trị của biến KNT: STACK
-		
-		// Giá trị của biến KĐT: HEAP
-		
 		Car c1 = new Car("1", "MG5", "Yellow", 800d); // H1
 		Car c2 = new Car("2", "Raize", "Orange", 540d); // H2
 		Car c3 = new Car("3", "VF8", "Blue", 720d); // H3
