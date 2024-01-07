@@ -15,5 +15,6 @@ public class Ex05StaticNonStatic_Loadingtime {
 		nonStaticMethod();
 		staticVariable= "static";
 		nonVariable = "none";
+		
 	}
 }
