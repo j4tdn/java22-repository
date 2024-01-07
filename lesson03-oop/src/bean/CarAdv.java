@@ -1,26 +1,38 @@
 package bean;
 
-public class Car {
+public class CarAdv {
 	
-	// mỗi class quản lý thuộc tính riêng của nó
-	// thuộc tính: nên cho access modifier --> private
-		
-	// attributes: thuộc tính
-	// khi khởi tạo đối tượng cho class Car thông qua hàm khởi tạo
-	// mỗi đối tượng sẽ có 1 ô nhớ quản lý các thuộc tiếng này riêng
+	/*
+	 Thuộc tính
+	 
+	 + static: thuộc phạm vi của Class
+	   --> tất cả các đội tượng tạo ra từ class đều có chung giá trị cho thuộc tính
+	   	   static
+	   --> lưu trữ ở 1 ô nhớ chung cho class	
+	   VD: model
+	   
+	 + non-static: thuộc phạm vi của Object
+	   --> mỗi đối tượng sẽ quản lý một giá trị thông tin riêng cho thuộc tính
+	       non-static
+	   --> lưu trử ở các ô nhớ riêng cho từng đối tượng
+	   VD: id, color, salesPrice
+	   
+	 + Object được tạo ra từ Class
+	 + Class có thể có nhiều Object
+	 */
 	private String id;
-	private String model;
+	public static String model;
 	private String color;
 	private Double salePrice;
 	
 	// empty constructor
-	public Car() {
+	public CarAdv() {
 	}
 
 	// constructor with full parameters
-	public Car(String id, String model, String color, Double salePrice) {
+	// ko nên truyền thuộc tính static cho hàm khởi tạo
+	public CarAdv(String id, String color, Double salePrice) {
 		this.id = id;
-		this.model = model;
 		this.color = color;
 		this.salePrice = salePrice;
 	}
@@ -43,7 +55,11 @@ public class Car {
 	public String getModel() {
 		return model;
 	}
-
+	
+	// this đại diện cho đối tượng gọi hàm
+	// c1.setModel(..)
+	//this = c1	
+	
 	public void setModel(String model) {
 		this.model = model;
 	}
