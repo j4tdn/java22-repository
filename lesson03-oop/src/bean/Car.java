@@ -1,4 +1,4 @@
-Car.javapackage bean;
+package bean;
 
 public class Car {
 	// mối class quản lí các thuộc tisnh của riêng nó
