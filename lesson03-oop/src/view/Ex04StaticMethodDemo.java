@@ -13,12 +13,12 @@ public class Ex04StaticMethodDemo {
 		 -->non-static
 		 
 		 + Các hàm không phụ thuộc vào đối tượng gọi nó (Đang gọi)
-		 -->ko phụ thuộc : đối tượng nào gọi cũng như nhau
+		 -->ko phụ thuộc : đối tượng nào Sgọi cũng như nhau
 		 ..> static
 		 */
 		Ex04StaticMethodDemo o1 = new Ex04StaticMethodDemo();
 		Ex04StaticMethodDemo.printTỉtle();
-		System.out.println("01 is good " + o1.isGood());
+//		System.out.println("01 is good " + o1.isGood());
 	}
 	private static int sum(int a ,int b) {
 		return a+b;

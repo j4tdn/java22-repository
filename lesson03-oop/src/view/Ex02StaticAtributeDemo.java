@@ -1,9 +1,11 @@
 package view;
 
+import bean.CarAdv;
 import bean.car;
 
 public class Ex02StaticAtributeDemo {
 	public static void main(String[] args) {
+		
 		car c01 = new car("1", "Audi", "Yellow", 800d); //H1
 		car c02 = new car("2", "Audi", "Red", 800d);//H2
 		car c03 = new car("3", "Audi", "Blue", 800d);//H3
