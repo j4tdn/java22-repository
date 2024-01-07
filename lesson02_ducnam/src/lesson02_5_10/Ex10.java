@@ -11,11 +11,11 @@ public class Ex10 {
 	  int a = rd.nextInt(20, 30);
 	  numbers[0] = a;
 	  
-	  for(int i = 1 ; i <= 4; i++) {
+	 for(int i = 1 ; i <= 4; i++) {
 		  a = rd.nextInt(20, 31);
 		  if(checkExists(numbers, a)) {
 			  i--;
-		  } else {
+		 } else {
 			  numbers[i] = a;
 		  }
 	  }

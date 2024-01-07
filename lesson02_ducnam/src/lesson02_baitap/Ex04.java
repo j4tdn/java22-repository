@@ -11,7 +11,7 @@ public class Ex04 {
 		 int d = rd.nextInt(10,21);
 		 
 		 System.out.println("a  :" + a);
-		 System.out.println("b  : " + b);
+		 System.out.println("b  :" + b);
 		 System.out.println("c  :" + c);
 	     System.out.println("d  :" + d);
 		 long x = Ex04(a) + Ex04(b) + Ex04(c) + Ex04(d);
