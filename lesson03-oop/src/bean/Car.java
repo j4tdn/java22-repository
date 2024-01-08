@@ -8,7 +8,7 @@ public class Car {
 	//khoi tao doi tuong cho class car thong qua ham khoi tao
 	// moi doi tuong se co 1 o nho quan ly cac thuoc tinh nay rieng
     private String id;
-    private String model;
+    private static String model;
     private String color;
     private Double salesPrice;
     
