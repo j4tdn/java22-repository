@@ -18,7 +18,7 @@ public class HorseSaddle {
         }
         boolean hasSaddleElement = checkHorstElement(matrix);
         if (hasSaddleElement) {
-            System.out.println("Mảng "+  "có phần tử yên ngựa.");
+            System.out.println("Mảng có phần tử yên ngựa.");
         } else {
             System.out.println("Mảng không có phần tử yên ngựa.");
         }
