@@ -8,7 +8,7 @@ public class MatrixUtils {
 		int count = 0;
 		for (int i = 0; i < row; i++) {
 			max = A[i][0];
-			int chooseColumn = 0; // ví trí cột tại chứa phần tử có giá trị max trên hàng
+			int chooseColumn = 0; // ví trí cột tại đó chứa phần tử có giá trị max theo cột của ma trận
 			for (int j = 0; j < col; j++) { // tìm phần tử max theo cột ma trận
 				if (max < A[i][j]) {
 					max = A[i][j];
