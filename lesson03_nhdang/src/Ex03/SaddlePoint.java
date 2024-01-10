@@ -29,7 +29,6 @@ public class SaddlePoint {
 		    boolean saddlePoint = true; 
 			min = arr[i][0];
 			int colIndex = 0;
-
 			for (int j = 1; j < arr[i].length; j++) {
 				if(arr[i][j] < min) {				
 					min = arr[i][j];
@@ -43,8 +42,8 @@ public class SaddlePoint {
 				}
 			}
 			if(saddlePoint){
-				System.out.println("Phần tử yên ngựa : "+min);
-			}
+				System.out.println("Phần tử yên ngựa: "+min);
+			} 
 		} 
 
 	}
