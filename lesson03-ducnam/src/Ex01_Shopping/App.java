@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class App {
 	public static void main(String[] args) {
+		
 		Customer c1 = new Customer("KH1", "Adam", "123", "New York");
 		Customer c2 = new Customer("KH2", "Cate", "243", "California");
 		
