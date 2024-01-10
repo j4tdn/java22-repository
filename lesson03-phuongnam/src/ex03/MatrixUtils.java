@@ -9,14 +9,14 @@ public class MatrixUtils {
 		for (int i = 0; i < row; i++) {
 			max = A[i][0];
 			int chooseColumn = 0; // ví trí cột tại chứa phần tử có giá trị max trên hàng
-			for (int j = 1; j < col; j++) { // tìm phần tử max theo cột ma trận
+			for (int j = 0; j < col; j++) { // tìm phần tử max theo cột ma trận
 				if (max < A[i][j]) {
 					max = A[i][j];
 					chooseColumn = j;
 				}
 			}
 
-			min = A[i][chooseColumn];
+			min = A[0][chooseColumn];
 			for (int a = 0; a < row; a++) // tìm phần tử min theo hàng ma trận
 			{
 				if (min > A[a][chooseColumn]) {
