@@ -3,11 +3,12 @@ package Ex02;
 public class Vehicles {
     private String name, type;
     private int capacity;
-    private float price, tax;
+    private double price;
+    private double tax;
     public Vehicles() {
     	
     } 
-	public Vehicles(String name, String type, int capacity, float price, float tax) {
+	public Vehicles(String name, String type, int capacity, double price, double tax) {
 		this.name = name;
 		this.type = type;
 		this.capacity = capacity;
@@ -32,22 +33,21 @@ public class Vehicles {
 	public void setCapacity(int capacity) {
 		this.capacity = capacity;
 	}
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
-	public float getTax() {
+	public double getTax() {
 		return tax;
 	}
-	public void setTax(float tax) {
+	public void setTax(double tax) {
 		this.tax = tax;
 	}
 	@Override
 	public String toString() {
-		return "Vehicles [name=" + name + ", type=" + type + ", capacity=" + capacity + ", price=" + price + ", tax="
-				+ tax + "]";
+		return  name + type +   capacity +  price + tax ;
 	}
 	
     
