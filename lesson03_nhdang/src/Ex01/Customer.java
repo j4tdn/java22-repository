@@ -1,4 +1,4 @@
-package Ex01_Shopping;
+package Ex01;
 
 public class Customer {
 	private String id, name, phone, address;
