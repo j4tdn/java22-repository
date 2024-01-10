@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class VehicleUtils {
 
-	static public void Input(Vehicle car) {
+	public static void Input(Vehicle car) {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Nhập mã xe: ");
 		car.setId(sc.nextLine());
