@@ -16,7 +16,7 @@ public class App {
 
 			System.out.println("Xe thứ " + (i + 1));
 			v[i] = new Vehicle();
-			VehicleUtils.nhapXe(v[i]);
+			VehicleUtils.Input(v[i]);
 
 		}
 
