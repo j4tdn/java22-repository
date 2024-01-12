@@ -11,7 +11,7 @@ public static void main(String[] args) {
 		// before override --> polymorphism.method.Ex02OverridingDemo@515f550a
 		// gọi toString của class cha Object
 		
-		// after override --> -- Custom ToString from Ex02 --
+		//after override --> -- Custom ToString from Ex02 --
 		
 		Ex02OverridingDemo o2 = new Ex02OverridingDemo();
 		System.out.println("toString --> " + o2.toString());
