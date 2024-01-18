@@ -48,7 +48,19 @@ khác nó là hình thái, chức năng khác
 
 2.2 Đa hình trong đối tượng(liên quan đến thừa kế)
 Hình vẽ có thể là hình vuông, tròn, tam giác phụ thuộc vào 1 số tính của nó
-
 Shape: paint, calcS
 Square    : setBackground
 Rectangle : 
+Khi dùng đa hình trong đối tượng
++ Dễ dàng ép kiểu qua về giữa các biến trong phạm vi KDL cha con
++ Hỗ trợ tạo danh sách(mảng) các phần tử trong phạm vi cha con
++ Hỗ trợ tạo hàm có KDL cha(chung)
+--> Có thể truyền tham số KDL cha, con
+
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa: Khi nào các class(KDL) có chung thuộc tính/phương thức thì mình 
+sẽ tạo KDL cha(class/interface/abstract class) chung để chứa các thuộc tính/phương thức chung đó
+để tăng khả năng reuse/clean code
+
+Thừa kế: thuộc tính, phương thức
+Override: phương thức
