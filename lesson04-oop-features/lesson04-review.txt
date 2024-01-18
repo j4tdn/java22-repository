@@ -1,0 +1,42 @@
+OOP
+1. Tính chất đóng gói(encapsulation)
+ĐN: Tính chất đóng gói được thể hiện qua các access modifier(từ khóa khai báo phạm vi)
+
+Khai báo access modifier ở: attribute(thuộc tính), method(phương thức)
+
+Nếu access modifier là 
++ private: đóng gói trong phạm vi của class
+ --> attribute, method là private thì chỉ được phép sử dụng trong class chứa nó
+
++ protected/no-declare: đóng gói trong phạm vi package
+ --> attribute, method là protected/no-declare thì được phép sử dụng trong class hiện tại 
+                          và các class khác nhưng phải cùng package với class hiện tại
+ . protected:
+   --> attribute, method là protected còn có thể được thừa kế/sử dụng
+       ở các class con của class hiện tại, class con có thể nằm ngoài package hiện tại 
+ . no-declare:
+   --> dùng trong package, ko thể dùng bên ngoài
+
++ public: dùng ở mọi nơi [trong dự án]
+
+2. Tính chất đa hình(polymorphism):
+Đn: Tính chất đa hình có 2 loại, đa hình trong phương thức và đa hình trong đối tượng
+Một phương thức, đối tượng có thời điểm, thời gian này nó là hình thái này, thời điểm thời gian
+khác nó là hình thái chức năng khác
+--> Đối tượng, phương thức như vậy gọi là đối tượng, phương thức có tính đa hình
+
+2.1 Đa hình trong phương thức:
++ Overloading
+ --> Hai hoặc nhiều phương thức được gọi là overloading nếu
+ . Thuộc cùng 1 class
+ . Cùng tên
+ . Số lượng tham số khác nhau || KDL truyền vào tham số khác nhau
+ 
++ Overriding
+ --> Hai phuuwong thức được gọi là overriding nếu
+ . Thuộc 2 class cha-con
+ . Hàm overriding là hàm nằm trong class con
+ overide, định nghĩa lại nội dung của hàm cha
+ --> Thường(ko bắt buộc) sẽ có ký hiệu (annotation @Override) để biết hàm đó là hàm 
+     được overide từ hàm có sẵn của cha
+ --> Overriding chỉ cho phép overide method, ko có khái niệm overide attribute 
