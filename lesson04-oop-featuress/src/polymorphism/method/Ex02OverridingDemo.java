@@ -6,8 +6,10 @@ public class Ex02OverridingDemo {
 			
 			// Khi in ra 1 biến KDL đối tượng
 			// Mặc định lấy biến đó gọi hàm toString của class đó hoặc class Object
+			
 			// before override --> polymorphism.method.Ex02OverridingDemo@515f550a
 			// gọi toString của class cha Object
+			
 			// after override --> -- Custom ToString from Ex02 --
 			
 			Ex02OverridingDemo o2 = new Ex02OverridingDemo();
@@ -19,11 +21,23 @@ public class Ex02OverridingDemo {
 			pc.log();
 			
 			// 1. Có thể overide hàm static được ko
+			
 			// 2. Có thể override thuộc tính(static/non-static) được ko
-	
+			
+			// --> cho ví dụ
 			
 		}
 		
+		// Shape: calS
+		// Rectangle, Triangle, Square extends Shape
+		// --> override calS
+		
+		// Shape: calS
+		// Rectangle, Triangle, Square extends Shape
+		
+		// Rectangle --> tinhDienTichHinhChuNhat
+		// Triangle --> calSTriangle
+		// Square --> tinhS
 		
 		// @Override
 		public String stringTo() {

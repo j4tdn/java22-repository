@@ -11,6 +11,7 @@ public class TestB1 {
 		TestA1.methodTestA1Public();
 		
 		// System.out.println(TestA1.varTestA1Protected);
+		
 		// TestA1.methodTestA1Protected();
 		// TestA1.methodTestA1NoDeclare();
 	}

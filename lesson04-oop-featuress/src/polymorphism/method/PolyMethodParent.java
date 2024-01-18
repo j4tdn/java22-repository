@@ -3,7 +3,7 @@ package polymorphism.method;
 public class PolyMethodParent {
 	
 	void log() {
-		System.out.println("Parent --> log 1 ...");
+		System.out.println("Parent --> LOG 1 ...");
 	}
 	
 }
