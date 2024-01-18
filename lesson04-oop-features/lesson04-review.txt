@@ -1,0 +1,33 @@
+opp
+
+1. tính chất đóng gói (encapsulation) 
+tính chất dóng ghói được thể hiện qua các access modifier ( các từ khóa khai báo phạm vi truy cập)
+ 
+ 
+  khai báo access modifiler ở thuộc tính và phương thức
+ nếu access modifile là:
+ 
+ + private đóng gói trong phạm vi của class 
+ ---> attribute( thuộc tính ) , method là private thì chỉ được phép sử dụng trong class chứ nó 
+ 
+ + protected / no-declare : đóng gói trong phạm vi packege 
+ 
+ -----> attribute method là protected thì được dùng trong class hiện tại và class khác nhyuwng cùng package 
+ protected / no-declare phân biệt 2 cái 
+ 
+ - protected :
+ 	attribute method là protected còn có thể được thừa kế, sử dụng ở các class con của class hiẹne tại class con  khác nằm ngoài package hiện tại 
+ 	
+ - no-declare : dùng trong package ko thể dùng bên ngoài 
+ + public : dungf được mọi nơi trong dự án 
+ 
+ 2. tính chất đa hình polymorphism 
+ định nghĩa tính chất đa hình : có 2 loại đa hình trong phương thức và đa hình trong đối tượng 
+ một phương thức đối tượng có thời điểm thời gian này nó lkaf hình thái này thời gian khác nó blaf hình thái khác chưucs năng khác 
+ đối tương phươnmg thưucs như vậy gọi là dôdis tượng phương thức có tính đa hình 
+ 2.1 đa hình trong phương thức 
+ + over loading 
+  	---> 2 hoặc nhiều phương thưức được gọi là over loading nếu 2 hay nhiều phương thức đó thuộc 2 hay nhiều 1 class 
+  	cùng tên 
+  	có số lượng tham số khác nhau hoặc kiểu dữ liệu truyền vào của tham số khác nhau 
+ 
