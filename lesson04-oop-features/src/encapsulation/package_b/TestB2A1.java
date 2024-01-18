@@ -9,9 +9,9 @@ import encapsulation.package_a.TestA1;
 
 public class TestB2A1 extends TestA1{
     public static void main(String[] args) {
-		System.out.println("Hello parent var " + TestA1.varTestA1protected);
+		System.out.println("Hello parent var " + TestA1.varTestA1Protected);
         //thừa kế -> trong class này đã thừa kế có thể
 		//gọi, dùng protected attribute/method từ class cha TestA1
-		System.out.println(TestB2A1.varTestA1protected);
+		System.out.println(TestB2A1.varTestA1Protected);
     }
 }

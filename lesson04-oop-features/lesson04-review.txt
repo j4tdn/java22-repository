@@ -45,3 +45,19 @@ khác nó là hình thái, chức năng khác
     --> Thường(ko bắt buộc) sẽ có ký hiệu (annotation @Override) để biết hàm đó là hàm
     được override từ hàm có sẵn của cha
     --> Override chỉ cho phép override method, không có khái niệm override attribute
+2.2 Đa hình trong đối tượng
+Hình vẽ có thể là hình vuông, tròn...
+
+Shape: paint, cals, setBackground
+
+Square: paint, calS, setBackground
+Rectangle: paint, cals...    
+
+Khi dùng đa hình trong đối tượng
+
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa: Khi nào các class (KDL) có chung thuộc tính/phương thức thì tạo KDL cha (class/interface/abstract class) chung để chứa các thuộc tính/phương thức chung đó
+--> tăng khả năng reuse/clean code
+
+Thừa kế: thuộc tính, phương thức
+Override: phương thức
