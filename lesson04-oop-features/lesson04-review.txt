@@ -45,3 +45,10 @@ khác nó là hình thái, chức năng khác
     --> Thường(ko bắt buộc) sẽ có ký hiệu (annotation @Override) để biết hàm đó là hàm
     được override từ hàm có sẵn của cha
     --> Override chỉ cho phép override method, không có khái niệm override attribute
+
+2.2 Đa hình trong đối tượng(liên quan đến thừa kế)
+Hình vẽ có thể là hình vuông, tròn, tam giác phụ thuộc vào 1 số tính của nó
+
+Shape: paint, calcS
+Square    : setBackground
+Rectangle : 
