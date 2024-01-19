@@ -34,3 +34,20 @@ Một phương thức, đối tượng có thời điểm, thời gian này nó 
   	. Hàm override là hàm nằm trong class con
   	override, định nghĩa lại nội dung của hàm cha
   	--> Override chỉ cho phép override method, ko có khái niệm override attribute
+
+  2.2 Đa hình trong đối tượng ( liên quan đến thừa kế ) 
+  Hình vẽ có thể là hình vuông, tròn, tam giác phụ thuộc vào 1 số tính chất của nó. 
+  Shape     : paint, calS 
+  Square    : setBackground 
+  Rectangle : 
+  
+  * Khi dùng đa hình trong đối tượng :
+     + Dễ dàng ép kiểu qua về giữa các biến trong phạm vi KDL cha con 
+     + Hỗ trợ tạo danh sách(mảng) các phần tử trong phạm vi cha con
+     + Hỗ trợ tạo hàm có KDL cha(chung)
+     + Có thể truyền tham số KDL cha, con 
+3. Tính chất thừa kế (Inheritance) 
+Định Nghĩa: Khi nào các class(KDL) có chung thuộc tính/phương thức thì mình sẽ tạo ra KDL cha(class/interface/abstract class ) 
+chung để chứa các thuộc tính/phương thức chung đó để tăng khả năng reuse/clean code. 
+Thừa kế: thuộc tính, phương thức
+Override: phương     
