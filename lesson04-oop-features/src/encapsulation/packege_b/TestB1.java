@@ -1,6 +1,6 @@
-package encapsulation.package_b;
+package encapsulation.packege_b;
 
-import encapsulation.package_a.TestA1;
+import encapsulation.packege_a.TestA1;
 
 public class TestB1 {
 	public static void main(String[] args) {

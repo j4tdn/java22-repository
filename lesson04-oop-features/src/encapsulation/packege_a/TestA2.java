@@ -1,4 +1,4 @@
-package encapsulation.package_a;
+package encapsulation.packege_a;
 
 public class TestA2 {
 	public static void main(String[] args) {
