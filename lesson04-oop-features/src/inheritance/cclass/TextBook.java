@@ -27,24 +27,6 @@ public class TextBook extends Book {
 	
 	// phân biệt this và super
 	
-	
-	
-	// tự gõ
-	// new TextBook("Ts1", "Toán 1", new BigDecimal("20"), "Nhi Đồng", false, new BigDecimal("5"))
-//	public TextBook(
-//			String id, String name, 
-//			BigDecimal salesPrice, String publisher,
-//			boolean isNew, BigDecimal discount) {
-//		// this = H1
-//		// this.setId(id);
-//		// this.setName(name);
-//		// this.setSalesPrice(salesPrice);
-//		// this.setPublisher(publisher);
-//		super(id, name, salesPrice, publisher);
-//		this.isNew = isNew;
-//		this.discount = discount;
-//	}
-	
 	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
 			BigDecimal discount) {
 		super(id, name, salesPrice, publisher);
@@ -68,15 +50,10 @@ public class TextBook extends Book {
 		this.discount = discount;
 	}
 
-	// sout(tb1)
-	// tb1.toString() --> this = tb1
-	
-	// tb1.getId()
 	
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + this.isNew + ", discount=" + this.discount + ", getId()=" + getId() + ", getName()="
-				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
+		return super.toString() + " --> isNew = " + isNew + ", discount = " + discount;
 	}
 
 	
