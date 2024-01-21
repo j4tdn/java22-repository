@@ -19,13 +19,15 @@ Nếu acces modifier là:
   
   .no-declare:
   --> dùng trong package , k thể dùng bên ngoài
-
+		
 +public: dùng mọi nơi[trong dự án] 
+
 2.Tính chất đa hình(polymorphism)
 Định nghĩa : Tính đa hình có 2 loại , đa hình trong phương thức và đa hình trong đối tượng
 một phương thức , đối tượng có thời điểm , thời gian này nó là hình thái này,thời gian khác có hình thái khác,
 chức năng khác
 --> Đối tượng, phương thức có tính đa hình
+
 2.1 Đa hình trong phương thức
 +Overloading
  -->Hai hoặc nhiều phương thức đc gọi là overloading nếu
@@ -39,4 +41,24 @@ chức năng khác
  override , định nghĩa lại nội dung của hàm cha
  Thường(ko bắt buộc) sẽ có ký hiệu (annotation @Override) để biết hàm đó là hàm dc override từ hàm có sẵn của cha
  -->Override chỉ cho phép override method, k có khái niệm override attribute
+ 
+ 2.2 Đa hình trong đối tượng(liên quan đến thừa kế)
+ Hình vẽ có thể là hình vuông,tròn,.. phụ thuộc vào 1 số tchat của nó
+ 
+ Shape    : paint, cals
+ Square   : pain ,cals ,setBackgroud
+ Rectangle: paint , cals
+ 
+ khi dùng đa hình trong đối tượng
+    --> Dễ dàng ép kiểu qua về giữa các biến trong phạm vi KDL cha con
+    --> Hỗ trợ tạo danh sách(mảng) các phần tử trong phạm vi cha con
+    --> Hỗ trợ tạo hàm có KDL cha(chung)
+    
+3. Tính chất thừa kế(Inheritance)
+Định nghĩa : khi nào các class(KDL) có chung thuộc tính / phươnh thức thì mình
+sẽ tạo ra một KDL cha(class/intefface/abstract class) chung để chứac các thuộc tính/ phương thức chung đó
+để tăng khả năng reuse/claen code
+
+Thừa kế: thuộc tính, phương thức
+Override:phương thức    
  
