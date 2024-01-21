@@ -37,8 +37,7 @@ public class TextBook extends Book{
 
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + isNew + ", discount=" + discount + ", getId()=" + getId() + ", getName()="
-				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
+		return super.toString() + "--> isNew = " + isNew + ", discount = " + discount;
 	}
 
 	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
