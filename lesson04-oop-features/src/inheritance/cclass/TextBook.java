@@ -75,8 +75,7 @@ public class TextBook extends Book {
 	
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + this.isNew + ", discount=" + this.discount + ", getId()=" + getId() + ", getName()="
-				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
+		return super.toString() + " --> isNew= " + isNew + ", discount = " + discount;
 	}
 
 	
