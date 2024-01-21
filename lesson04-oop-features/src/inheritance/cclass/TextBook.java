@@ -43,7 +43,9 @@ public class TextBook extends Book{
 		return "TextBook [isNew=" + isNew + ", discount=" + discount + ", getId()=" + getId() + ", getName()="
 				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
 	}
-
+	
+	/*public String toString() {
+		return super.toString() +*/
 	
 
 
