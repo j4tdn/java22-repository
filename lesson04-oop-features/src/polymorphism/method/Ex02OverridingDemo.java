@@ -15,6 +15,9 @@ public class Ex02OverridingDemo {
 		
 		PolyMethodChild pc = new PolyMethodChild();
 		pc.log();
+		
+		// 1. Có thể override thuộc tính được không
+		// 2. Có thể override hàm static được không. cho ví dụ
 	}
 	
 	@Override
