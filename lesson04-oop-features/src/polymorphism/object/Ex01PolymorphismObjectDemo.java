@@ -51,6 +51,30 @@ public class Ex01PolymorphismObjectDemo {
 		sq1.paint();
 		sq1.calcS();
 		sq1.setBackground();
+		
+		/*
+		 ChinhNo bien = new ChinhNo();
+		 Cha bien = new Con(); --> OK
+		 -----------------------------
+		 Con bien = new Cha(); --> LỖI
+		 
+		 CÂU 1: Tại sao lấy biến Cha = Cha, con được nhưng lấy con = cha lại lỗi
+		 --> 
+		 + Vì lúc compile biến thuộc KDL con có thể gọi đến hàm đã override từ KDL cha và 
+		 gọi thêm các hàm mới của riêng KDL con
+		 + Khi gọi hàm riêng của KDL con lúc runtime sẽ ko tìm đến được các hàm này trong đối tượng
+		 của KDL cha
+		 
+		 Thay vì đợi đến khi chạy gọi hàm mới lỗi --> lúc ép kiểu nó đã báo lỗi rồi (runtime ERROR)
+		 
+		 CÂU 2: Tại sao phải dùng đa hình trong đối tượng(tại sao phải lấy cha = con mà ko lấy chính nó
+		 cha = cha, con = con) ?
+		 
+		 --> Dễ dàng ép KDL qua veef giữa các biến trong phạm vi KDL cha con
+		 --> hỗ trợ tạo danh sách(mảng) các phần tử trong phạm vi cha con
+		 --> hỗ trợ tạo hàm có KDL cha(chung)
+		 		Có thể truyền tham số KDL cha, con
+		 */
 	}
 
 }

@@ -48,4 +48,13 @@ Một phương thức, đối tượng có Thời điểm thời gian này nó l
  
  Shape		: paint, calcS
  Square		: setBackground
- Rectangle	:			
+ Rectangle	:
+ 
+ 2.3. Tính chất thừa kế (Inheritance)
+ Định nghĩa: Khi nào các class(KDL) có chung thuộc tính/phương thức mình sẽ
+ tạo ra 1 KDL cha(class/interface/abstract class) chung để chứa các thuộc tính/phương thức
+ chung đó để
+ + Tăng khả năng reuse/clean code
+ 
+ Thừa kế: thuộc tính, phương thức
+ Override: phương thức	
