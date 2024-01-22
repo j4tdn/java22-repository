@@ -20,13 +20,6 @@ public class TextBook extends Book{
 	// super: đại điện cho đối tượng KDL cha
 	//	   	: gọi đến các thuộc tính/hàm non-static của cha
 	//	    : gọi đến các hàm khởi tạo trong class cha
-	
-	// tự gõ
-//	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew, BigDecimal discount) {
-// 		super(id, name, salesPrice, publisher);	
-//		this.isNew = isNew;
-//		this.discount = discount;
-//	}
 
 	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
 			BigDecimal discount) {
@@ -53,8 +46,7 @@ public class TextBook extends Book{
 
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + isNew + ", discount=" + discount + ", getId()=" + getId() + ", getName()="
-				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
+		return super.toString() + " --> isNew = " + isNew + " , discount = " + discount;
 	}
 	
 }
