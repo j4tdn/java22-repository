@@ -3,17 +3,26 @@ package inheritance.cclass;
 import java.math.BigDecimal;
 
 public class TextBook extends Book {
-	
-	//Book:id, name, salesPrice, publisher
-	
+
+	// Book:id, name, salesPrice, publisher
+
 	private boolean isNew;
 	private BigDecimal discount;
-	
+
 	public TextBook() {
-		
+
 	}
 
-	public TextBook(boolean isNew, BigDecimal discount) {	
+	public TextBook(boolean isNew, BigDecimal discount) {
+		this.isNew = isNew;
+		this.discount = discount;
+	}
+	
+
+
+	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
+			BigDecimal discount) {
+		super(id, name, salesPrice, publisher);
 		this.isNew = isNew;
 		this.discount = discount;
 	}
@@ -36,15 +45,7 @@ public class TextBook extends Book {
 
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + isNew + ", discount=" + discount + "]";
+		return super.toString() + " --> isNew = " + ", discount = " + discount;
 	}
-
-	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
-			BigDecimal discount) {
-		super(id, name, salesPrice, publisher);
-		this.isNew = isNew;
-		this.discount = discount;
-	}
-	
 
 }
