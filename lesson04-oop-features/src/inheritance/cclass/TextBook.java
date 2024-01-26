@@ -20,7 +20,6 @@ public class TextBook extends Book {
 	// super: đại diện cho đối tượng KDL cha
 	//		: gọi đến các hàm non-static của cha		: 
 	//Tự gõ
-	
 
 	public boolean isNew() {
 		return isNew;
@@ -47,8 +46,7 @@ public class TextBook extends Book {
 
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + isNew + ", discount=" + discount + ", getId()=" + getId() + ", getName()="
-				+ getName() + ", getSalesPrice()=" + getSalesPrice() + ", getPublisher()=" + getPublisher() + "]";
+		return super.toString() + " --> isNew = " + isNew + ", discount = " + discount;
 	}
 	
 }
