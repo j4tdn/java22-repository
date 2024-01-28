@@ -12,7 +12,8 @@ public class Ex03BasicCarAdvDemo {
 		
 		Ex03BasicCarAdvDemo ex03 = new Ex03BasicCarAdvDemo();//H1
 		System.out.println("b --> "+ ex03.b);
-		System.out.println("a --> "+ ex03.a);
+		System.out.println("a --> "+ ex03.a); //ko nên
+		
 		/*
 		 Thuộc tính
 		 
@@ -22,7 +23,7 @@ public class Ex03BasicCarAdvDemo {
 		 
 		 		 
 		 + non-static
-		 --> class gọi đc ko? KHÔNG(khi nào khởi tạo đối tượng thì mới có 
+		 --> class gọi đc ko? KHÔNG(khi nào khởi tạo đối tượng thì mới có,
 		 lấy class gọi thì ko biết đag gọi đối tượng nào
 		 --> object gọi đc ko? được
 		 

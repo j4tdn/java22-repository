@@ -9,10 +9,10 @@ public class Car {
 	//khi khởi tạo đối tượng cho class Car thông qua hàm khởi tạo
 	//mỗi đối tượng sẽ có 1 ô nhớ quản lí các thuộc tính này riêng
 	
-	public String id;
-	public String model;
-	public String color;
-	public Double salePrice;
+	private String id;
+	private String model;
+	private String color;
+	private Double salePrice;
 	
 	//empty constructor
 	public Car() {

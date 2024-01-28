@@ -17,7 +17,8 @@ public class CarAdv {
 	 --> lưu trữ ở các ô nhớ riêng cho từng đối tọngw
 	 VD: id, color, salePrice
 	 
-	 + object
+	 + object đc tạo ra từng class
+	 + class có thể có nhiều object
 	 * 
 	 */
 	
@@ -29,7 +30,7 @@ public class CarAdv {
 	//empty constructor
 	public CarAdv() {
 	}
-	//constructor with full parameters
+	//ko nên truyền thuộc tính static(model) cho hàm khởi tạo
 	public CarAdv(String id, String color, Double salePrice) {
 		this.id = id;
 		this.color = color;
@@ -58,6 +59,9 @@ public class CarAdv {
 	public String getModel() {
 		return model;
 	}	
+	// this đại diện cho đối tượng đang gọi hàm
+		// c1.setModel(...)
+		// this = c1
 	public void setModel(String model) {
 		this.model=model;
 	}

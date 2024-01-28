@@ -1,6 +1,5 @@
 package view;
 
-import java.util.Random;
 
 public class Ex04StaticMethodDemo {
 	
@@ -29,7 +28,7 @@ public class Ex04StaticMethodDemo {
 //		o1.printTitle();
 //		o2.printTitle();
 		
-		Ex04StaticMethodDemo.printTitle();
+		Ex04StaticMethodDemo.printTitle(); //static nên gọi bằng class
 		Ex04StaticMethodDemo.printTitle();
 		
 		System.out.println("========Ví dụ 02 =======");
@@ -37,6 +36,7 @@ public class Ex04StaticMethodDemo {
 		o1.score = 7.8d;
 		Ex04StaticMethodDemo o2 = new Ex04StaticMethodDemo();
 		o2.score= 8.8d;
+		
 		//ko nên
 //		o1.sum(5, 10);
 //		o2.sum(7, 12);

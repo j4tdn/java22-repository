@@ -35,6 +35,8 @@ public class Ex02StaticAttributeDemo {
 		c0k.setModel("MG");
 		c10.setModel("MG");
 
+		System.out.println("c01 -->" + c01);
+		System.out.println("C05--> " + c05);
 	}
 
 }

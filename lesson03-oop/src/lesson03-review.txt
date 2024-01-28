@@ -13,6 +13,11 @@ Chương trình hướng đối tượng -- OOP
 B. Thực hành 
 ? Làm sao để tạo ra đối tượng, đối tượng là gì?
 Table --> Class(Id,chatlieu,soluong)
+->Tạo ra các đối tượng(ban 1, ban 2, ban 3)
+
+Table --> Object()
+->Table thuộc class Stuff(id,name,position)
+->ban,ghe,choi,cap....
 
 ---------------------------------
 1. Vì sao các thuộc tính trong class theo OOP nên cho private rồi sử dụng getter,
