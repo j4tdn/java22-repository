@@ -23,18 +23,15 @@ public class Main {
 	}
 	private static void printList(Director[] Director, Manager[] ListManager, Staff[] ListStaff) {
 		System.out.println("1. Danh sách nhân sự ");
-		System.out.println("Giám đốc");
-		System.out.println("\t Name \t\t Ngày sinh \t HS Lương \t HS Chức vụ ");		
+		System.out.println("Giám đốc");		
 		for(Director ns: Director) {
 			System.out.println(ns.toString());
 		}
-		System.out.println(" Trưởng phòng");
-		System.out.println("\t Name \t\t Ngày sinh \t HS Lương \t HS Chức vụ \t\t Phòng ban");		
+		System.out.println(" Trưởng phòng");	
 		for(Manager ns: ListManager) {
 			System.out.println(ns.toString());
 		}
-		System.out.println(" Nhân sự");
-		System.out.println("\t Name \t\t Ngày sinh \t HS Lương \t\t HS Chức vụ \t\t Phòng ban \t\t Trưởng phòng");		
+		System.out.println(" Nhân sự");		
 		for(Staff ns: ListStaff) {
 			System.out.println(ns.toString());
 		}
