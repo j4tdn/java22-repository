@@ -1,0 +1,16 @@
+package polymorphism.object;
+
+public class Square extends Shape {
+	
+	@Override
+	void paint() {
+		System.out.println("Square paint --> paint ...");
+	}
+	
+	@Override
+	void calcS() {
+		System.out.println("Square calcS --> calcS ...");
+
+	}
+	
+}
