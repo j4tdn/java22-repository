@@ -1,0 +1,17 @@
+Bài 4: Viết chương trình quản lý nhân sự tại công ty A 
+gồm các loại nhân sự sau đây.
+class 
+		Director	 		fullName, birthDate, salaryCoefficient,positionCoefficient
+		HeadOfDepartment extends Director , departmentName
+		Staff extends HeadOfDepartment	, HeadOfDepartment
+
+Chương trình thực hiện các công việc sau đây.
+
+1. Tạo dữ liệu gồm 1 Giám đốc, 2 Trưởng phòng, 6 Nhân viên
+2. Viết hàm:
+o Hiển thị thông tin các nhân sự có trong công ty => PrintList()
+o Thống kê số lượng nhân viên được quản lý bởi từng trưởng phòng => SearchStaffOfHeadDepartment()
+o Tính và in ra mức lương của từng loại nhân sự , biết rằng : => calculateSalary()
+Nhân viên: Lương = (hệ số lương + hệ số chức vụ(nếu có)) * 1250000
+Trưởng phòng: Lương = (hệ số lương + hệ số chức vụ(nếu có)) * 2200000
+Giám đốc: Lương = (hệ số lương + hệ số chức vụ(nếu có)) * 3000000
