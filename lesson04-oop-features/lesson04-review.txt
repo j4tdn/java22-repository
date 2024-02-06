@@ -1,0 +1,53 @@
+OOP 
+
+1. Tinh chat dong goi(encapsulation)
+Dinh nghia: Tinh chat dong goi duoc the hien qua qua cac access modifier (tu khoa khai bao pham vi truy cap)
+
+khai bao access modifier o : attribute(thuoc tinh), method(phuong thuc)
+
+Neu access modifier la 
+
++ private: dong goi trong pham vi class
+--> attribute, method la private thi chi duoc phep su dung trong class chua no 
+
++protected/no-declare: dong goi trong pham vi package
+--> attribute, method la protected/no-declare thi duoc phep su dung trong class hien tai va cac class khac nhung ma phai
+cung pakage voi class hien tai 
+
+- protected: 
+
+-no-declare: 
++ public: dung o moi noi [trong du an]
+
+2. tinh chat da hinh (polyorphism)
+DInh nghia: Tinh chat da hinh co 2 loai: da hinh trong phuong thuc va da hinh trong doi tuong
+
+Mot phuong thuc, doi tuong co thoi diem, thoi gian nay no la hinh thai nay, thoi diem thoi gian khac noo
+la hinh thai chuc nang khac
+
+DOi tuong, phuong thuc nhu vay la doi tuong phuong thuc co tinh da hinh
+
+2.1 da hinh trong phuong thuc
++ Overloading
+--> Hai hoac nhieu phuong thuc duoc goi la overloading neu 
+	. thuoc cung 1 class
+	. cung ten
+	. so luong tham so khac nhau || KDL truyen vao cua tham so khac nhau 
+	
++ Overriding
+--> Hai phuong thuc duoc goi la overridingneu
+. thuoc 2 classes cha con
+. Ham override la ham nam trong class con
+override, dinh nghia lai noi dung cua ham cha 
+Thuong se co ky hieu (annotation @Override) de biet ham do lam duoc 
+override tu ham co san cua cha
+--> Override chi cho phep override method, k co khai niem attribute
+
+2.2 Da hinh trong doi tuong (lien quan den thua ke) 
+
+Hinh ve co the la hinh vuong, tron , tam giac phu thuoc vao 1 so tinh chat cua no
+
+Shape: paint, calcS
+
+Square	:  setBackground
+Rectangle	:	
