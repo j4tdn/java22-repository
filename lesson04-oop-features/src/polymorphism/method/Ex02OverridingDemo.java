@@ -8,7 +8,7 @@ public class Ex02OverridingDemo {
 		
 		Ex02OverridingDemo o2 = new Ex02OverridingDemo();
 		
-		System.out.println("toString --> " + o2);
+		System.out.println("toString --> " + o2.toString());
 		
 		System.out.println("==========");
 		

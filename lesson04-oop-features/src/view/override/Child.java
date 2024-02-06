@@ -13,9 +13,9 @@ public class Child extends Parent {
 
 	public static void main(String[] args) {
 		
-		//Child c = new Child();
+		//Child c = new Child();text 02 log 02
 		
-		//Parent c = new Parent();
+		//Parent c = new Parent();text 01 log 01
 		
 		//c: luc compile la kdl parent
 		//c: luc runtime la kdl child

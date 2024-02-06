@@ -3,7 +3,7 @@ oop
 1. tinhs chất đóng gói(encapsulation)
 định nghĩa: tính chất đóng gói được thê hiện qua các access modifier(từ khóa khai baó phạm vi truy cập)
 
-khai báo access modifier ở: attribute(thuộc tính), method(phương thức)
+khai báo access modifier ở: attribute(thuộc tính), method(phương thức/hàm)
 
 nếu access modifier là 
 
@@ -24,13 +24,13 @@ nếu access modifier là
 
 2. tinhs  chất đa hình(polymorphism)
 định nghĩa: tính chất đa hình có 2 loại, đa hình trong phương  thức và đa hình trong đối tượng
-một phương thức có thời điểm, thời gian này nó là hình thái này, thời điểm thời gian khác nói là hình thái chức năng khác
+một phương thức, đối tượng có thời điểm, thời gian này nó là hình thái này, thời điểm thời gian khác nó là hình thái chức năng khác
 
 đóio tượng, phương thcuws như vậy gọi là đối tượng, phương thức có tính đa hình
 
 2.1 đa hình trong phương thức 
 + Overloading
-  hai hoặc nhiều phương thức được gọi là overloading nếu
+  -->h ai hoặc nhiều phương thức được gọi là overloading nếu
   .thuộc cùng 1 class
   .cùng tên
   .có số lượng tham số khác nhau hoặc kiểu dự liệu truyền vào của tham số khác nhau
@@ -42,13 +42,13 @@ một phương thức có thời điểm, thời gian này nó là hình thái n
     .thuộc 2 classes cha con
     .hàm overriding là hàm nằm trong class con
      overriding, đinhj nghĩa lại nội dung của hàm cha
-     Thường sẽ có ký hiệu ( annotation @overriding) để biết hàm đó là hàm
+     Thường(không bắt buộc) sẽ có ký hiệu ( annotation @overriding) để biết hàm đó là hàm
      được overring từ hàm có sẵn của cha
      
     + overriding chi cho phép overriding method, không có khais niệm overriding attribute
     
     
-2.2 đa hình trong đối tượng 
+2.2 đa hình trong đối tượng (liên quan đến thừa kế) 
 Hinh vẽ có thể hình vuôgnw, hình tròn, hình tam giác, phụ  thuộc vào 1 sóo tính chất cua nó
 
 Shape: paint, cals

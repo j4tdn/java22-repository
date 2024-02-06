@@ -37,3 +37,21 @@ public class Ex04StaticMethodDemo {
 	}
 
 }
+/*
+ cú pháp của một hàm
+ 
+  [access-modifier] [static] [final] return_data_type method_name(parameters){
+    body: statements
+ */
+
+
+/*
+ các hàm phụ thuộc vào đối tượng gọi nó (đang gọi)
+ -->phụ thuộc: mỗĩ đói tượng gọi hàm sẽ đưa ra kết quả khác nhau
+ --> non-static
+ 
+ cac hàm không phụ thuộc vào đối tượng gọi nó(đang gọi)
+ --> không phụ thuộc: đối tượng nào gọi cung như nhau
+ --> static
+ */
+ 

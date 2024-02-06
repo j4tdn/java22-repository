@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public class TextBook extends Book {
 
 	private boolean isNew;
-	private BigDecimal dícount;
+	private BigDecimal discount;
 	
 	public TextBook() {
 	}
@@ -18,10 +18,10 @@ public class TextBook extends Book {
 	
 
 	public TextBook(String id, String name, BigDecimal salesPrice, String publisher, boolean isNew,
-			BigDecimal dícount) {
+			BigDecimal discount) {
 		super(id, name, salesPrice, publisher);
 		this.isNew = isNew;
-		this.dícount = dícount;
+		this.discount = discount;
 	}
 
 	public boolean isNew() {
@@ -32,17 +32,17 @@ public class TextBook extends Book {
 		this.isNew = isNew;
 	}
 
-	public BigDecimal getDícount() {
-		return dícount;
+	public BigDecimal getDiscount() {
+		return discount;
 	}
 
-	public void setDícount(BigDecimal dícount) {
-		this.dícount = dícount;
+	public void setDícount(BigDecimal discount) {
+		this.discount = discount;
 	}
 
 	@Override
 	public String toString() {
-		return "TextBook [isNew=" + isNew + ", dícount=" + dícount + "]";
+		return super.toString() + " --> isNew = " + isNew + ", discount " + discount;
 	}
 	
 	

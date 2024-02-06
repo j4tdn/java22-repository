@@ -3,6 +3,19 @@ package view;
 import bean.CarAdv;
 
 public class Ex03BasicCarAdvDemo {
+	/*
+	 thuộc tính
+	 
+	 +static:
+	 --> class gọi được không ? được
+	 --> object gọi đuọc không? được (khôn nên - warning)
+	     warning: lấy 1 đói tượng set giá trị nhưng lại ăn cho tát cả
+	     
+	 +non-static: khi có đối tượng thì mơis có giá trị cho thuộc tính nớ, khi có class thì chưa có đối tượng, nên phải new ra đối tượng thì mới gọi dc 
+	 --> class gọi đuoc không? không(khi nào khởi tạo đối tượng thì mới có thông tin cho thuôcj tính non-static
+	                                 lấy class gọi thì không biết đang gọi cho đối tượng nào)
+	 -->object gọi được không ? được    
+	 */
 	
 	public static void main(String[] args) {
 		CarAdv.model = "audi";

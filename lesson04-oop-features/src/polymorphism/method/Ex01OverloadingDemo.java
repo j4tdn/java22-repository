@@ -9,6 +9,14 @@ public class Ex01OverloadingDemo {
 		 2.tính tổng 3 số nguyên trả về 1 số nguyên
 		 3.tính tổng 2 số thực trả về 1 số thực
 		 4.tính tổng 2 số thực, trả về số nguyên(kết quả làm tròn trên 1 số thực trả về)(round up)
+		 
+		 round commercial: làm tròn bình thường
+		 round up: làm tròn trên
+		 round down: làm tròn dưới
+		 */
+		
+		/*
+		 
 		 */
 		
 		System.out.println(sum(5, 7));
