@@ -11,13 +11,14 @@ public class Ex01AbstractionTheoryDemo {
 	              trong các lớp thực thi
 	 */
 	
-	// functional interface
-	
-	// lambda expression
-	
-	// strategy pattern
-	
 	// ôn tập: lý thuyết + bài tập
 	
-	// kiểm tra
+	// interview: lý thuyết + coding
+	
+	// kiểm tra: 100% bài tập
+	
+	// enum
+	// functional interface
+	// lambda expression
+	// strategy pattern
 }
