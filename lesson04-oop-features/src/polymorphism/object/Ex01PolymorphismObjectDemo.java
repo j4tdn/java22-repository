@@ -19,6 +19,7 @@ public class Ex01PolymorphismObjectDemo {
 		System.out.println("==============================");
 		
 		long a = 10;
+		a= Integer.MAX_VALUE + 200; 
 		a = Integer.MIN_VALUE;
 		
 		int b = (int)a;
@@ -43,6 +44,11 @@ public class Ex01PolymorphismObjectDemo {
 	sh2.paint ();
 	sh2.calcS ();
 	}
+	
+	// COn new cha
+	Square sq1 = (Square) new Shape();
+	sq1.paint();
+	sq1.calcS();
 	
 
 }
