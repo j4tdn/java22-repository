@@ -1,33 +1,66 @@
-opp
+OOP
 
-1. tính chất đóng gói (encapsulation) 
-tính chất dóng ghói được thể hiện qua các access modifier ( các từ khóa khai báo phạm vi truy cập)
- 
- 
-  khai báo access modifiler ở thuộc tính và phương thức
- nếu access modifile là:
- 
- + private đóng gói trong phạm vi của class 
- ---> attribute( thuộc tính ) , method là private thì chỉ được phép sử dụng trong class chứ nó 
- 
- + protected / no-declare : đóng gói trong phạm vi packege 
- 
- -----> attribute method là protected thì được dùng trong class hiện tại và class khác nhyuwng cùng package 
- protected / no-declare phân biệt 2 cái 
- 
- - protected :
- 	attribute method là protected còn có thể được thừa kế, sử dụng ở các class con của class hiẹne tại class con  khác nằm ngoài package hiện tại 
- 	
- - no-declare : dùng trong package ko thể dùng bên ngoài 
- + public : dungf được mọi nơi trong dự án 
- 
- 2. tính chất đa hình polymorphism 
- định nghĩa tính chất đa hình : có 2 loại đa hình trong phương thức và đa hình trong đối tượng 
- một phương thức đối tượng có thời điểm thời gian này nó lkaf hình thái này thời gian khác nó blaf hình thái khác chưucs năng khác 
- đối tương phươnmg thưucs như vậy gọi là dôdis tượng phương thức có tính đa hình 
- 2.1 đa hình trong phương thức 
- + over loading 
-  	---> 2 hoặc nhiều phương thưức được gọi là over loading nếu 2 hay nhiều phương thức đó thuộc 2 hay nhiều 1 class 
-  	cùng tên 
-  	có số lượng tham số khác nhau hoặc kiểu dữ liệu truyền vào của tham số khác nhau 
- 
+1. Tính chất đóng gói(encapsulation)
+Định nghĩa: Tính chất đóng gói được thể hiện qua các access modifier(từ khóa khai báo phạm vi truy cập)
+
+Khai báo access modifier ở: attribute(thuộc tính), method(phương thức)
+
+Nếu access modifier là
+
++ private: đóng gói trong phạm vi của class
+  --> attribute, method là private thì chỉ được phép sử dụng trong class chứa nó
+  
++ protected/no-declare: đóng gói trong phạm vi package
+  --> attribute, method là protected/no-declare thì được phép sử dụng trong class hiện tại
+      và các class khác nhưng mà phải cùng package với class hiện tại
+  
+  . protected:
+  	--> attribute, method là protected còn có thể được thừa kế, sử dụng
+  	ở các class con của class hiện tại, class con có thể nằm ngoài package hiện tại
+  	
+  . no-declare:
+    --> dùng trong package, k thể dùng bên ngoài
+      
++ public: dùng ở mọi nơi [trong dự án]
+
+2. Tính chất đa hình(polymorphism)
+Định nghĩa: Tính chất đa hình có 2 loại, đa hình trong phương thức và đa hình trong đối tượng
+Một phương thức, đối tượng có thời điểm, thời gian này nó là hình thái này, thời điểm thời gian
+khác nó là hình thái, chức năng khác
+Đối tượng, phương thức như vậy gọi là đối tượng, phương thức có tính đa hình
+
+2.1 Đa hình trong phương thức
++ Overloading
+  --> Hai hoặc nhiều phương thức được gọi là overloading nếu
+  . Thuộc cùng 1 class
+  . Cùng tên
+  . Số lượng tham số khác nhau || KDL truyền vào của tham số khác nhau
+  
++ Overriding
+  --> Hai phương thức được gọi là overriding nếu
+  . Thuộc 2 classes cha con
+  . Hàm override là hàm nằm trong class con
+    override, định nghĩa lại nội dung của hàm cha
+    
+    --> Thường(ko bắt buộc) sẽ có ký hiệu (annotation @Override) để biết hàm đó là hàm
+    được override từ hàm có sẵn của cha
+    --> Override chỉ cho phép override method, không có khái niệm override attribute
+
+2.2 Đa hình trong đối tượng(liên quan đến thừa kế)
+Hình vẽ có thể là hình vuông, tròn, tam giác phụ thuộc vào 1 số tính của nó
+Shape: paint, calcS
+Square    : setBackground
+Rectangle : 
+Khi dùng đa hình trong đối tượng
++ Dễ dàng ép kiểu qua về giữa các biến trong phạm vi KDL cha con
++ Hỗ trợ tạo danh sách(mảng) các phần tử trong phạm vi cha con
++ Hỗ trợ tạo hàm có KDL cha(chung)
+--> Có thể truyền tham số KDL cha, con
+
+3. Tính chất thừa kế (Inheritance)
+Định nghĩa: Khi nào các class(KDL) có chung thuộc tính/phương thức thì mình 
+sẽ tạo KDL cha(class/interface/abstract class) chung để chứa các thuộc tính/phương thức chung đó
+để tăng khả năng reuse/clean code
+
+Thừa kế: thuộc tính, phương thức
+Override: phương thức
