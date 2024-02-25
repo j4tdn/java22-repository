@@ -1,5 +1,5 @@
 package Ex04;
 
-public class Sum {
+public class Sum{
 
 }
