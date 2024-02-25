@@ -2,11 +2,8 @@ package Ex05;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 public class Main {
 	ArrayList<Book> book = new ArrayList<>();
-	ArrayList<Customer> customer = new ArrayList<>();
-	Map<Customer, ArrayList<Book>> customerBooksMap = new HashMap<>();
 	public static void main(String[] args) {
 		Main m = new Main();
 		m.bookList();
@@ -57,7 +54,7 @@ public class Main {
 
 	public void price() {
 		Customer c1 = new Customer(1, "Nguyễn Văn A", "0123456789", "Đà Nẵng");
-		ArrayList<Book> bookToBuy = new ArrayList<Book>();
+		ArrayList<Book> bookToBuy = new ArrayList<>(book);
 		RefBook r2 = new RefBook("STK02", new BigDecimal("121"), "IPM", new BigDecimal("15"));
 		TextBook t2 = new TextBook("SGK02", new BigDecimal("30"), "Nhi Đồng", "old");
 		bookToBuy.add(t2);
@@ -83,8 +80,7 @@ public class Main {
 	            }
 	        }
 		}
-		System.out.println("\nKhách hàng mua sách: " + c1);
-		System.out.println("\nTổng tiền: "+totalPrice);
+		System.out.println("\nKhách hàng " + c1.getCustomerName() + " đã mua 1 sách tham khảo và 1 sách giáo khoa với tổng tiền " + totalPrice);
 		
 	}
 }
