@@ -17,7 +17,7 @@ public class Main {
 		RefBook r2 = new RefBook("STK02", new BigDecimal("121"), "IPM", new BigDecimal("15"));
 		TextBook t1 = new TextBook("SGK01", new BigDecimal("60"), "Nhi Đồng", "new");
 		TextBook t2 = new TextBook("SGK02", new BigDecimal("30"), "Nhi Đồng", "old");
-		TextBook t3 = new TextBook("SGK03", new BigDecimal("180"), "Hikari", "old");
+		TextBook t3 = new TextBook("SGK03", new BigDecimal("190"), "Hikari", "old");
 		book.add(r1);
 		book.add(r2);
 		book.add(t1);
