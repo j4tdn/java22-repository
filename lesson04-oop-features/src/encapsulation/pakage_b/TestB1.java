@@ -8,7 +8,6 @@ public class TestB1 {
 //	}
 	public static void main(String[] args) {
 
-		// sử dungj các class trong cùng 1 pakage thì khoong cần phải import
 		// khác pakage thì phải import
 
 		TestA1.methodTestA1Public();

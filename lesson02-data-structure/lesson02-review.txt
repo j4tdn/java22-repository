@@ -15,11 +15,11 @@
     
 2. Kiểu dữ liệu
 - Nguyên thủy(primitive data type)
-  VD: int, double, string
+  VD: int, double, string, float, char
   + Giá trị: lưu trữ ở STACK
   
 - Đối tượng(object type)
-  VD1: Integer, Double, String: KDL có sắn của Java --> 100% nó là class có duy nhất 1 thuộc tính bên trong
+  VD1: Integer, Double, String, Date Calendar: KDL có sắn của Java --> 100% nó là class có duy nhất 1 thuộc tính bên trong
        --> Immutable Object
        
   VD2: Item, Store, Employee: KDL do mình tự tạo ra phù hợp với bài toán
