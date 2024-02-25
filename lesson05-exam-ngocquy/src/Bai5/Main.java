@@ -53,9 +53,12 @@ public class Main {
         // Mô phỏng việc mua sách
         SachGiaoKhoa sachGiaoKhoa = (SachGiaoKhoa) danhSachSach.get(1); // Giả sử khách hàng mua sách giáo khoa SGK002
         SachThamKhao sachThamKhao = (SachThamKhao) danhSachSach.get(3); // Giả sử khách hàng mua sách tham khảo STK001
+        System.out.println("\nGiả sử khách hàng mua "
+        		+ "\n 1 SGK: Mã sách: SGK002, Đơn giá: 48.0, Nhà xuất bản: Nhi Đồng, Tình trạng: Cũ"
+        		+ "\n 1 STK: Mã sách: STK001, Đơn giá: 99.0, Nhà xuất bản: Nhi Đồng, Thuế (%): 10.0");
         // Tính tổng tiền khách hàng phải thanh toán
         double tongTien = tinhTongTien(sachGiaoKhoa, sachThamKhao);
-        System.out.println("\nTổng tiền mà khách hàng phải thanh toán: " + tongTien);
+        System.out.println("Tổng tiền mà khách hàng phải thanh toán: " + tongTien);
     }
 
     // Hàm tính tổng tiền khách hàng phải thanh toán
