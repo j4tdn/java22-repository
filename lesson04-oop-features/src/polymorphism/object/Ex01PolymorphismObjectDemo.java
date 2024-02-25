@@ -47,8 +47,8 @@ public class Ex01PolymorphismObjectDemo {
 	
 	// COn new cha
 	Square sq1 = (Square) new Shape();
-	sq1.paint();
-	sq1.calcS();
+	//sq1.paint();
+	//sq1.calcS();
 	
 
 }
