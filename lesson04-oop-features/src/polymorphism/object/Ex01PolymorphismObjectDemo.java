@@ -1,5 +1,6 @@
 package polymorphism.object;
 
+
 public class Ex01PolymorphismObjectDemo {
 	public static void main(String[] args) {
 		// 1. Khởi tạo đối tượng cho chính KDL của nó
