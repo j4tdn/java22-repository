@@ -11,14 +11,15 @@ public class Ex01AbstractionTheoryDemo {
 	              trong các lớp thực thi
 	 */
 	
-	// ôn tập: lý thuyết + bài tập
-	
-	// interview: lý thuyết + coding
-	
-	// kiểm tra: 100% bài tập
-	
-	// enum
 	// functional interface
 	// lambda expression
+	
 	// strategy pattern
+	// design pattern(mẫu thiết kế): mvc, mvvn, builder, singleton, factory, strategy, observer
+	// mỗi design pattern là mẫu thiết kế, tập hợp các công thức, bước làm để giải quyết một bài toán
+	
+	// code convention
+	// enum
+	// boxing, auto-boxing
+	// int-Integer, Integer-int, Float, Double ...
 }

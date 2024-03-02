@@ -64,3 +64,36 @@ sẽ tạo KDL cha(class/interface/abstract class) chung để chứa các thu�
 
 Thừa kế: thuộc tính, phương thức
 Override: phương thức
+
+
+
+
+
+
+--------------------------------
+  Functional Interface
+  --
+  Là interface có duy một hàm trừu tượng
+  Thay vì sử dụng từ khóa new để khởi tạo một đối tượng cho interface
+  rồi override lại các hàm trừu tượng bên trong 
+  -> sử dụng lambda expression để khởi tạo đối tượng interface(functional)
+  
+  Ví dụ
+  
+  interface Test01 {
+	 void hello();
+  } --> là functional interface
+  
+  interface Test02 {
+	 void method01(int x);
+	 int method02();
+  } --> không phải
+  
+  interface Test03 {
+	 Item apply(String name);
+	 
+	 default void log(Employee emp) {
+		System.out.println(emp);
+	 }
+  } --> là functional interface
+	 
