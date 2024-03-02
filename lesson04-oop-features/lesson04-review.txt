@@ -61,4 +61,23 @@ khác nó là hình thái chức năng khác
  Thừa kế: thuộc tính, phương thức
  Override: phương thức
  
+ 
+ Functional Interface là interface có duy nhất một hàm trừu tượng
+ Thay vì dùng từ khóa new để khởi tạo 1 đối tượng cho interface
+ rồi override lại các hàm trừu tượng bên trong
+-> sử dụng lambda expression để khởi tạo đối tượng interface
+VD:  interface Test01 {
+         void hello();
+      } --> là functional interface
+      
+      interface Test02 {
+          void method01(int x);
+          int method02();
+        } --> ko phải
+        
+         interface Test03 {
+         Item apply(String name);
+        default void log(Employee emp) {               
+	 
+ 
                       

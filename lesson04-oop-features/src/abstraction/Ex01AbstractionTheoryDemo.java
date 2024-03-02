@@ -11,6 +11,8 @@ public class Ex01AbstractionTheoryDemo {
 	// function interface
 	// lambda expression
 	// strategy pattern
+	// design pattern(mẫu thiết kế): mvc, mvvn, builder, singleton, factory, strategy
+	// là mẫu thiếu kế, tập hợp các công thức, bước làm để giải quyết một bài toán
 	// ôn tập: lý thuyết + bài tập
 	// kiểm tra
 
