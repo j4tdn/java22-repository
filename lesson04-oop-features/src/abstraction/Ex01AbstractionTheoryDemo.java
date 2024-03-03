@@ -7,4 +7,13 @@ public class Ex01AbstractionTheoryDemo {
 	 * 				có chung thuộc tính , phương thức
 	 * 	2. interface,abstract class --> chứa các abstract method sau đó được override lại trong các lớp thực thi
 	 */
+	
+	
+	//Functional interface
+	//strategy expression
+	//strategy pattern
+	//design pattern(Mẫu thiết kế): MVC, MVVN, Builder
+	
+	//enum
+	//code convention
 }
