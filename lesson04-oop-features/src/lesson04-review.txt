@@ -65,3 +65,12 @@ khác nó là hình thái, chức năng khác
 để tăng khả năng reuse/clean code
 	thừa kế: thuộc tính, phương thức
 	override: phương thức		
+	
+--------------------------------------------------------	
+1.functional_interface
+	   functional_interface: co duy nhat 1 ham truu tuong, 
+	   cos the co them nhuwng ham khong phai ham truu tuong
+	 
+	 interface: su dung tu khoa new de khoi tao inteface => override
+	 functional_interface: su dung lamda de khoi tao doi tuong interface
+	  
