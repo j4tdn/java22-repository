@@ -7,7 +7,7 @@ public class Rectangle implements Shape {
 		System.out.println("Rectangle-->paint");
 	}
 
-	@Override
+	
 	public void calcS() {
 		System.out.println("Rectangle-->calcS");
 	}

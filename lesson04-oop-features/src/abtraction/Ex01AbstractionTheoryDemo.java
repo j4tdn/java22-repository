@@ -10,15 +10,15 @@ public class Ex01AbstractionTheoryDemo {
 	 2.interface, abstract class --> chứa các abstract method sau đó đc override lại trong các lớp thực thi
 	 */
 	
-	//function interface
+	//functional interface
 	
 	//lambda expression
 	
 	//strategy pattern
+	//design pattern(mẫu thiết kế): mvc, mvvn, builder..
+	// mỗi design pattern là mẫu thiết kế, tập hợp các công thức, bước làm để giải quyết 1 bài toán
 	
-	//ôn tập: lý thuyết + bài tập
-	
-	//kiểm tra
+	//code convention
 	
 
 }

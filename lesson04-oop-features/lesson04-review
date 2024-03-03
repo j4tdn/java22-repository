@@ -64,3 +64,16 @@ Thừa kế: thuộc tính, phương thức
 Ovverride: phương thức
 	
 	
+	
+	----------------------------------------------------------------
+	1. Functional Interface:
+	   -->
+	   là interface có duy nhất 1 hàm trừu tượng
+	   
+	   Thay vì sử dụng từ khóa new để khởi tạo đối tượng cho interface rồi  override lại các hàm trừu tượng bên trong
+	   --> sử dụng lambda expression để khởi tạo đối tượng interface(functional)
+	   
+	   Ví dụ
+	  
+	
+	
