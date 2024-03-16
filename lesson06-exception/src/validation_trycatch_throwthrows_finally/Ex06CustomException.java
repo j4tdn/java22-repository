@@ -5,26 +5,21 @@ import java.util.Random;
 import exception.InvalidAgeException;
 
 public class Ex06CustomException {
-	
-	public static void main(String[] args) {
-		
+    public static void main(String[] args) {
 		int age = new Random().nextInt(30);
-		
 		try {
 			boolean isValid = validate(age);
 			System.out.println("isValid: " + isValid);
-		} catch (InvalidAgeException e) {
-			e.printStackTrace();
+		} catch() {
+			
 		}
-		
+		System.out.println("isValid: " + isValid);
 	}
-	
-	private static boolean validate(int age) throws InvalidAgeException{
-		if (age < 18) {
-			throw new InvalidAgeException("-- Age required greater than or equal 18 --");
-		}
-		System.out.println("Age is valid");
-		return true;
-	}
-	
+    private static boolean validate(int age) throws InvalidAgeException {
+    	if (age<18) {
+    		throw new InvalidAgeException("--Age required greater than 18");
+    	}
+    	System.out.println("Age is valid");
+    	return true;
+    }
 }
