@@ -8,7 +8,7 @@ import bean.Order;
 import bean.ReferenceBook;
 import bean.TextBook;
 
-public class Ex05BookDemo_StrategyPatternClean {
+public class Ex05BookDemoStrategyPatternClean {
 	
 	public static void main(String[] args) {
 		
@@ -45,7 +45,7 @@ public class Ex05BookDemo_StrategyPatternClean {
 		
 		Condition rangePriceCondition = book -> {
 			double price = book.getSalesPrice().doubleValue();
-			return price >= 40 && price <= 80 ;
+			return price >= 40 && price <= 80;
 		};
 		
 		result = findBooks(books, rangePriceCondition);
