@@ -8,7 +8,7 @@ import bean.Order;
 import bean.ReferenceBook;
 import bean.TextBook;
 
-public class Ex05BookDemo_StrategyPatternClean {
+public class Ex05BookDemoStrategyPatternClean {
 
 	public static void main(String[] args) {
 
