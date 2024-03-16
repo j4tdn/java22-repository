@@ -8,7 +8,7 @@ import bean.Order;
 import bean.ReferenceBook;
 import bean.TextBook;
 
-public class Ex05BookDemo {
+public class Ex05BookDemo_StrategyPattern {
 	
 	public static void main(String[] args) {
 		
@@ -30,20 +30,39 @@ public class Ex05BookDemo {
 		Book[] books = {tb1, rb1, rb2, tb2, tb3, tb4, rb4, rb5, tb5,  rb3,};
 		
 		// Tìm toàn bộ sách thuộc nhà xuất bản Nhi Đồng
-		Book[] result = findBooksByPublisher(books, "Nhi Đồng");
+		// Book[] result = findBooksByPublisher(books, "Nhi Đồng");
+		
+		// anonymous class
+		Condition ndCondition = new Condition() {
+			
+			@Override
+			public boolean test(Book book) {
+				return "Nhi Đồng".equals(book.getPublisher());
+			}
+		};
+		
+		Book[] result = findBooks(books, ndCondition);
 		generate("1. Sách thuộc NXB 'Nhi Đồng'", result);
 		
 		
-		// Tìm toàn bộ sách có đơn giá nhỏ hơn 50
-		result = findBooksBySalesPrice(books);
-		generate("2. Sách có đơn giá nhỏ hơn 50", result);
+		// Tìm toàn bộ sách có đơn giá nhỏ hơn 100
+		// result = findBooksBySalesPrice(books);
+		
+		Condition ltPriceCondition = new Condition() {
+			
+			@Override
+			public boolean test(Book book) {
+				return book.getSalesPrice().doubleValue() < 100;
+			}
+		};
+		
+		result = findBooks(books, ltPriceCondition);
+		
+		generate("2. Sách có đơn giá nhỏ hơn 100", result);
 		
 		// Tìm toàn bộ sách có đơn giá từ 40 đến 80
 		result = findBooksBySalesPrice(books, 40, 80);
 		generate("3. Sách có đơn giá từ 40 đến 80", result);
-		
-		// Tìm toàn bộ các sách tham khảo
-		
 		
 		/* 
 		Thực hiện giải lập. Khách hàng mua 3 cuốn sách giáo khoa, 2 cuốn sách
@@ -58,14 +77,51 @@ public class Ex05BookDemo {
 		
 	}
 	
+	// điều kiện(biểu thức) từ các hàm
+	// givenPubs.equals(book.getPublisher())
+	// book.getSalesPrice().doubleValue() < 50
+	// book.getSalesPrice().doubleValue() >= from && book.getSalesPrice().doubleValue() <= to
+	
+	// ==> công thức chung là: boolean test(Book book)
+	
 	// strategy pattern
+	
+	// dựa vào điều kiện(biểu thức) ở các hàm, tìm ra công thức chung của các biểu thức đó
+	// công thức chung: --> hàm trừu tượng chỉ có tham số truyền vào, kdl trả về, chưa có phần thực thi
+	//   + các hàm đó có input đầu vào là gì
+	//   + kiểu dữ liệu trả về là gì
+	//   + tên hàm bất kì(phụ thuộc vào chức năng đặt cho hợp lý)
+	
+	// phần thực thi của công thức chung như thế nào là do điều kiện mà người dùng truyền vào
+	
+	// tạo ra 1 interface/abstract class chứa hàm trừu tượng(công thức chung)
+	// Condition: boolean test(Book book)
+	// Truyền interface thành tham số cho hàm
+	
+	// condition.test(book)
+	// lúc compile sẽ gọi hàm test ở interface Condition
+	// lúc runtime sẽ gọi hàm test ở giá trị mà user truyền vào cho biến condition khi gọi
+	// hàm findBooks
+	
+	// condition = ndCondition(H1)
+	// conditoon = ltPriceCondition(H2)
+	private static Book[] findBooks(Book[] books, Condition condition) {
+		Book[] result = new Book[books.length];
+		int count = 0;
+		for (Book book: books) {
+			if (condition.test(book)) {
+				result[count++] = book;
+			}
+		}
+		return Arrays.copyOfRange(result, 0, count);
+	}
+	
+	// ======================================================================
 	
 	private static Book[] findBooksByPublisher(Book[] books, String givenPubs) {
 		Book[] result = new Book[books.length];
 		int count = 0;
 		for (Book book: books) {
-			// Nếu book nào có NXB là 'Nhi Đồng'
-			// Lấy book đó đưa vào mảng result
 			if (givenPubs.equals(book.getPublisher())) {
 				result[count++] = book;
 			}
@@ -77,8 +133,6 @@ public class Ex05BookDemo {
 		Book[] result = new Book[books.length];
 		int count = 0;
 		for (Book book: books) {
-			// Nếu book nào có đơn giá nhỏ hơn 50
-			// Lấy book đó đưa vào mảng result
 			if (book.getSalesPrice().doubleValue() < 50) {
 				result[count++] = book;
 			}
@@ -90,8 +144,6 @@ public class Ex05BookDemo {
 		Book[] result = new Book[books.length];
 		int count = 0;
 		for (Book book: books) {
-			// Nếu book nào có đơn giá nhỏ hơn từ 'from' đến 'to'
-			// Lấy book đó đưa vào mảng result
 			double price = book.getSalesPrice().doubleValue();
 			if (price >= from && price <= to) {
 				result[count++] = book;

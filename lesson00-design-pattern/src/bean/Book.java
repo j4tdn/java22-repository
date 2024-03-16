@@ -3,39 +3,46 @@ package bean;
 import java.math.BigDecimal;
 
 public class Book {
+	
 	private String id;
-	private  BigDecimal salsPrice;
-	private  String publisher;
+	private BigDecimal salesPrice;
+	private String publisher;
+	
 	public Book() {
 	}
-	public Book(String id, BigDecimal salsPrice, String publisher) {
-		super();
+
+	public Book(String id, BigDecimal salesPrice, String publisher) {
 		this.id = id;
-		this.salsPrice = salsPrice;
+		this.salesPrice = salesPrice;
 		this.publisher = publisher;
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public BigDecimal getSalsPrice() {
-		return salsPrice;
+
+	public BigDecimal getSalesPrice() {
+		return salesPrice;
 	}
-	public void setSalsPrice(BigDecimal salsPrice) {
-		this.salsPrice = salsPrice;
+
+	public void setSalesPrice(BigDecimal salesPrice) {
+		this.salesPrice = salesPrice;
 	}
+
 	public String getPublisher() {
 		return publisher;
 	}
+
 	public void setPublisher(String publisher) {
 		this.publisher = publisher;
 	}
+
 	@Override
 	public String toString() {
-		return getId() + ","+ getSalsPrice() + "," + getPublisher() ;
+		return getId() + ", " + getSalesPrice() + ", " + getPublisher();
 	}
-	
-	
 }
