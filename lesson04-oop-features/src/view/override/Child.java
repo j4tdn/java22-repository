@@ -18,7 +18,7 @@ public class Child extends Parent{
 		// c: lúc compile là KDL Parent
 		// c: lúc runtime là KDL Child
 		
-		Parent c = new Child(); // text 01 log 02
+		Parent c = new Child(); // text 01 log 02 
 		
 		System.out.println("c text --> " + c.text);  // text 01 
 		System.out.println("c log  --> " + c.log()); // log 01

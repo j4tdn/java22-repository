@@ -18,6 +18,7 @@ public class Ex01PolymorphismObjectDemo {
 		rectangle.calcS();
 		
 		shape = square;
+		
 		// rectangle = (Rectangle)shape;
 		
 		System.out.println("===================");
@@ -29,7 +30,7 @@ public class Ex01PolymorphismObjectDemo {
 		
 		// int max 2 ty
 		// long max 4 ty
-		
+		 
 		// long a = 10; // ok
 		// a = Integer.MAX_VALUE + 2; // [-2147483648, 2147483647]
 		// int b = (int)a;
@@ -52,7 +53,7 @@ public class Ex01PolymorphismObjectDemo {
 		sh1.paint();
 		sh1.calcS();
 		
-		Shape sh2 = new Rectangle();
+		Shape sh2 = new Rectangle(); 
 		sh2.paint();
 		sh2.calcS();
 		
