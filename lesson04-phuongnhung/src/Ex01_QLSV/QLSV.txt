@@ -1,0 +1,21 @@
+==>class SinhVien
+Attribute:
+	id: số nguyên
+	fullName: chuỗi ký tự
+	theoryScore: số thực
+	practiceScore: số thực
+	
+Method:
+	getter và setter cho mỗi thuộc tính.
+	averageScore: (Lý thuyết + Thực hành) / 2
+	toString 
+	
+class Main
+Attribute: ListSV
+Method: 
+	main: tạo danh sách 3 sv (1,2,3)
+	input
+	output
+	SearchByAverageScore(4)
+	SearchByTheoryScoreAndPracticeScore(5)
+	
