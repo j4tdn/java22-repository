@@ -14,6 +14,18 @@ public class DateUtils {
 	private DateUtils() {
 	}
 	
+	public static Calendar clone(Calendar source) {
+		Calendar target = Calendar.getInstance();
+		target.setTimeInMillis(source.getTimeInMillis());
+		return target;
+	}
+	
+	public static Calendar clone(Calendar source, Locale locale) {
+		Calendar target = Calendar.getInstance(locale);
+		target.setTimeInMillis(source.getTimeInMillis());
+		return target;
+	}
+	
 	// calendar                     -> date                            -> string
 	// calendar -> Calendar#getTime -> date -> DateFormat#format(date) -> string
 	
@@ -29,6 +41,16 @@ public class DateUtils {
 			e.printStackTrace();
 		}
 		return date;
+	}
+	
+	public static Calendar toCalendar(String text, String pattern, Locale locale) {
+		// B1. text -> date
+		Date date = toDate(text, pattern);
+		
+		// B2. date -> calendar
+		Calendar c = Calendar.getInstance(locale);
+		c.setTime(date);
+		return c;
 	}
 	
 	public static Calendar toCalendar(String text, String pattern) {
@@ -84,32 +106,32 @@ public class DateUtils {
 	/**
 	 * 1. Format date with default pattern
 	 */
-	public static String format(Date date) {
-		return format(date, DMY_DEFAULT_PATTERN);
+	public static String format(Date date, Locale locale) {
+		return format(date, DMY_DEFAULT_PATTERN, locale);
 	}
 	
 	/**
 	 * 2. Format date with given pattern
 	 */
-	public static String format(Date date, String pattern) {
-		System.out.println("default locale: " + Locale.getDefault());
+	public static String format(Date date, String pattern, Locale locale) {
+		// System.out.println("default locale: " + Locale.getDefault());
 		// DateFormat df = new SimpleDateFormat(pattern); --> sử dụng vị trí(locale) mặc định mà JAVA thiết lập
-		DateFormat df = new SimpleDateFormat(pattern, new Locale("vi", "VN"));
+		DateFormat df = new SimpleDateFormat(pattern, locale);
 		return df.format(date);
 	}
 	
 	/**
 	 * 3. Format calendar with default pattern
 	 */
-	public static String format(Calendar c) {
-		return format(c, DMY_DEFAULT_PATTERN);
+	public static String format(Calendar c, Locale locale) {
+		return format(c, DMY_DEFAULT_PATTERN, locale);
 	}
 	
 	/**
 	 * 4. Format calendar with given pattern
 	 */
-	public static String format(Calendar c, String pattern) {
+	public static String format(Calendar c, String pattern, Locale locale) {
 		Date convertedDate = c.getTime();
-		return format(convertedDate, pattern);
+		return format(convertedDate, pattern, locale);
 	}
 }
