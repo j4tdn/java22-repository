@@ -40,7 +40,7 @@ public class Ex03DateFormat {
 		//setter, set lại thông tin thuộc tính trong Calendar
 		c.set(Calendar.HOUR_OF_DAY,18);
 		
-		DateFormat dft = new SimpleDateFormat("đ/MM/yyyy hh/mm/ss a");
+		DateFormat dft = new SimpleDateFormat("dd/MM/yyyy hh/mm/ss a");
 		//convert(chuyển đổi) KDL Calendar sang KDL Date
 		Date covDate =c.getTime();
 		formatted = dft.format(covDate);
