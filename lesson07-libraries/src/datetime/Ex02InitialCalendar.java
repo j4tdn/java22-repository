@@ -22,14 +22,14 @@ public class Ex02InitialCalendar {
 		
 		//Lấy thông tin ngày, tháng , năm 
 		int dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
-		int month = c.get(Calendar.YEAR) + 1;
+		int month = c.get(Calendar.MONTH) + 1;
 		int year = c.get(Calendar.YEAR);
-		System.out.println("Ngày tháng năm: " + dayOfMonth + "-" + month + "-" + year);
+		System.out.println("Ngày tháng năm: " + concat("-", dayOfMonth, month, year));
 		
 		int hour = c.get(Calendar.HOUR_OF_DAY);
 		int minute = c.get(Calendar.MINUTE);
 		int second = c.get(Calendar.SECOND);
-		System.out.println("\nGio phút giây: " + concat("-", hour, minute, second));
+		System.out.println("\nGio phút giây: " + concat(":", hour, minute, second));
 	}
 	
 	private static String concat(String delimiter, int ...values) {
