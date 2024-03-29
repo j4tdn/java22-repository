@@ -3,6 +3,9 @@ import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -27,7 +30,10 @@ private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyyy";
         DateFormat df = new SimpleDateFormat(pattern, locale);
         return df.format(c.getTime());
     }
-
+	public static String getCurrentDateTimeInZone(String zoneId, String pattern) {
+        LocalDateTime currentDateTime = LocalDateTime.now(ZoneId.of(zoneId));
+        return currentDateTime.format(DateTimeFormatter.ofPattern(pattern));
+    }
 
 	public static Date toDate(String text, String pattern) {
 		DateFormat df = new SimpleDateFormat(pattern);
