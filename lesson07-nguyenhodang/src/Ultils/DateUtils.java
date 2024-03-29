@@ -30,7 +30,7 @@ private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyyy";
         DateFormat df = new SimpleDateFormat(pattern, locale);
         return df.format(c.getTime());
     }
-	public static String getCurrentDateTimeInZone(String zoneId, String pattern) {
+	public static String getDateTimeInZone(String zoneId, String pattern) {
         LocalDateTime currentDateTime = LocalDateTime.now(ZoneId.of(zoneId));
         return currentDateTime.format(DateTimeFormatter.ofPattern(pattern));
     }

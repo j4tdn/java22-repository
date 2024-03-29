@@ -2,11 +2,14 @@ package Ex03;
 import Ultils.DateUtils;
 import common.WKD_EGVN;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Scanner;
 import java.util.TimeZone;
 
 public class CheckTime {
@@ -16,10 +19,18 @@ public class CheckTime {
 		firstAndLastDay();
 		currentDate();
 		showTime();
-
+		Scanner scanner = new Scanner(System.in);
+        System.out.print("6. Nhập ngày sinh (dd/mm/yyyy): ");
+        String inputDate = scanner.nextLine();
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate birthDate = LocalDate.parse(inputDate, dateFormatter);
+        LocalDate currentDate = LocalDate.now();
+        int daysLived = DaysLived(birthDate, currentDate);
+        System.out.println("Số ngày đã sống được: " + daysLived + " ngày");
+        scanner.close();
 	}
 	public static void printCurrentDateTimeInTokyo() {
-		String formattedDateTimeTokyo = DateUtils.getCurrentDateTimeInZone("Asia/Tokyo", "dd/MM/yyyy HH:mm:ss");
+		String formattedDateTimeTokyo = DateUtils.getDateTimeInZone("Asia/Tokyo", "dd/MM/yyyy HH:mm:ss");
         System.out.println("1. Ngày giờ hiện tại ở Tokyo, Nhật Bản: " + formattedDateTimeTokyo);
     }
 	public static void showTime() {
@@ -51,6 +62,9 @@ public class CheckTime {
         currentDate.add(Calendar.DAY_OF_WEEK, 6);
         System.out.println("   Ngày cuối tuần hiện tại: " + DateUtils.format(currentDate, "dd/MM/yyyy", Locale.getDefault()));
 	}
-	
+	public static int DaysLived(LocalDate birthDate, LocalDate currentDate) {
+        Period period = Period.between(birthDate, currentDate);
+        return period.getYears() * 365 + period.getMonths() * 30 + period.getDays();
+    }
 	
 }
