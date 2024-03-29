@@ -3,14 +3,11 @@ import Ultils.DateUtils;
 import common.WKD_EGVN;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.Period;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.TimeZone;
 
 public class CheckTime {
 	public static void main(String[] args) {
