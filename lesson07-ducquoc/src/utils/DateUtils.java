@@ -1,5 +1,5 @@
-
 package utils;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -11,7 +11,24 @@ public class DateUtils {
 	
 	private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyyy";
 	
-	private DateUtils() {	
+	private DateUtils() {
+	}
+	
+	// opt -> optional
+	// opt(2, "year")  -> 2 years
+	// opt(1, "month") -> 1 month
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date Time cannot be negative");
+		}
+		if (val == 0) {
+			return "";
+		}
+		return val + " " + unit + optPlural(val);
+	}
+	
+	public static String optPlural(long val) {
+		return val > 1 ? "s" : "";
 	}
 	
 	public static Calendar clone(Calendar source) {
