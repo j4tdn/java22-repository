@@ -5,11 +5,10 @@ import java.util.Date;
 public class Ex01InitialUtilDate {
 
 	public static void main(String[] args) {
-		Date date = new Date();
-		System.out.println("date: " + date);
-		// Thu Mar 14 20:02:42 GMT+07:00 2024
+		Date date = new Date(); // khởi tạo 1 ô nhớ chưa thông tin thười gian hiện tại
+		System.out.println("date: " + date);//date: Sun Mar 31 14:27:47 ICT 2024 ICT: Indochina Time
 
-		System.out.println("month: " + date.getMonth() + 1);
+		System.out.println("month: " + date.getMonth() + 1);// Quy ước: tháng 0->11 nên phải cộng 1
 		
 		System.out.println("System_Time: " + System.currentTimeMillis() + "(ms)");
 		

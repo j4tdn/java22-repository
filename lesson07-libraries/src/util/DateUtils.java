@@ -134,4 +134,17 @@ public class DateUtils {
 		Date convertedDate = c.getTime();
 		return format(convertedDate, pattern, locale);
 	}
+	
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date time cannot be negative");
+		}
+		if (val == 0) {
+			return "";
+		}
+		return val + " " + unit + optPlural(val);
+	}
+	public static String optPlural(long val) {
+		return val >1?"s":"";
+	}
 }
