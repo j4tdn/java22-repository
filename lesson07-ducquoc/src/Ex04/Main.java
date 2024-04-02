@@ -6,15 +6,21 @@ import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class Main {
-	public static void main(String[] args) {
-		LocalDate  date = LocalDate.of(2022	, 06,07);
-		Locale vnLocale = new Locale("vi", "vn");
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy", vnLocale);
-		 DayOfWeek dayOfWeek = date.getDayOfWeek();
-		 int a = (110-4)/7;
-		 int b = (110-4)%7;
-		 LocalDate endDay = LocalDate.of(2022, 06,07)
-				 .plusDays(a*2+b+2+110+1);
-		 System.out.println("ngày "+endDay+" sẽ phải giao sản phẩm");
-	}
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.of(2022, 6, 7);
+        LocalDate startDate = LocalDate.of(2022, 6, 7);
+        Locale vnLocale = new Locale("vi", "vn");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy", vnLocale);
+        long implementationDate = 110;
+        long daysCompleted = 0;
+        while (daysCompleted < implementationDate) {
+            if (date.getDayOfWeek() != DayOfWeek.SATURDAY && date.getDayOfWeek() != DayOfWeek.SUNDAY) {
+                daysCompleted++;
+            }
+            date = date.plusDays(1);
+        }
+        LocalDate endDate = date.minusDays(1);
+        System.out.println("Ngày bắt đầu dự án: " + startDate);
+        System.out.println("Ngày kết thúc dự án: " + endDate);
+    }
 }
