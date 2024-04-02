@@ -13,7 +13,20 @@ public class DateUtils {
 	
 	private DateUtils() {
 	}
-	
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date Time cannot be negative");
+		}
+		if (val == 0) {
+			return " ";
+		}
+		return val + " " + unit + optPlural(val);
+
+	}
+
+	private static String optPlural(long val) {
+		return val > 1 ? " " : " ";
+	}
 	public static Calendar clone(Calendar source) {
 		Calendar target = Calendar.getInstance();
 		target.setTimeInMillis(source.getTimeInMillis());

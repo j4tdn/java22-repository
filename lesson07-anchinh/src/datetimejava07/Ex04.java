@@ -1,4 +1,4 @@
-package excersises;
+package datetimejava07;
 
 import java.util.Calendar;
 import java.util.Locale;

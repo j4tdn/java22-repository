@@ -1,4 +1,4 @@
-package excersises;
+package datetimejava07;
 
 import java.text.ParseException;
 import java.util.Calendar;
