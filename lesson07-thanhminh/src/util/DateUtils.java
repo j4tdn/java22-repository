@@ -11,6 +11,19 @@ public class DateUtils {
 	private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyyy";
 	private DateUtils() {
 	}
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date Time cannot be negative");
+		}
+		if (val == 0) {
+			return "";
+		}
+		return val + " " + unit + optPlural(val);
+	}
+	
+	public static String optPlural(long val) {
+		return val > 1 ? "s" : "";
+	}
 	public static Calendar clone(Calendar source) {
 		Calendar target = Calendar.getInstance();
 		target.setTimeInMillis(source.getTimeInMillis());
