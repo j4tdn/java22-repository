@@ -14,6 +14,23 @@ public class DateUtils {
 	private DateUtils() {
 	}
 
+	// opt -> optional
+	// opt(2, "year") -> 2 year
+	// opt(1, "month") -> 1 month
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date Time cannot be negative");
+		}
+		if (val == 0) {
+			return "";
+		}
+		return val + " " + unit + optPlual(val);
+	}
+
+	public static String optPlual(long val) {
+		return val > 1 ? "s" : "";
+	}
+
 	public static Calendar clone(Calendar source) {
 		Calendar target = Calendar.getInstance();
 		target.setTimeInMillis(source.getTimeInMillis());
