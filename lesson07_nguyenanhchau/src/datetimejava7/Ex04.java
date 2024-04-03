@@ -1,4 +1,4 @@
-package exercises;
+package datetimejava7;
 
 import java.util.Calendar;
 
