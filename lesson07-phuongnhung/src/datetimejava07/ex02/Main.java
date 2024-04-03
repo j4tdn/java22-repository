@@ -1,10 +1,11 @@
-package ex02;
+package datetimejava07.ex02;
 
 import java.util.Calendar;
 import java.util.Scanner;
 
 import common.WKD_EGVN;
 import util.DateUtils;
+
 
 public class Main {
 	public static void main(String[] args) {

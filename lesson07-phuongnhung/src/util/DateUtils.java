@@ -6,10 +6,19 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class DateUtils {
 	private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyy HH:mm:ss";
-
 	private DateUtils() {
+	}
+	public static String opt(long val, String unit) {
+		if (val < 0) {
+			throw new IllegalArgumentException("Date Time cannot be negative");
+		}
+		if (val == 0) {
+			return "";
+		}
+		return val + " " + unit ;
 	}
 
 	public static Calendar clone(Calendar source) {
