@@ -1,4 +1,4 @@
-package view;
+package p1_strategy;
 
 @FunctionalInterface
 public interface IntCheck {

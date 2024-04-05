@@ -1,4 +1,4 @@
-package view;
+package p1_strategy;
 
 import java.util.Arrays;
 
