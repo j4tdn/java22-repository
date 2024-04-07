@@ -45,9 +45,7 @@ public class Ex01BuilderPatternDemo {
 	 			: cuối cùng gán giá trị bên Builder cho Á
 	 			: A sẽ là immutable(bất biến ở HEAP)
 	 	
-	 		
-	 	
-	 	
+
 	 	+ Nâng cao
 	 	  Sử dụng chính class A để khởi tạo đối tượng nhưng mà ko thông qua constructor trực tiếp
 	 	  --> dán tiếp thông qua 1 hàm static thường đặt tên là 'of', 'newInstance'
