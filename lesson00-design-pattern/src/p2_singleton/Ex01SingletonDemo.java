@@ -34,6 +34,7 @@ public class Ex01SingletonDemo {
 	 
 	 */
 
+	//Trong 1 class, chỉ khởi tạo 1 đối tượng thông qua hàm getInstance
 	public static void main(String[] args) {
 		// Calendar c = Calendar.getInstance();
 
