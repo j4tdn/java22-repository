@@ -1,5 +1,8 @@
 package common;
 
+//Locale ảnh hưởng: 
+//					1. Tiếng Việt/ Anh
+//					2. Ngày đầu tiên của tuần
 public enum WKD_EGVN {
 	
 	// SUNDAY --> WKD_EGVN SUNDAY = new WKD_EGVN();

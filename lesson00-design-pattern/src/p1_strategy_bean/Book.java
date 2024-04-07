@@ -1,4 +1,4 @@
-package bean;
+package p1_strategy_bean;
 
 import java.math.BigDecimal;
 
