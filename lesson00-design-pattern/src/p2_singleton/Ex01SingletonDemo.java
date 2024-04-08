@@ -29,9 +29,6 @@ public class Ex01SingletonDemo {
 	       
 	       . ItemDao
 	       . HibernateItemDao
-	       
-	 
-	 
 	 */
 	
 	public static void main(String[] args) {
