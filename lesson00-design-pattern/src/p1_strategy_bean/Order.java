@@ -1,4 +1,4 @@
-package bean;
+package p1_strategy_bean;
 
 public class Order {
 	private Book book;
