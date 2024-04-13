@@ -1,6 +1,6 @@
-package view;
+package p1_strategy;
 
-import bean.Book;
+import p1_strategy_bean.Book;
 
 @FunctionalInterface
 public interface Condition {
