@@ -1,6 +1,5 @@
 package string_demo;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Ex02StringDemo {
@@ -29,6 +28,9 @@ public class Ex02StringDemo {
 		
 		s = " 		Welcome	 to  Java22 	class		 ";
 		s = s.strip().replaceAll("\\s{1,}" , " ");
+
+		s = s.strip().replaceAll("\\s{1,}" , " "); //strip() dùng để bỏ khoảng trắng ở đầu và cuối
+
 		System.out.println("Chuỗi s mới --> |||" + s + "|||");
 		
 		s = "aaaaa";
@@ -41,11 +43,20 @@ public class Ex02StringDemo {
 //		s = s.replaceAll("a+", "A").replaceAll("b+", "B");
 		
 		// [a,b]+ --> 1 hoặc nhiều kí tự a hoặc b hoặc ab hoặc ba --> thỏa mãn điều kiện
+
 		s = "15bazadx202wks999";
 //		s = s.replaceAll("[a,b]+", "-");
 //		String[] sa = s.split("[a,b]+");
 		String[] sa = s.split("[a-z]+");
 		System.out.println("Thao tác với string regex 2 -->" + Arrays.toString(sa));
+
+//		s = s.replaceAll("[a,b]+", "-");
+//		String[] sa = s.split("[a,b]+");
+		s = "15bazadx202wks999";
+		String[] sa1 = s.split("[a-z]+");
+		String sb = s.replaceAll("[a-z]+", "");
+		System.out.println("Thao tác với string regex 2(split) -->" + Arrays.toString(sa1));
+		System.out.println("Thao tác với string regex 3(replaceAll) --> " + sb);
 		
 		//Kiểm tra số điện thoại :
 		// tất cả là kí tự số

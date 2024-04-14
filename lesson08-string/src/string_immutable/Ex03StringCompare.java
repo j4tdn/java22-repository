@@ -27,9 +27,9 @@ public class Ex03StringCompare {
 		String o1=new String("c++");
 		String o2=new String("php");
 		String o3=new String("c++");
-		System.out.println("(o1==o2)" + (o1==o2));
-		System.out.println("(o1==o3)" + (o1==o3));
-		System.out.println("(o2==o3)" + (o2==o3));
+		System.out.println("(o1==o2)" + (o1==o2)); 
+		System.out.println("(o1==o3)" + (o1==o3));  // F
+		System.out.println("(o2==o3)" + (o2==o3)); 
 		
 		System.out.println("\n==================\n");
 		
@@ -38,7 +38,7 @@ public class Ex03StringCompare {
 		String l2 = "spring";
 		String l3 = "java";
 		System.out.println("(l1==l2)-->" +(l1==l2) );
-		System.out.println("(l1==l3)-->" +(l1==l3) );
+		System.out.println("(l1==l3)-->" +(l1==l3) ); //T
 		System.out.println("(l2==l3)-->" +(l2==l3) );
 		
 		//Với String class con của Object, Comparable
