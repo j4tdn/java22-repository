@@ -26,7 +26,7 @@ public class Ex04LocalDateTime {
 		LocalTime endTime = endDateTime.toLocalTime();
 
 		Period period = Period.between(startDate, endDate);
-		Duration duration = Duration.between(startDateTime, endDateTime);
+		Duration duration = Duration.between(startTime, endTime);
 		
 		if(duration.isNegative()) {
 			duration.plusDays(1);
