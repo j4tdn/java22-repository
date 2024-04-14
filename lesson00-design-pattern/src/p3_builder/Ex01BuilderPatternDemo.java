@@ -1,0 +1,106 @@
+package p3_builder;
+
+import java.time.LocalDate;
+
+public class Ex01BuilderPatternDemo {
+	/*
+	 * Builder Pattern + Có class, để khởi tạo đối tượng cho class -->sd từ khóa new
+	 * sau đó muốn set lại các giá trị cho các thuộc tính của đối tượng(setter) c1.
+	 * Gọi hàm constructor với nhiều tham số c2. Gọi hàm constructor rỗng hoạc 1 vài
+	 * tham số Sau đó dùng setter để set lại giá trị sau Vấn đề: 1. Khi 1 class có
+	 * nhiều hơn 5( Convention) thuộc tính và các tham số có thể trùng KDL dẫn đến
+	 * 
+	 * User: firstName, lastName, age, address, email, phone public User(){} public
+	 * User(String firstName, String lastName, int age, String address, String
+	 * email, String phone){} --> khi dùng hàm khởi tạo nhiều tham số, KDL tham số
+	 * trùng nhau, dẫn đến dễ truyền dữ liệu sai User u1 = new User("Nhung",
+	 * "Hoang", 18, "18 LeDuan", "2706nhung@gmail.com", "0944664689") // bình thường
+	 * User u2 = new User("Nhung", "Hoang", 18, "18 LeDuan", "0944664689",
+	 * "2706nhung@gmail.com") // chạy được nhưng ko đúng dữ liệu truyền vào Vấn đề 1
+	 * --> Code này có thể ko bị lỗi tại compile, runtime nhưng mà dữ liệu truyền
+	 * vào có thể bị sai
+	 * 
+	 * 2. + Khi khởi tọa đối tượng user cần firstName, lastName, age --> public
+	 * User(String firstName, String lastName, int age) + Khi khởi tọa đối tượng
+	 * user cần firstName, lastName, email --> public User(String firstName, String
+	 * lastName, String email) + Khi khởi tọa đối tượng user cần firstName,
+	 * lastName, address --> public User(String firstName, String lastName, String
+	 * address)
+	 *** 
+	 * Vấn đề 2: Khi yêu cầu tạo các hàm khởi tạo với 1/N tham số có constructor
+	 * declaration trùng nhau trùng số lượng tham số, KDL truyền vào ==> không được
+	 * 
+	 * Cách fix tạm thời: Dùng hàm khởi tạo rỗng, xong gọi 3 hàm setters, code vẫn
+	 * chạy nhưng mà xuống hàng set từng param, nếu số lượng param nhiều code k được
+	 * đẹp
+	 * 
+	 * ==> Sử dụng Builder Pattern: để khởi tạo đối tượng cho các complex object(có
+	 * nhiều hơn 5 tham số) Giải quyết được 2 vấn đề + Không sợ truyền param bị sai
+	 * + Không sợ overloading constructor ko hoạt động
+	 * 
+	 * ==> Có 2 cách để tạo ra class với Builder Pattern + Truyền thống Class A:
+	 * thuộc tính : sử dụng constructor, new để tạo đối tượng, setter để set giá trị
+	 * ================= (builder) Class A: vẫn chứa thuộc tính, k có constructor,
+	 * setter chỉ có getter Việc khởi tạo đối tượng cho class A, set lại giá trị cho
+	 * thuộc là do 1 class khác giúp đỡ, xử lý --> class đó gọi là class Builder của
+	 * class A --> Sử dụng Builder để build ra A : khởi tạo đối tượng, set giá trị
+	 * thực hiện với Builder : cuối cùng gán giá trị bên Builder qua A : A sẽ là
+	 * immutable(bất biến ở HEAP)
+	 * 
+	 * + Nâng cao Sử dụng chính class A để khởi tạo đối tượng nhưng mà k thông qua
+	 * constructor trực tiếp --> dán tiếp thông qua 1 hàm static thường đặt tên là
+	 * 'of', 'newInstance' Và thay các hàm setter bằng hàm with Vẫn chứa hàm getter
+	 * bình thường
+	 */
+
+	public static void main(String[] args) {
+		User user1 = User.initBuilder().withFirstName("Nhung").withLastName("Hoang").withAge(22).buil();
+
+		System.out.println("user1 --> " + user1);
+		System.out.println("\n================\n");
+
+		User user2 = User.initBuilder().withFirstName("Nhi").withLastName("Hoang").withAge(17)
+				.withEmail("nhi@gmail.com").buil();
+		System.out.println("user2 --> " + user2);
+
+		System.out.println("\n========NÂNG CAO========\n");
+
+		RemoteDate date1 = RemoteDate.of().withDay(7).withMonth(4).withYear(2024);
+		System.out.println("date1 --> " + date1);
+		RemoteDate date2 = RemoteDate.of(7, 4, 2024).withDayOfYear(2022);
+		// cập nhật date2 --> vì with.. mutable
+		date2.withDayOfYear(310); // của mình
+
+		System.out.println("date2 --> " + date2);
+
+		LocalDate date3 = LocalDate.now().withDayOfMonth(10).withMonth(7).withYear(2024);
+
+		// k cập nhật date3 --> vì with.. immutable
+		date3.withDayOfMonth(15); // của localdate
+
+		System.out.println("date3 --> " + date3);
+
+		RemoteTime time4 = RemoteTime.of().withHour(17).withMinute(45).withSecond(22); // H1
+
+		// ko cập nhật time4 --> vì with... immutable
+		// vì time4 -> trỏ đến ô nhớ mới
+		// muốn cập nhật phải gán lại cho time4
+		time4.withHour(21);
+
+		System.out.println("time4 --> " + time4);
+
+		// ================= Tổng hợp ===================
+		// Có 3 cách code để tạo ra class sử dụng Builder Pattern
+		// Cách 1: Class A -> Builder + with --> build -> Instance Of A
+		// Cách 2: Class A -> A.of để tạo ra insatcne -> sử dụng with ... để cập nhật
+		// giá trị
+		// 2.1 --> mutable
+		// --> sau khi gọi with gán xong return this
+		// 2.2 --> immutable
+		// --> sau khi gọi with gán xong return new instance
+
+		// Ngoài việc khắc phục hạn chế của class bình thường khi có nhiều tham số
+		// Giúp tạo ra các immutable object(class)
+
+	}
+}
