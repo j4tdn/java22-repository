@@ -1,0 +1,80 @@
+/*
+	 
+	 Builder Pattern
+	 
+	 + Có class, để khởi tạo đối tượng cho class --> sử dụng từ khóa new
+	   sau đó muốn set lại các giá trị cho các thuộc tính của đối tượng
+	   --> dùng hàm setter
+	   C1. Gọi constructor với nhiều tham số
+	   C2. Gọi constructor rỗng hoặc 1 vài tham số
+	       Sau đó dùng setter để set lại giá trị sau
+	   
+	   Vấn đề
+	      Khi class có nhiều hơn 5(convention) thuộc tính(tham số)
+	      và các tham số có thể trùng KDL dẫn đến
+	      
+	      User: firstName, lastName, age, address, email, phone
+	      public User(){}
+	      public User(String firstName, String lastName, int age, String address,String  email,String phone)
+	 	  
+	 	  1. Khi dùng hàm khởi tạo nhiều tham số, KDL tham số trùng nhau, dẫn đến dễ truyền bị sai dữ liệu
+	 	  User user1 = new User("Teo", "Le", 18, "Da Nang", "teole@gmail.com", "123456789")
+	 	  User user2 = new User("Le", "Teo", 18, "Da Nang", "123456789", "teole@gmail.com")
+	 	  
+	 	  LocalDate.of(year, month, day) --> LocalDate.of(2022, 2, 28);
+	 	                                 --> Localdate.of(28, 2, 2022);
+	 	
+	 	 *** Vấn đề 1 --> Code này có thể ko bị lỗi tại compile, runtime nhưng mà dữ liệu truyền vào có thể bị sai
+	 	 
+	     2. 
+	     + Khi khởi tọa đối tượng user cần firstName, lastName, age
+	       --> public User(String firstName, String lastName, int age)
+	     + Khi khởi tọa đối tượng user cần firstName, lastName, email
+	       --> public User(String firstName, String lastName, String email)
+	     + Khi khởi tọa đối tượng user cần firstName, lastName, address
+	       --> public User(String firstName, String lastName, String address)
+	       
+	     *** Vấn đề 2: Khi yêu cầu tạo các hàm khởi tạo với 1/N tham số có constructor declaration trùng nhau
+	         trùng số lượng tham số, KDL truyền vào ==> không được
+	          
+         Cách fix tạm thời: Dùng hàm khởi tạo rỗng, xong gọi 3 hàm setters, code vẫn chạy
+         nhưng mà xuống hàng set từng param, nếu số lượng param nhiều code k được đẹp
+         
+         ==> Sử dụng Builder Pattern: để khởi tạo đối tượng cho các complex object(có nhiều hơn 5 tham số)
+         Giải quyết được 2 vấn đề
+         + Không sợ truyền param bị sai
+         + Không sợ overloading constructor ko hoạt động
+         
+         ==> Có 2 cách để tạo ra class với Builder Pattern
+         + Truyền thống
+           Class A: thuộc tính
+                  : sử dụng constructor, new để tạo đối tượng, setter để set giá trị
+		    =================
+           (builder)
+           Class A: vẫn chứa thuộc tính, k có constructor, setter chỉ có getter
+           Việc khởi tạo đối tượng cho class A, set lại giá trị cho thuộc 
+           là do 1 class khác giúp đỡ, xử lý --> class đó gọi là class Builder của class A
+           --> Sử dụng Builder để build ra A
+               : khởi tạo đối tượng, set giá trị thực hiện với Builder
+               : cuối cùng gán giá trị bên Builder qua A
+               : A sẽ là immutable(bất biến ở HEAP)
+           
+         + Nâng cao
+           Sử dụng chính class A để khởi tạo đối tượng nhưng mà k thông qua constructor trực tiếp
+           --> dán tiếp thông qua 1 hàm static thường đặt tên là 'of', 'newInstance'
+           Và thay các hàm setter bằng hàm with
+           Vẫn chứa hàm getter bình thường
+	 */  
+	 
+	 
+		// ================= Tổng hợp ===================
+		// Có 3 cách code để tạo ra class sử dụng Builder Pattern
+		// Cách 1: Class A -> Builder + with --> build -> Instance Of A
+		// Cách 2: Class A -> A.of để tạo ra insatcne -> sử dụng with ... để cập nhật giá trị
+		//       2.1 --> mutable
+		//               --> sau khi gọi with gán xong return this
+		//       2.2 --> immutable
+		//      		  --> sau khi gọi with gán xong return new instance
+		
+		// Ngoài việc khắc phục hạn chế của class bình thường khi có nhiều tham số
+		// Giúp tạo ra các immutable object(class)
