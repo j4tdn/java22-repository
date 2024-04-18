@@ -1,13 +1,13 @@
-package view;
+package p1_strategy;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.Arrays;
 
-import bean.Book;
-import bean.Order;
-import bean.ReferenceBook;
-import bean.TextBook;
+import p1_strategy_bean.Book;
+import p1_strategy_bean.Order;
+import p1_strategy_bean.ReferenceBook;
+import p1_strategy_bean.TextBook;
 
 public class Ex05BookDemo {
 	

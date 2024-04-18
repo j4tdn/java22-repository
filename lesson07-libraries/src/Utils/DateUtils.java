@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class DateUtils {
 	private static final String DMY_DEFAULT_PATTERN = "dd/MM/yyyy";
@@ -94,7 +95,7 @@ public class DateUtils {
 		return format(date, DMY_DEFAULT_PATTERN, locale);
 	}
 	
-	// format date
+	// format date with given pattern
 	public static String format(Date date, String pattern, Locale locale) {
 		//DateFormat df = new SimpleDateFormat(pattern);--> sử dụng vị trí(locale) mặc định mà JAVA thiết lập
 		//System.out.println("default locale: " + Locale.getDefault());
@@ -102,7 +103,7 @@ public class DateUtils {
 		return df.format(date);
 	}
 	
-	// format calendar
+	// format calendar with given pattern
 	public static String format(Calendar c, String pattern, Locale locale) {
 		Date convertedDate = c.getTime();
 		return format(convertedDate, pattern, locale);
@@ -111,6 +112,16 @@ public class DateUtils {
 	// format calendar with default pattern
 	public static String format(Calendar c, Locale locale) {
 		return format(c, DMY_DEFAULT_PATTERN, locale);
+	}
+	
+	//5. Format calendar with given c, pattern, timezone
+	public static String format(Calendar c, String pattern, TimeZone timezone) {
+		Date convertedDate = c.getTime();
+		
+		DateFormat df = new SimpleDateFormat(pattern);
+		df.setTimeZone(timezone);
+		
+		return df.format(convertedDate);
 	}
 
 }

@@ -1,8 +1,8 @@
-package view;
+package p1_strategy;
 
 import java.util.Arrays;
 
-import bean.Book;
+import p1_strategy_bean.Book;
 
 public class Ex06NumberTest {
 	/*
