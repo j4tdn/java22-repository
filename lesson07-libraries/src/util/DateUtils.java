@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.TimeZone;
 
 public class DateUtils {
 	
@@ -126,6 +127,15 @@ public class DateUtils {
 	public static String format(Date date, Locale locale) {
 //		Date convertedDate = c.getTime();
 		return format(date, DMY_DEFAULT_PATTERN, locale);
+	}
+	
+	public static String format(Calendar c, String pattern, TimeZone timezone) {
+		Date convertedDate = c.getTime();
+		
+		DateFormat df= new SimpleDateFormat(pattern);
+		df.setTimeZone(timezone);
+		
+		return df.format(convertedDate);
 	}
 	
 
