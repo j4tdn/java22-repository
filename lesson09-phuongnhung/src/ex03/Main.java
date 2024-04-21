@@ -1,6 +1,5 @@
 package ex03;
 
-import java.util.Scanner;
 
 public class Main {
 /*
@@ -12,13 +11,17 @@ Method signature: revert(String s) >> String
  */
 	public static void main(String[] args) {
 		String input = "  Welcome to JAVA10 class  ";
-		String[] words =  input.strip().replaceAll("\\s{1,}", " ").split(" ");
+		System.out.println(revert(input));
+	}
+	private static String revert(String s) {
+		String result = "";
+		String[] words =  s.strip().replaceAll("\\s{1,}", " ").split(" ");
 		for(String word: words) {
 			for(int i=word.length()-1 ; i>=0 ; i-- ) {
-				System.out.print(word.charAt(i));
-			}
-			System.out.print(" ");
+				result = result.concat(word.charAt(i)+"");			}
+			result = result.concat(" ");
 
 		}
+		return result;
 	}
 }
