@@ -1,0 +1,57 @@
+package Ex01;
+
+import common.Rank;
+
+public class Student {
+
+	private String studentId ;
+	private String name;
+	private Rank rank;
+	
+	public Student() {
+		
+	}
+
+	public Student(String studentId, String name, Rank rank) {
+		super();
+		this.studentId = studentId;
+		this.name = name;
+		this.rank = rank;
+	}
+
+	public String getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Rank getRank() {
+		return rank;
+	}
+
+	public void setRank(Rank rank) {
+		this.rank = rank;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", name=" + name + ", rank=" + rank + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+}
