@@ -1,4 +1,3 @@
-
 package view;
 
 import java.time.LocalDate;
@@ -26,6 +25,7 @@ public class Ex01ArrayDeclareAssign {
 	 --> gán giá trị trực tiếp với {}
 	 
 	 
+	 
 	 */
 	public static void main(String[] args) {
 		int[] n1 = new int[8]; //{0,0,0,0,0,0,0,0}
@@ -33,8 +33,7 @@ public class Ex01ArrayDeclareAssign {
 		int[] n3 = new int[] {1, 6, 7, 2, 5}; //bắt buộc dùng new int[] {..} khi return
 		int[] n4 = mockInts();
 		
-		System.out.println("n1-eq-n2 --> " + n2.equals(n3));
-		
+		System.out.println("n1-eq-n2 --> " + n1.equals(n2));
 		System.out.println("n2 class--> " + n2.getClass());
 		
 		//mảng 2 chiều
