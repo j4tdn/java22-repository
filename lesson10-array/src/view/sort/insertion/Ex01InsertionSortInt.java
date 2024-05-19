@@ -1,23 +1,23 @@
-package view.sort.selection;
+package view.sort.insertion;
 
 import java.util.Arrays;
 
 import functional.CompareInt;
 
-public class Ex01SelectionSortInt {
+public class Ex01InsertionSortInt {
 
 		public static void main(String[] args) {
 			int[] elements = {1,5,11,9,4,6};
 			
-			selectionSort(elements, (e1,e2)->e1-e2);
+			insertSort(elements, (e1,e2)->e1-e2);
 			
-			System.out.println("Selection Sort - Int Acd -->" + Arrays.toString(elements));
+			System.out.println("Insertion Sort - Int Acd -->" + Arrays.toString(elements));
 		}
 		
-		private static void selectionSort(int[] elements, CompareInt compareInt) {
+		private static void insertSort(int[] elements, CompareInt compareInt) {
 			
 			int length = elements.length;
-			for(int i = length - 1; i > 0; i--) {
+			for(int i = 0; i < length; i++) {
 				for(int j = 0; j < i; j++) {
 					if(compareInt.compare(elements[j], elements[i]) >0 ) {
 						int temp = elements[j];

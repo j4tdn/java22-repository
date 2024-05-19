@@ -2,7 +2,7 @@ package bean;
 
 import java.time.LocalDate;
 
-public class Item {
+public class Item implements Comparable<Item>{
 	private Integer id;
 	private String name;
 	private Double price;
@@ -57,5 +57,14 @@ public class Item {
 	public String toString() {
 		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", salesDate=" + salesDate + "]";
 	}
+	public int compareTo(Item i) {
+		Item i1 = this;
+		Item i2 = i;
+		//tăng dần theo salePrice
+		//return i1.getPrice().compareTo(i2.getPrice());
+		//giảm dần theo id
+		return i2.getId().compareTo(i1.getId());
+
+	};
 	
 }
