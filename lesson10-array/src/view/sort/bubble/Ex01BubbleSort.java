@@ -1,30 +1,29 @@
-package view.sort;
+package view.sort.bubble;
 
 import java.util.Arrays;
 
 import functional.CompareInt;
-import functional.CompareString;
 
-public class Ex02BubbleSortString {
-	
+public class Ex01BubbleSort {
 	public static void main(String[] args) {
-		String[] elements = {"a", "f", "t", "b", "j", "k", "d"};
+		int[] elements = { 1, 5, 11, 9, 4, 6 };
 		bubbleSort(elements, (e1,e2)->{
-			return e1.compareTo(e2)<0 ? 1:-1;
+			return e1<e2 ? 1:-1;
 		});
 		System.out.println("bubble sort -->"+ Arrays.toString(elements));
 		
 	}
-	private static void bubbleSort(String[] elements, CompareString cpString) {
+	private static void bubbleSort(int[] elements, CompareInt cpInt) {
 		int length = elements.length;
 		for(int i = 0; i< length; i++) {
 			for (int j=0; j< length-i-1;j++ ) {
-				if(cpString.compare(elements[j], elements[j+1])>0) { 
-					String temp = elements[j];
+				if(cpInt.compare(elements[j], elements[j+1])>0) { // tăng dần 
+					int temp = elements[j];
 					elements[j] = elements[j+1];
 					elements[j+1] = temp;
 				}
 			}
 		}
 	}
+
 }

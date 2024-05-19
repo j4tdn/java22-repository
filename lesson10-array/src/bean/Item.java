@@ -3,59 +3,74 @@ package bean;
 import java.time.LocalDate;
 
 public class Item {
+	
 	private Integer id;
 	private String name;
-	private Double price;
+	private Double salesPrice;
 	private LocalDate salesDate;
 	
 	public Item() {
 	}
-	public Item(Integer id, String name, Double price, LocalDate salesDate) {
-		super();
+
+	public Item(Integer id, String name, Double salesPrice, LocalDate salesDate) {
 		this.id = id;
 		this.name = name;
-		this.price = price;
+		this.salesPrice = salesPrice;
 		this.salesDate = salesDate;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Double getPrice() {
-		return price;
+
+	public Double getSalesPrice() {
+		return salesPrice;
 	}
-	public void setPrice(Double price) {
-		this.price = price;
+
+	public void setSalesPrice(Double salesPrice) {
+		this.salesPrice = salesPrice;
 	}
+
 	public LocalDate getSalesDate() {
 		return salesDate;
 	}
+
 	public void setSalesDate(LocalDate salesDate) {
 		this.salesDate = salesDate;
 	}
+	
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) {
+	public boolean equals(Object o) {
+		if (this == o) {
 			return true;
 		}
-		if (!(obj instanceof Item)) {
+		
+		if (!(o instanceof Item)) {
 			return false;
 		}
-		Item that = (Item)obj;
+		
+		Item that = (Item)o;
 		
 		return getId() == that.getId();
 	}
+
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", price=" + price + ", salesDate=" + salesDate + "]";
+		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", salesDate=" + salesDate + "]";
 	}
+	
+	
 	
 }
