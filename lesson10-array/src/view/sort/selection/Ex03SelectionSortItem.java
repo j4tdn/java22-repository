@@ -90,7 +90,7 @@ public class Ex03SelectionSortItem {
 			
 			return i1.getName().compareTo(i2.getName());
 		});
-	printf("6. Null first, tăng dần theo name", itemsWithNullObjects);
+		printf("6. Null first, tăng dần theo name", itemsWithNullObjects);
 	}
 	
 	private static void selectionSort(Item[] elements, CompareItem cpItem) {
