@@ -3,7 +3,7 @@ package view.list;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Ex02SoTypeProcessing {
+public class Ex02ArrayListPrinciple {
 
 	public static void main(String[] args) {
 		// Array
