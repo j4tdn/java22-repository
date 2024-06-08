@@ -39,15 +39,16 @@ public class Ex02ArrayListPrinciple {
 		// Hạn chế việc tạo mới mảng liên tục khi add như là Array
 		// Dynamic size
 		
-		List<String> elements = new ArrayList<>();
+		List<String> elements = new ArrayList<>(2);
 		elements.add("A1"); // size = 1
 		elements.add("B1"); // size = 2
 		elements.add("C1"); // size = 3
-		elements.add("D1"); // size = 4
-		elements.add("E1"); // size = 5
+//		elements.add("D1"); // size = 4
+//		elements.add("E1"); // size = 5
 		
+		System.out.println("elements has size = " + elements.size());
 		
-		elements.add("W1");
+		elements.add(3, "W1");
 		
 		System.out.println("elements has size = " + elements.size());
 		
