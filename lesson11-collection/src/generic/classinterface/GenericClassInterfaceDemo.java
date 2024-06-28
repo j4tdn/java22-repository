@@ -12,8 +12,17 @@ public class GenericClassInterfaceDemo {
 		list.add("A4");
 		list.add("A5");
 		
-		System.out.println("size --> " + list.size());
-		System.out.println("capacity --> " + list.getCapacity());
+		list.set(2, "A33");
+		
+		System.out.print("ForIndex --> ");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.print(list.get(i) + " ");
+		}
+		
+		System.out.print("\n\nForEach --> ");
+		
+		// for each
+		list.forEach(element -> System.out.print("Value " + element + " "));
 		
 	}
 	

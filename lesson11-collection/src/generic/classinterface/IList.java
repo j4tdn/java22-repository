@@ -1,10 +1,12 @@
 package generic.classinterface;
 
+import java.util.function.Consumer;
+
 public interface IList<E> {
 
 	E get(int pos);
 
-	void set(int pos, E e);
+	void set(int pos, E newValue);
 
 	boolean add(E e);
 
@@ -15,5 +17,7 @@ public interface IList<E> {
 	boolean isEmpty();
 	
 	int getCapacity();
+	
+	void forEach(Consumer<E> consumer);
 
 }
