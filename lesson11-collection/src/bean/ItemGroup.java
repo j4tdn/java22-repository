@@ -47,8 +47,12 @@ public class ItemGroup {
 	
 	@Override
 	public int hashCode() {
+		// khi override, hashcode ko còn là địa chỉ
+		// trở thành công thức để hashing giá trị
+		
+		// text -> algorithm -> encoded
+		// attribute values -> hash(Objects.hash) -> hashed value
 		return Objects.hash(getId());
-
 	}
 	
 	@Override

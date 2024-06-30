@@ -1,6 +1,7 @@
 package view.map;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -51,7 +52,9 @@ public class Ex01BasicDemo {
 		// Cơ chế kiểm tra entry đã tồn tại trong map chưa
 		// --> kiểm tra key của entry đã tồn tại trong map chưa
 
-		loopByEntry("1. Loop map by entries", models);
+		// loopByEntry("1. Loop map by entries", models);
+		// loopByKey("1. Loop map by keys", models);
+		loopByValue("1. Loop map by values", models);
 		
 		// sắp xếp models theo biển số xe(value)
 		Map<String, Integer> sortedModels = sort(models, (e1, e2) -> {
@@ -91,6 +94,25 @@ public class Ex01BasicDemo {
 		
 		// B4. Trả về map mới
 		return sortedMap;
+	}
+	
+	private static void loopByValue(String prefix, Map<String, Integer> models) {
+		System.out.println(prefix + " {");
+		Collection<Integer> values = models.values();
+		for(Integer value: values) {
+			System.out.println("  value -> " + value);
+		}
+		System.out.println("}\n");
+	}
+	
+	private static void loopByKey(String prefix, Map<String, Integer> models) {
+		System.out.println(prefix + " {");
+		Set<String> keys = models.keySet();
+		for(String key: keys) {
+			System.out.println("  key -> " + key);
+			System.out.println("  value -> " + models.get(key));
+		}
+		System.out.println("}\n");
 	}
 	
 	// forEach -> array, list, set
