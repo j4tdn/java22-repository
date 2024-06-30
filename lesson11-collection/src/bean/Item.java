@@ -1,22 +1,20 @@
 package bean;
 
-import java.time.LocalDate;
-
-public class Item implements Comparable<Item> {
+public class Item {
 	
 	private Integer id;
 	private String name;
 	private Double salesPrice;
-	private LocalDate salesDate;
+	private Integer storeId;
 	
 	public Item() {
 	}
-
-	public Item(Integer id, String name, Double salesPrice, LocalDate salesDate) {
+	
+	public Item(Integer id, String name, Double salesPrice, Integer storeId) {
 		this.id = id;
 		this.name = name;
 		this.salesPrice = salesPrice;
-		this.salesDate = salesDate;
+		this.storeId = storeId;
 	}
 
 	public Integer getId() {
@@ -43,42 +41,30 @@ public class Item implements Comparable<Item> {
 		this.salesPrice = salesPrice;
 	}
 
-	public LocalDate getSalesDate() {
-		return salesDate;
+	public Integer getStoreId() {
+		return storeId;
 	}
 
-	public void setSalesDate(LocalDate salesDate) {
-		this.salesDate = salesDate;
+	public void setStoreId(Integer storeId) {
+		this.storeId = storeId;
 	}
 	
+	// mặc định: 2 items equals với nhau khi có địa chỉ trùng nhau
+	// custom  : 2 items equals với nhau khi trùng id
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
 			return true;
 		}
-		
 		if (!(o instanceof Item)) {
 			return false;
 		}
-		
 		Item that = (Item)o;
-		
-		return getId() == that.getId();
-	}
-	
-	@Override
-	public int compareTo(Item i) {
-		Item i1 = this;
-		Item i2 = i;
-		
-		return i1.getSalesPrice().compareTo(i2.getSalesPrice());
+		return that.getId() == getId();
 	}
 
 	@Override
 	public String toString() {
-		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", salesDate=" + salesDate + "]";
+		return "Item [id=" + id + ", name=" + name + ", salesPrice=" + salesPrice + ", storeId=" + storeId + "]";
 	}
-	
-	
-	
 }
