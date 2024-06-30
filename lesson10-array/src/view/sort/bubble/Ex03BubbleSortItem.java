@@ -33,8 +33,8 @@ public class Ex03BubbleSortItem {
 		
 		//3. Giảm dần theo salePrice
 		bubbleSort(item, (i1,i2)->{
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 			return sp2.compareTo(sp1);
 		});
 		printf("Giảm dần theo salePrice", item);
@@ -59,8 +59,8 @@ public class Ex03BubbleSortItem {
 		
 		//5. Giảm dần theo salePrice, giảm dần theo name, tăng dần theo id
 		bubbleSort(item, (i1,i2)->{
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 			
 			int salePriceInt = sp1.compareTo(sp2);
 			

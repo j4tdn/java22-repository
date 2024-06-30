@@ -85,10 +85,10 @@ public class Ex02ArrayOperation {
 		target[pos] = newValue;
 		
 		return target;
-	}
+	}// có thể sửa thành thêm vị trí bất kì
 	
 	private static void modify(int[] elements) {
-		elements[3] = 555;
+		elements[3] = 555;// vẫn cập nhật đúng trên ô nhớ
 		elements = new int[5]; // ko ảnh hưởng bên ngoài
 	}
 

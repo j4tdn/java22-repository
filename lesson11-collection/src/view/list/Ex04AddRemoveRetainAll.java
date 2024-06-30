@@ -11,7 +11,7 @@ public class Ex04AddRemoveRetainAll {
 		// câc cách khởi tạo 1 list , Arraylist
 		// cách 1: new Arraylist --> java.util.Arraylist        --> dynamic ArrayList      --> hỗ trợ get/set/add/remove
 		// cách 2: Arrays.asList --> java.util.Arrays.Arraylist --> ArrayLisst(fixed size) --> hỗ trợ get/set
-		// cách 3: List.of(...)	 --> ImmutableList										   --> không hỗ trợ
+		// cách 3: List.of(...)	 --> ImmutableList										   --> Hỗ trợ get
 		
 		// cách khởi tạo 3
 		List<Integer> list03 = List.of(1,2,3,4,5);

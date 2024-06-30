@@ -40,11 +40,11 @@ public class Ex02SortItem {
 		Arrays.sort(items, (i1, i2) ->  i1.getId().compareTo(i2.getId()));
 		SortUtils.printf("1.Sắp xếp tăng dần theo id", items);
 		
-		Arrays.sort(items, (i1, i2) ->  i2.getPrice().compareTo(i1.getPrice()));
+		Arrays.sort(items, (i1, i2) ->  i2.getSalesPrice().compareTo(i1.getSalesPrice()));
 		SortUtils.printf("2.Sắp xếp giảm dần theo salePrice", items);
 		
 		Arrays.sort(items, (i1, i2) -> {
-			int salesPriceInt = i2.getPrice().compareTo(i1.getPrice());
+			int salesPriceInt = i2.getSalesPrice().compareTo(i1.getSalesPrice());
 			if(salesPriceInt != 0) {
 				return salesPriceInt;
 			}

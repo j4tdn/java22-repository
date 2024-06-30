@@ -24,8 +24,8 @@ public class Ex04BubbleSortItemNullValues {
 			}
 
 			// null first
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 
 			int salePriceInt = sp1.compareTo(sp2);
 
@@ -50,8 +50,8 @@ public class Ex04BubbleSortItemNullValues {
 			}
 
 			// null first, salesPrice ascending
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 			if (sp1 == null) {
 				return -1;
 			}

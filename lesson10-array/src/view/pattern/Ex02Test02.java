@@ -1,8 +1,6 @@
 package view.pattern;
 
-import java.util.Arrays;
 
-import functional.IntCon;
 import functional.Operator;
 
 public class Ex02Test02 {
@@ -18,12 +16,11 @@ public class Ex02Test02 {
 		int max = process(Integer.MIN_VALUE, elements, (a,b)-> a<b?b:a );
 		int min = process(Integer.MAX_VALUE, elements, (a,b)-> a>b?b:a );
 		
-		
 		System.out.println(
-				"Tổng" + sum + "\n" +
-						"Tích" + mul + "\n" +
-						"Lớn nhất" + max+ "\n" +
-						"Nhỏ nhất" + min + "\n" 
+				"Tổng " + sum + "\n" +
+				"Tích " + mul + "\n" +
+				"Lớn nhất " + max+ "\n" +
+				"Nhỏ nhất " + min + "\n" 
 				);
 	}
 	

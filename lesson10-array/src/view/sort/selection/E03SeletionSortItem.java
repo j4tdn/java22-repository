@@ -33,8 +33,8 @@ public class E03SeletionSortItem {
 		
 		//3. Giảm dần theo salePrice
 		selectionSort(item, (i1,i2)->{
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 			return sp2.compareTo(sp1);
 		});
 		printf("Giảm dần theo salePrice", item);
@@ -59,8 +59,8 @@ public class E03SeletionSortItem {
 		
 		//5. Giảm dần theo salePrice, giảm dần theo name, tăng dần theo id
 		selectionSort(item, (i1,i2)->{
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 			
 			int salePriceInt = sp1.compareTo(sp2);
 			
@@ -83,8 +83,8 @@ public class E03SeletionSortItem {
 			}
 
 			// null first
-			Double sp1 = i1.getPrice();
-			Double sp2 = i2.getPrice();
+			Double sp1 = i1.getSalesPrice();
+			Double sp2 = i2.getSalesPrice();
 
 			int salePriceInt = sp1.compareTo(sp2);
 
@@ -108,18 +108,18 @@ public class E03SeletionSortItem {
 			}
 		}
 	}
-	private static void selectionSort(String[] elements, CompareString cpString) {
-		int length = elements.length;
-		for(int i = length - 1; i > 0; i--) {
-			for(int j = 0; j < i; j++) {
-				if(cpString.compare(elements[j], elements[i]) >0 ) {
-					String temp = elements[j];
-					elements[j] = elements[i];
-					elements[i] = temp;
-				}
-			}
-		}
-	}
+//	private static void selectionSort(String[] elements, CompareString cpString) {
+//		int length = elements.length;
+//		for(int i = length - 1; i > 0; i--) {
+//			for(int j = 0; j < i; j++) {
+//				if(cpString.compare(elements[j], elements[i]) >0 ) {
+//					String temp = elements[j];
+//					elements[j] = elements[i];
+//					elements[i] = temp;
+//				}
+//			}
+//		}
+//	}
 	private static void printf(String sortDesc, Item[] items) {
 		System.out.println(sortDesc + " --> {");
 		for(Item item: items) {

@@ -44,11 +44,11 @@ public class Ex01ArrayDeclareAssign {
 				{4,5,6,7},
 				{7,8,9,9},
 		};
+		System.out.println("n11 class--> " + n11.getClass());
 		System.out.println(">>>In mảng n11>>>");
 		for(int rowI = 0; rowI < 3; rowI++) {
 			for(int colm = 0; colm < 4; colm++) {
 				System.out.print(n11[rowI][colm] + " ");
-				
 			}
 			System.out.println();
 		}
@@ -68,6 +68,7 @@ public class Ex01ArrayDeclareAssign {
 		System.out.println("\n----------------------\n");
 		
 		Item[] items = mockAutoItems(8);
+		System.out.println("items class--> " + items.getClass());
 
 		System.out.println(">>>In mảng Items>>");
 		for(Item item : items) {
@@ -75,14 +76,14 @@ public class Ex01ArrayDeclareAssign {
 		}
 		
 		//--> Lỗi thường gặp với mảng ->NPE
-		Random rd = new Random();  //{null, null, null, null}
-		items =  new Item[4];
+		Random rd = new Random();  
+		items =  new Item[4];//{null, null, null, null}
 		System.out.println("items-->" + items);
 		System.out.println("items elements-->" + Arrays.toString(items));
 		
-		for(Item item : items) {
-			item.setId(rd.nextInt(10)); //--> NPE
-		}
+//		for(Item item : items) {
+//			item.setId(rd.nextInt(10)); //--> NPE
+//		}
 	}
 	private static Item[] mockAutoItems(int n) {
 		Item[] items = new Item[n];
