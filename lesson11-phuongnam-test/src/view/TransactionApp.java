@@ -40,7 +40,12 @@ public class TransactionApp {
 		}));
 
 		// 6. Are any traders based in Milan?
+		System.out.println("6. Are any traders based in Milan? " + existTraderInMilan());
+
 		// 7. Count the number of traders in Milan.
+		System.out.println("7. Count the number of traders in Milan. --> " + countTradersInMilan());
+		
+		
 		// 8. Print all transactions’ values from the traders living in Cambridge.
 		// 9. What’s the highest value of all the transactions?
 		// 10. Find the transaction with the smallest value.
@@ -122,5 +127,30 @@ public class TransactionApp {
 		result.addAll(name);
 		result.sort(comparator);
 		return result;
+	}
+
+	private static boolean existTraderInMilan() {
+
+		for (var t : transactions) {
+			if (t.getTrader().getCity().equals("Milan")) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	private static int countTradersInMilan() {
+		Set<Trader> trader = new HashSet<>();
+
+		for (var t : transactions) {
+
+			if (t.getTrader().getCity().equals("Milan")) {
+				trader.add(t.getTrader());
+			}
+		}
+
+		return trader.size();
+
 	}
 }
