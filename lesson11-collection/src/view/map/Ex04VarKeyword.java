@@ -14,6 +14,16 @@ import bean.ItemGroup;
 public class Ex04VarKeyword {
 	public static void main(String[] args) {
 		/*
+		 JavaScript: let, var, const
+		 let, const: block scope {}
+		 var       : global function scope
+		 var date = new Date();
+		 
+		 Java -> ~10
+		 
+		 Mục đích: Giúp việc khai báo KDL của biến lúc compile gọn hơn
+		 
+		 Dựa vào giá trị bên phải(sau dấu =) để quy ước KDL của var lúc compile, runtime
 		 
 		 Mục đích: Giúp việc khai báo KDL của biến lúc compile gọn hơn
 		 
@@ -39,11 +49,12 @@ public class Ex04VarKeyword {
 		var s1 = "hello";
 		// var s2 = null;
 		
-		List<String> list1 = new ArrayList<String>(); // -> KDL String
-		// ko khai báo list2(Object)
+		List<String> list1 = new ArrayList<>(); 
+		// list1.add(String)
 		// list1 --> nhận vào List hoặc con của list
 		
-		var list2 = new ArrayList<>();
+		var list2 = new ArrayList<String>();// -> KDL String
+		// ko khai báo list2(Object)
 		// var list2 --> luôn là ArrayList
 		
 		// Map<ItemGroup, List<Item>> groups = new HashMap<>();

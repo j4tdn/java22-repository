@@ -4,6 +4,24 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Ex01BasiDemo {
+	/*
+	 Generic: Parameterized Type
+	        : WildCard
+	        
+	 Collection<E>
+	 
+	 List<E>   ==> ArrayList, LinkedList
+	           ==> contains, remove --> override equals
+	           
+    Set<E>    ==> HashSet, LinkedHashSet, TreeSet
+              ==> add(e), principle of duplication E
+                  --> override hashcode, equals of E data type
+	 
+	 Map<K, V> ==> HashMap, LinkedHashMap, TreeMap
+	           ==> put(k, v), principle of duplication entry
+	               --> override hashcode, equals of K data type
+	 
+	 */
 	public static void main(String[] args) {
 		Set<String> elements = new HashSet<>();
 		elements.add("A88");

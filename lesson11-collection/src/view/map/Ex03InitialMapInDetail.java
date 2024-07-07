@@ -6,6 +6,15 @@ import java.util.Map;
 
 public class Ex03InitialMapInDetail {
 	public static void main(String[] args) {
+		// List<T> list = new ArrayList<>()
+		// add, add
+		// Arrays.asList
+		// List.of
+				
+		// Map<K, V> map = new HashMap<>() ==> TreeMap, LinkedHashMap
+		// --> Tạo ra 1 dynamic map, sử dụng put, put để thêm phần tử vào
+				
+		// Khởi tạo map kèm các entry bàn đầu
 		Map<Integer, String> codes = new HashMap<>() {
 			private static final long serialVersionUID = 1L;				
 			{
