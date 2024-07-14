@@ -1,6 +1,7 @@
 package view;
 
 import java.util.ArrayList;
+
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Set;
 import bean.Trader;
 import bean.Transaction;
 import model.DataModel;
-
+import static utils.TransactionUtils.*;
 public class TransactionApp {
 	
 	private static List<Transaction> transactions = DataModel.getTransactions();
