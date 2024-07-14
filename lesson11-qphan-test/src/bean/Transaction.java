@@ -37,7 +37,15 @@ public class Transaction {
 	public void setValue(int value) {
 		this.value = value;
 	}
-
+	
+	public String getTraderCity() {
+		return trader.getCity();
+	}
+	
+	public String getTraderName() {
+		return trader.getName();
+	}
+	
 	@Override
 	public String toString() {
 		return "Transaction [trader=" + trader + ", year=" + year + ", value=" + value + "]";
