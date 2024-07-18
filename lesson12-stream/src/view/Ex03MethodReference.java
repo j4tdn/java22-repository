@@ -47,6 +47,8 @@ public static void main(String[] args) {
 		
 		System.out.println("====");
 		greenApples.forEach(System.out::println);
+		
+		Predicate<Apple> predicate = t -> t.getColor().equals("green");
 
 
 	}

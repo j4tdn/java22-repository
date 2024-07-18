@@ -11,6 +11,20 @@ public class Apple {
 	
 	public Apple() {
 		
+		System.out.println("Invoked empty constructor");
+	}
+	
+	public Apple(Integer id) {
+		this.id = id;
+		System.out.println("Invode constructor(id)");
+	}
+	
+	public Apple(Integer id, String color) {
+		this.id = id;
+		this.color = color;
+		System.out.println("Invode constructor(id,color)");
+
+		
 	}
 
 	public Apple(Integer id, String color, Double weight, String origin) {
@@ -19,6 +33,13 @@ public class Apple {
 		this.color = color;
 		this.weight = weight;
 		this.origin = origin;
+	}
+	public Apple(String line) {
+		String[] tokens = line.split("[ ,]+");
+		this.id = Integer.parseInt(tokens[0]);
+		this.color = tokens[1];
+		this.weight = Double.parseDouble(tokens[2].substring(0, tokens[2].length()-1));
+	    this.origin = tokens[3];
 	}
 
 	public Integer getId() {
@@ -52,6 +73,15 @@ public class Apple {
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+	
+	public static Apple transfer( String line) {
+		String[] tokens = line.split("[ ,]+");
+		
+		Double weight = Double.parseDouble(tokens[2].substring(0, tokens[2].length()-1));
+		return new Apple(Integer.parseInt(tokens[0]), tokens[1],weight, tokens[3]);
+	}
+	
+	
 	public static boolean heavierThan30(Apple apple) {
 		return apple.getWeight()>30;
 		

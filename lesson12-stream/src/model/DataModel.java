@@ -3,10 +3,26 @@ package model;
 import java.util.List;
 
 import bean.Apple;
+import bean.Dish;
+import common.Kind;
 
 public class DataModel {
 	private DataModel() {
 		
+	}
+	
+	public static List<Dish> getDishes(){
+		return List.of(
+				new Dish("1", "D1", 413d,Kind.EGG, false),
+				new Dish("2", "D2", 400d, Kind.OTHER, true),
+				new Dish("3", "D3", 150d,Kind.FISH, false),
+				new Dish("4", "D4", 342d,Kind.FISH, false),
+				new Dish("5", "D5", 66d,Kind.FISH, false),
+				new Dish("6", "D6", 1003d,Kind.FISH, false),
+				new Dish("7", "D7", 87d,Kind.FISH, false),
+				new Dish("8", "D8", 109d,Kind.FISH, false)
+				);
+				
 	}
 
 	public static List<Apple> getApples(){
