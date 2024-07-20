@@ -18,7 +18,7 @@ public class Ex01AppleView {
 			
 			@Override
 			public boolean test(Apple a) {
-				return "Green".equals(a.getColor());
+				return "Green".equalsIgnoreCase(a.getColor());// khong phân biê
 			}
 		});
 		generate("1.",greenApple);

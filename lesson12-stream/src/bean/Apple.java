@@ -8,7 +8,19 @@ public class Apple {
 	private Double weight;
 	private String origin;
 	public Apple() {
-		// TODO Auto-generated constructor stub
+		System.out.println("Unvoked empty constructor");
+	}
+	
+	public Apple(Integer id) {
+		super();
+		this.id = id;
+		System.out.println("Unvoked constructor(id)");
+	}
+	public Apple(Integer id, String color) {
+		super();
+		this.id = id;
+		this.color = color;
+		System.out.println("Unvoked constructor(id, color)");
 	}
 	public Apple(Integer id, String color, Double weight, String origin) {
 		super();
@@ -16,6 +28,18 @@ public class Apple {
 		this.color = color;
 		this.weight = weight;
 		this.origin = origin;
+	}
+	public Apple(String line) {
+		String[] tokens = line.split("[ ,]+");
+		this.id = Integer.parseInt(tokens[0]);
+		this.color = tokens[1];
+		this.weight = Double.parseDouble(tokens[2].substring(0, tokens[2].length()-1));;
+		this.origin =  tokens[3];
+	}
+	public static Apple transfer(String line) {
+		String[] tokens = line.split("[ ,]+");
+		Double weight = Double.parseDouble(tokens[2].substring(0, tokens[2].length()-1));
+		return new Apple(Integer.parseInt(tokens[0]), tokens[1], weight, tokens[3]);
 	}
 	public Integer getId() {
 		return id;
