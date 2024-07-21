@@ -1,6 +1,7 @@
 package utils;
 
 import java.util.Collection;
+import java.util.Map;
 
 public class PrintUtils {
 
@@ -20,4 +21,7 @@ public class PrintUtils {
 		System.out.println("}\n");
 	} 
 		}
+	public static<K,V> void generate(String prefix, Map<K,V> data) {
+		generate(prefix, data.entrySet());
+	}
 }

@@ -1,6 +1,8 @@
 package model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bean.Apple;
 import bean.Dish;
@@ -40,5 +42,16 @@ public class DataModel {
 				);
 				
 		
+	}
+	public static Map<String, Integer> getModel(){
+		Map<String, Integer> models = new HashMap();
+		
+		models.put("Quảng Nam", 92);
+		models.put("Đà Nẵng", 43);
+		models.put("Thừa Thiên Huế", 75);
+		models.put("Quảng Trị", 74);
+		models.put("Quảng Bình", 73);
+		
+		return models;
 	}
 }
