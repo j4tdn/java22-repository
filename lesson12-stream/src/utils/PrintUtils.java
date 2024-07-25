@@ -1,10 +1,15 @@
 package utils;
 
 import java.util.Collection;
+import java.util.Map;
 
 public class PrintUtils {
 	
 	private PrintUtils() {
+	}
+	
+	public static <K,V> void generate(String prefix, Map<K,V> data) {
+		generate(prefix, data.entrySet());
 	}
 	
 	public static <E> void generate(String prefix, Collection<E> data) {
