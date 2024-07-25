@@ -1,7 +1,10 @@
 package view.stream;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -75,7 +78,15 @@ public class Ex01BasicDemo {
 				.map(d -> d.getName())
 				.collect(Collectors.toList())
 		);
-		
+		Map<String, Integer> models = DataModel.getModel();
+		generate("4. Data of models", models);
+		// map -> set -> list -> sort -> map
+		// map -> set -> stream -> sort -> map
+		models.entrySet() //set<Entry<K,V>>
+		.stream()  //stream <Entry<K,v>>
+		.sorted((e1, e2) -> e1.getValue().compareTo(e2.getValue()))
+		.collect(Collectors.toMap(Entry::getKey, Entry::getValue, (v1, v2)-> v2, LinkedHashMap::new));
+		generate("4. Sorted data of models", models);
 	}
 	
 	private static <E, R> List<R> findingAndGet(
