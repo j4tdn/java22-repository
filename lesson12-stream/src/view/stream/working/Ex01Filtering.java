@@ -1,12 +1,21 @@
 package view.stream.working;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeSet;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import bean.Apple;
+import bean.Dish;
+import common.Kind;
+import model.DataModel;
 
 import static utils.PrintUtils.*;
 
@@ -65,7 +74,31 @@ public class Ex01Filtering {
 				.collect(Collectors.toCollection(TreeSet::new));
 		
 		generate("R5 unique", r5);
-	}
+		
+		System.out.println("\n======= Distinct By Key/Prop =========");
 	
-
+		Set<Kind> kinds = new HashSet<Kind>();
+		//var result = new ArrayList<Dish>();
+		
+//		for(var dish: dishes) {
+//			var kind = dish.getKind();
+//			if(kinds.add(dish.getKind())) {
+//				result.add(dish);
+//			}
+//		}
+		var apples = DataModel.getApples();
+		
+		generate("Distinct Dishes by Kind", distinctBy(apples,Apple::getOrigin));
+		
+		var dishes = DataModel.getDishes();
+		
+		generate("Distinct Dishes by Kind", distinctBy(dishes,Dish::getKind));
+		}
+	public static <E,R> List<E> distinctBy(List<E> elements, Function<E,R> function){
+		var existing = new HashSet<R>();
+		
+		return elements.stream()
+				.filter(A -> existing.add(function.apply(A)))
+				.collect(Collectors.toList());
+	}
 }

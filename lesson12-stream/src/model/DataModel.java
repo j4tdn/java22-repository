@@ -21,7 +21,7 @@ public class DataModel {
 				new Dish("4", "D4", 342d,Kind.FISH, false),
 				new Dish("5", "D5", 66d,Kind.FISH, false),
 				new Dish("6", "D6", 1003d,Kind.FISH, false),
-				new Dish("7", "D7", 87d,Kind.FISH, false),
+				new Dish("7", "D7", 87d,Kind.MEAT, false),
 				new Dish("8", "D8", 109d,Kind.FISH, false)
 				);
 				
