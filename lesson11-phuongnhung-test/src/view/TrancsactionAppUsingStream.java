@@ -84,16 +84,16 @@ public class TrancsactionAppUsingStream {
 
 		// 9. What’s the highest value of all the transactions?
 		System.out.print("\n9. What’s the highest value of all the transactions?  ");
-		Integer[] values = transactions.stream()
-				.sorted(Comparator.comparing(Transaction::getValue).reversed())
+		
+		System.out.println(transactions.stream()
 				.map((t)->t.getValue())
-				.distinct()
-				.toArray(Integer[]::new);
-		System.out.println(values[0]);
+				.reduce(Integer.MIN_VALUE, Integer::max));
 
 		// 10. Find the transaction with the smallest value.
 		System.out.print("\n10. Find the transaction with the smallest value. ");
-		System.out.println(values[values.length-1]);
+		System.out.println(transactions.stream()
+				.map((t)->t.getValue())
+				.reduce(Integer.MAX_VALUE, Integer::min));
 	}
 
 
