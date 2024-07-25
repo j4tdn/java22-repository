@@ -1,6 +1,8 @@
 package model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import bean.Apple;
 import bean.Dish;
@@ -11,6 +13,16 @@ public class DataModel {
 	private DataModel() {
 	}
 	
+	public static Map<String, Integer> getModels() {
+		Map<String, Integer> models = new HashMap<>();
+		models.put("Quảng Nam", 92);
+		models.put("Đà Nẵng", 43);
+		models.put("Thừa Thiên Huế", 75);
+		models.put("Quảng Trị", 74);
+		models.put("Quảng Bình", 73);
+		return models;
+	}
+	
 	public static List<Dish> getDishes() {
 		return List.of(
 			new Dish("1", "D1", 308d, Kind.EGG, false),
@@ -19,7 +31,7 @@ public class DataModel {
 			new Dish("4", "D4", 86d, Kind.FISH, false),
 			new Dish("5", "D5", 22d, Kind.MEAT, false),
 			new Dish("6", "D6", 707d, Kind.MEAT, false),
-			new Dish("7", "D7", 101d, Kind.EGG, false),
+			new Dish("7", "D2", 101d, Kind.EGG, false),
 			new Dish("8", "D8", 292d, Kind.OTHER, true)
 		);
 	}
