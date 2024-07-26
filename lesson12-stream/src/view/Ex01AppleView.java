@@ -7,7 +7,7 @@ import bean.Apple;
 import functional.ApplePredicate;
 import model.DataModel;
 
-import static 
+import static utils.PrintUtils.*; 
 
 public class Ex01AppleView {
 	public static void main(String[] args) {
@@ -21,9 +21,11 @@ public class Ex01AppleView {
 				return "green".equalsIgnoreCase(apple.getColor());
 			}
 		});
-		
+		generate("1st: find all green apples in his inventory", greenApples);
 		// using lambda
-		var weightApples = filter(inventory, apple -> apple.getWeight() > 150);
+		var weightApples = filter(inventory, apple -> apple.getWeight() > 30);
+		
+		generate("3rd: find all apples heavier than 30g", weightApples);
 		
 	}
 	private static List<Apple> filter(List<Apple> inventory, ApplePredicate predicate){

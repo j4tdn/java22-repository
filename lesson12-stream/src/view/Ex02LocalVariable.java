@@ -11,7 +11,7 @@ public class Ex02LocalVariable {
 	private static String author = "Java22";
 	
 	public static void main(String[] args) {
-		
+		testRunning().run();
 	}
 	private static void testNormal() {
 		int minutes = 6;
@@ -20,11 +20,22 @@ public class Ex02LocalVariable {
 	private static Runnable testRunning() {
 		// local variable
 		int seconds = 6;
-		return () -> {
+		
+		return new Runnable() {
+			
+			@Override
+			public void run() {			 
+				//seconds = 12; // Local variable seconds defined in an enclosing scope must be final or effectively final
+				author = "JDK22";
+				
+				System.out.println("Call 'testRunning' method take" + seconds + " seconds by " + author);					
+			
+		   }
+		};
+	}
+		/*return () -> {
 			seconds = 12; // Local variable seconds defined in an enclosing scope must be final or effectively final
 			author = "JDK22";
 		System.out.println("Call 'testRunning' method take" + seconds + " seconds by " + author);	
-		};
-	}
-
+		};*/
 }
