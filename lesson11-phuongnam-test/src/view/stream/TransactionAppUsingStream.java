@@ -26,8 +26,7 @@ public class TransactionAppUsingStream {
 
 				transactions.stream()
 					.filter(t -> t.getValue() > 300)
-					.sorted(Comparator
-					.comparing(Transaction::getTraderCity))
+					.sorted(Comparator.comparing(Transaction::getTraderCity))
 					.toList());
 
 		printf("3. What are all the unique cities where the traders work?",
@@ -56,8 +55,7 @@ public class TransactionAppUsingStream {
 
 		printf("8. Print all transactions’ values from the traders living in Cambridge", 
 				transactions.stream()
-					.filter(t -> t.getTraderCity()
-					.equals("Cambridge"))
+					.filter(t -> t.getTraderCity().equals("Cambridge"))
 					.map(Transaction::getValue)
 					.toList()
 
@@ -94,8 +92,7 @@ public class TransactionAppUsingStream {
 	private static boolean existTraderInMilan() {
 		boolean check = transactions.stream()
 				.map(Transaction::getTrader)
-				.anyMatch(t -> t.getCity()
-				.equals("Milan"));
+				.anyMatch(t -> t.getCity().equals("Milan"));
 
 		if (check) {
 			return true;
@@ -106,8 +103,7 @@ public class TransactionAppUsingStream {
 	private static int countTradersInMilan() {
 		List<Trader> trader = transactions.stream()
 				.map(Transaction::getTrader).distinct()
-				.filter(t -> t.getCity()
-				.equals("Milan"))
+				.filter(t -> t.getCity().equals("Milan"))
 				.toList();
 		int count = trader.size();
 		return count;
