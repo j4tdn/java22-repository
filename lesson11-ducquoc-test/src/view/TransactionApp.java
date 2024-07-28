@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import bean.Trader;
 import bean.Transaction;
 import model.DataModel;
 
@@ -35,14 +36,20 @@ public class TransactionApp {
 				getCity(transactions)
 			);
  		// 4. Find all traders from Cambridge and sort them by name desc.
-		printf(
-				" 4. Find all traders from Cambridge and sort them by name desc.",
-				getCyti("Cambridge", null)
-			);
+//		printf(
+//				" 4. Find all traders from Cambridge and sort them by name desc.",
+//				getCyti("Cambridge", null)
+//			);
  		// 5. Return a string of all traders’ names sorted alphabetically.
- 		
+		printf(
+				"5. Return a string of all traders’ names sorted alphabetically.",
+				getNameAndSort(transactions, (t1, t2) -> t1.getTrader().getName().compareTo(t2.getTrader().getName()))
+			);
  		// 6. Are any traders based in Milan?
- 		
+		printf(
+				"6. Are any traders based in Milan?",
+				getCity(transactions)
+			);
  		// 7. Count the number of traders in Milan.
  		
  		// 8. Print all transactions’ values from the traders living in Cambridge.
@@ -62,6 +69,17 @@ public class TransactionApp {
 		result.sort(comparator);
 		return result;
 	}
+	private static List<Transaction> getNameAndSort(  List<Transaction> transactions ,Comparator<Transaction> comparator) {
+		List<Transaction> result = new ArrayList<>();
+		for (var t: transactions) {
+			if (t.getTrader() != null) {
+				result.add(t);
+			}
+		}
+		result.sort(comparator);
+		return result;
+	}
+	
 	private static List<Transaction> getTransactionsByvalueAndSort(int value, Comparator<Transaction> comparator) {
 		List<Transaction> result = new ArrayList<>();
 		for (var t: transactions) {
@@ -83,11 +101,13 @@ public class TransactionApp {
 		return result;
 	}
 	
-	private static Set<String> getCity(List<Transaction> transactions){
+	private static Set<String> getCity(String value,List<Transaction> transactions){
 		Set<String> result = new HashSet<String>();
-		for (Transaction transaction : transactions) {
-			result.add(transaction.getTrader().getCity());
-			
+		for (var t : transactions) {
+			if(t.getTrader().getCity().equalsIgnoreCase(value)) {
+				result.add(t);
+			}
+		
 		}
 		return result;
 	}
