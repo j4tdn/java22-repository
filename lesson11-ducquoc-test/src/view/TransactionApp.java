@@ -47,16 +47,28 @@ public class TransactionApp {
 			);
  		// 6. Are any traders based in Milan?
 		printf(
-				"6. Are any traders based in Milan?",
-				getCity(transactions)
+				"6. Are any traders based in Milan ",
+				getCity("Milan",transactions)
 			);
  		// 7. Count the number of traders in Milan.
- 		
+		
+				int count = getCity("Milan",transactions).size();
+		System.out.println(" 7. Count the number of traders in Milan." + count);
  		// 8. Print all transactions’ values from the traders living in Cambridge.
- 		
+		printf(
+				"8. Print all transactions’ values from the traders living in Cambridge. ",
+				getCity("Cambridge",transactions)
+			);
  		// 9. What’s the highest value of all the transactions?
- 		
+		printf(
+				" 9. What’s the highest value of all the transactions? ",
+				getCityAndSorrt("Cambridge",transactions,(t1, t2) -> t2.getValue()-t1.getValue())
+			);
  		// 10. Find the transaction with the smallest value.
+		printf(
+				" 10. Find the transaction with the smallest value.",
+				getCityAndSorrt("Cambridge",transactions,(t1, t2) -> t1.getValue()-t2.getValue())
+			);
 	}
 	
 	private static List<Transaction> getTransactionsAndSort(int year, Comparator<Transaction> comparator) {
@@ -80,6 +92,29 @@ public class TransactionApp {
 		return result;
 	}
 	
+	private static List<Transaction> getCity(String value,  List<Transaction> transactions ) {
+		List<Transaction> result = new ArrayList<>();
+		for (var t: transactions) {
+			if (t.getTrader().getCity().equals(value)) {
+				result.add(t);
+			}
+		}
+		
+		return result ;
+	}
+	private static List<Transaction> getCityAndSorrt(String value,  List<Transaction> transactions ,Comparator<Transaction> comparator ) {
+		List<Transaction> result = new ArrayList<>();
+		for (var t: transactions) {
+			if (t.getTrader().getCity().equals(value)) {
+				result.add(t);
+			}
+		}
+		result.sort(comparator);
+		List<Transaction> chido = new ArrayList<>();
+		chido.add(result.get(0));
+		return chido ;
+	}
+	
 	private static List<Transaction> getTransactionsByvalueAndSort(int value, Comparator<Transaction> comparator) {
 		List<Transaction> result = new ArrayList<>();
 		for (var t: transactions) {
@@ -101,13 +136,12 @@ public class TransactionApp {
 		return result;
 	}
 	
-	private static Set<String> getCity(String value,List<Transaction> transactions){
+	private static Set<String> getCity(List<Transaction> transactions){
 		Set<String> result = new HashSet<String>();
-		for (var t : transactions) {
-			if(t.getTrader().getCity().equalsIgnoreCase(value)) {
-				result.add(t);
-			}
-		
+		for (Transaction transaction : transactions) {
+			if(transaction.getTrader().getCity().equalsIgnoreCase("Milan"))
+			result.add(transaction.getTrader().getCity());
+			
 		}
 		return result;
 	}
