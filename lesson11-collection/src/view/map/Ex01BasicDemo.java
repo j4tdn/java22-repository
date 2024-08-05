@@ -32,8 +32,7 @@ public class Ex01BasicDemo {
 	public static void main(String[] args) {
 		// Xây dựng hệ thống quản lý biển số xe của các tỉnh thành ở Việt Nam
 		// Đà Nẵng 43, Quảng Nam 92, Bắc Ninh 99
-		Map<String, Integer> models = new TreeMap<>(	);
-		
+		Map<String, Integer> models = new TreeMap<>();
 		
 		models.put("Quảng Nam", 92);
 		models.put("Đà Nẵng", 43);

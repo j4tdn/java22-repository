@@ -1,0 +1,30 @@
+1. Cách sử dụng Stream<E>
+=== B1 ===
+List<E>    --> Stream<E>
+Set<E>     --> Stream<E>
+Map<K, V>  --> Stream<Entry<K, V>> --> Stream<Entry<K,V>>
+
+=== B2 ===
+use stream methods --> filter(Predicate), map(Function<E, R>), sorted(Comparator<T>)
+
+=== B3 ===
+collect(Collectors.toList())
+collect(Collectors.toSet())
+collect(Collectors.toMap(...))
+collect(Collectors.joining(...))
+collect(Collectors.toCollection(...))
+
+Đặc điểm:
++ Builder Pattern: 
+--> Sau khi từ source chuyển sang Stream<E>
+--> gọi các hàm filter, map, sorted vẫn trả về stream
+--> những hàm khi gọi vẫn trả về stream --> intermediate operations
+
++ Strategy Pattern
+--> khi gọi các intermediate operation phải truyền vào behavior mong muốn
+
++ khi gọi các hàm trả về không phải stream -> terminal operations
+
+Câu hỏi: Vì sao sau khi gọi các hàm của stream để xử lý xong mình không lưu lại kết quả trong stream 
+mà phải chuyển đổi sang KDL khác
+
