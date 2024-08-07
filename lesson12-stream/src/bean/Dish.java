@@ -5,22 +5,22 @@ import java.util.Objects;
 import common.Kind;
 
 public class Dish {
+	
 	private String id;
 	private String name;
 	private Double calories;
 	private Kind kind;
-	private Boolean vegetarian;
+	private Boolean isVeggie;
 	
 	public Dish() {
 	}
 
-	public Dish(String id, String name, Double calories, Kind kind, Boolean vegetarian) {
-		super();
+	public Dish(String id, String name, Double calories, Kind kind, Boolean isVeggie) {
 		this.id = id;
 		this.name = name;
 		this.calories = calories;
 		this.kind = kind;
-		this.vegetarian = vegetarian;
+		this.isVeggie = isVeggie;
 	}
 
 	public String getId() {
@@ -55,36 +55,37 @@ public class Dish {
 		this.kind = kind;
 	}
 
-	public Boolean getVegetarian() {
-		return vegetarian;
+	public Boolean getIsVeggie() {
+		return isVeggie;
 	}
 
-	public void setVegetarian(Boolean vegetarian) {
-		this.vegetarian = vegetarian;
+	public void setIsVeggie(Boolean isVeggie) {
+		this.isVeggie = isVeggie;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+		
+		if (!(o instanceof Dish)) {
+			return false;
+		}
+		
+		Dish that = (Dish)o;
+		
+		return getId() == that.getId();
+	}
 	
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Dish other = (Dish) obj;
-		return Objects.equals(id, other.id);
+		return Objects.hash(getId());
 	}
 
 	@Override
 	public String toString() {
-		return "Dish [id=" + id + ", name=" + name + ", calories=" + calories + ", vegetarian=" + vegetarian + "]";
+		return "Dish [id=" + id + ", name=" + name + ", calories=" + calories + ", isVeggie=" + isVeggie + "]";
 	}
-	
 	
 }
