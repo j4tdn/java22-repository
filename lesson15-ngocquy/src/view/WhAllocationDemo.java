@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class WhAllocationDemo {
 
 	public static void main(String[] args) {
-			// Step 1: // Step 1: Check for Planning Amount
+			// Step 1: Check for Planning Amount
 		boolean shouldContinue = checkPlanningAmount(DataModel.planningAmount, DataModel.requiredMinPlanningAmount);
 		if (shouldContinue) {
 			// Step 2: Filling gaps by references or average
