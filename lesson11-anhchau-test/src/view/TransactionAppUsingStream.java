@@ -18,7 +18,7 @@ private static List<Transaction> transactions = DataModel.getTransactions();
  		// 1. Find all transactions in the year 2011 and sort them by value (small to high). DONE
 		printf(
 			"1. Find all transactions in the year 2011 and sort them by value (small to high)",
-			transactions.stream().filter(t -> t.getYear() == 2011)
+			transactions.stream().filter(t -> t.getYear() == 2011) // Lọc các giao dịch có năm là 2011.
 			.sorted(Comparator.comparing(Transaction::getValue))
 			.collect(Collectors.toList())
 			
