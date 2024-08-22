@@ -13,6 +13,14 @@ public class Ex05FindingAndMatching {
         5th: does no elements greater than 0
 	 
 	 New Data Type: Optional<T> hạn chế xảy ra NPE
+	 Optional
+	    T
+	    --> ifPresent(Consumer<T> consumer), isPresent
+	    --> ifAbsent(Consumer<T> consumer), isAbsent
+	    --> orElse
+	    
+	    --> of
+	    --> ofNullable
 	 */
 	public static void main(String[] args) {
 		var numbers = List.of(1 , 2, 1, 4, 5, 8, 10, 4, 12);
