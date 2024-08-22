@@ -4,7 +4,6 @@ import static model.DataModel.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.security.KeyStore.Entry;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -45,9 +44,12 @@ public class WhAllocationDemo {
 			
 			//
 			Map<Integer, BigDecimal> mapSumDemands = calculateSumDemand(mapStoreDemands,ListStoresOfA55);
-			printf("step 3 Danh sách tổng demand theo mỗi WH : ", mapSumDemands);
+			printf("step 4 Danh sách tổng demand theo mỗi WH : ", mapSumDemands);
 			
 
+		}
+		else {
+			System.out.println("stop calculation");
 		}
 		// print result step by step
 	}
@@ -59,7 +61,7 @@ public class WhAllocationDemo {
 	    for(Integer wh: level) {
 	    	// Tính tổng demand cho từng level
             BigDecimal sumDemand = ListStoresOfA55.stream()
-                .filter(store -> store.getWhId().equals(wh)) // Lọc các store có level tương ứng
+                .filter(store -> store.getWhId().equals(wh)) 
                 .map(store -> mapStoreDemand.getOrDefault(store.getId(), BigDecimal.ZERO))
                 .reduce(BigDecimal.ZERO, BigDecimal::add); // Tính tổng demand
 
