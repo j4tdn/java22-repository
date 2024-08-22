@@ -3,6 +3,7 @@ package view;
 import static model.DataModel.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,6 +29,8 @@ public class WhAllocationDemo {
 			System.err.println("hihi");
 		}
 		
+		
+		//step 2
 		else {
 			
 			System.out.println();
@@ -131,14 +134,14 @@ public class WhAllocationDemo {
 		        
 		        BigDecimal sum = BigDecimal.ZERO;
 		    	BigDecimal count = BigDecimal.ZERO;
-		    	
+		    	BigDecimal average = BigDecimal.ZERO;
 		    	
 		    	
 				for (Store st : storeArrayList) {
 		        	if (!storeHaveNoPotentialNoReference.contains(st) && (!storeHaveRefThatHasPotential.contains(st))) {
 		        		sum = sum.add(st.getPotential());
 //		        		System.out.println(st.getPotential());
-		        		
+		        		count = count.add(bd(1));
 		        		System.out.println(st);
 		        		
 		        	}
@@ -146,10 +149,15 @@ public class WhAllocationDemo {
 		        	
 		        //tính các potential cho các store ko có potential và ko có ref
 //		        BigDecimal countBig = bd(count);
-		        System.out.println(sum + " ");
-//		        System.out.println(bd(count));
-//		        BigDecimal average = sum.divide(countBig);
-		        
+				BigDecimal avg = BigDecimal.ZERO;
+				for (Store store : storeArrayList) {
+					 if (storeHaveNoPotentialNoReference.contains(store)) {
+						 store.setPotential((sum.divide(count, 1, RoundingMode.HALF_UP)));
+					 }
+				 }		        
+				
+				
+				storeArrayList.stream().forEach(System.out::println);
 		        
 		}
 		
