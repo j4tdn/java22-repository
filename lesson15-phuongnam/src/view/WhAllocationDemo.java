@@ -42,12 +42,11 @@ public class WhAllocationDemo {
 			
 			ArrayList<Store> storeArrayList = new ArrayList<>(storeList);
 			
-			System.out.println(storeArrayList);
-			
-			 Map<Item, List<Store>> r = DataModel.mockStoresOfRefItemA55();
-			 List<Store> storeHaveRefButNoPotential = new ArrayList<>();
+//			System.out.println(storeArrayList);
 			 
-			 List<Store> storeHaveRefThatHasPotential = new ArrayList<Store>();
+			 List<Store> storeHaveRefThatHasPotential = new ArrayList<Store>();  //list các store có ref có potential
+			 
+			 List<Store> storeHaveNoPotentialNoReference = new ArrayList<Store>();
 			 
 			 Map<Integer, String> storeHaveNoPotential = new TreeMap<>(); // 10 và 12
 			 
@@ -86,7 +85,7 @@ public class WhAllocationDemo {
 		        }
 		        
 		        
-		        System.out.println(listOfReferenceStore);
+//		        System.out.println(listOfReferenceStore);
 		        
 		        
 		        
@@ -102,7 +101,7 @@ public class WhAllocationDemo {
 		        	if (sto.getPotential().compareTo(BigDecimal.ZERO) == 0) {
 		        		if (listOfReferenceStore.containsKey(sto.getId())) {
 		        			System.out.println(sto.getId() + "có ");
-		        			
+		        			storeHaveRefThatHasPotential.add(sto);
 		        			int refId = listOfReferenceStore.get(sto.getId());  //id của reference store là 1
 		        			for (Store st : storeArrayList) {
 		        				if (st.getId().equals(refId)) {
@@ -114,14 +113,50 @@ public class WhAllocationDemo {
 		        			}
 		        			
 		        		}
+		        		
+		        		else {
+		        			storeHaveNoPotentialNoReference.add(sto);
+		        			System.out.println(sto.getId() + "hihi");
+		        		}
 		        	}
 		        }
+		        System.out.println("-------------------------");
+		        System.out.println(storeHaveNoPotentialNoReference);
+		        
+		        System.out.println("---------------------------");
+		        System.out.println(storeHaveRefThatHasPotential);
 		        
 		        
-		        storeArrayList.stream().forEach(System.out::println);
+//		        storeArrayList.stream().forEach(System.out::println);
+		        
+		        BigDecimal sum = BigDecimal.ZERO;
+		    	BigDecimal count = BigDecimal.ZERO;
+		    	
+		    	
+		    	
+				for (Store st : storeArrayList) {
+		        	if (!storeHaveNoPotentialNoReference.contains(st) && (!storeHaveRefThatHasPotential.contains(st))) {
+		        		sum = sum.add(st.getPotential());
+//		        		System.out.println(st.getPotential());
+		        		
+		        		System.out.println(st);
+		        		
+		        	}
+		        }	
+		        	
+		        //tính các potential cho các store ko có potential và ko có ref
+//		        BigDecimal countBig = bd(count);
+		        System.out.println(sum + " ");
+//		        System.out.println(bd(count));
+//		        BigDecimal average = sum.divide(countBig);
+		        
+		        
 		}
 		
 		
 	}
+	
+	
+
 	
 }
