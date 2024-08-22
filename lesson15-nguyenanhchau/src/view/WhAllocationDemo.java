@@ -91,15 +91,18 @@ public class WhAllocationDemo {
 			store.setPotential(averagePotential);
 		}
 	}
-	private static Map<Integer, BigDecimal> calculateWH(Map<Integer, BigDecimal> demand,Map<Item, List<Store>> storeA55Data){
-		
-		Map<Integer, BigDecimal> WH = new HashMap<>();
-		
-		
-		return WH;
-		
-		
-		
+	private static Map<Integer, BigDecimal> calculateWH(Map<Integer, BigDecimal> demand, Map<Item, List<Store>> storeData) {
+	    Map<Integer, BigDecimal> whDemand = new HashMap<>();
+
+	    storeData.values().stream()
+	        .flatMap(List::stream) 
+	        .forEach(store -> {
+	            Integer whId = store.getWhId();
+	            BigDecimal storeDemand = demand.getOrDefault(store.getId(), BigDecimal.ZERO);
+	            whDemand.merge(whId, storeDemand, BigDecimal::add);
+	        });
+
+	    return whDemand;
 	}
 	private static Map<Integer, BigDecimal> calculateDemand(Map<Item, List<Store>> storeA55Data,
 			Map<Item, List<Store>> storeA77Data, Map<Integer, BigDecimal> weightReStore,
