@@ -1,5 +1,5 @@
 DELIMITER $$
-DROP PROCEDURE p_insert_into_size;
+DROP PROCEDURE IF EXISTS p_insert_into_size;
 CREATE PROCEDURE p_insert_into_size()
 BEGIN
 	DECLARE running INT DEFAULT 1;
