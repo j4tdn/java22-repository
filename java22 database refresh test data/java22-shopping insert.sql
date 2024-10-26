@@ -98,7 +98,84 @@ SELECT t01.C01_ITEM_ID ITEM_ID,
 
 
 -- T08_CUSTOMER, T11_TITLE, T13_EMPLOYEE
+CALL p_insert_into_customer(1, 10);
+
+INSERT INTO T11_TITLE(C11_TITLE_ID, C11_TITLE_NAME) VALUES
+(1, 'Nhân viên'),
+(2, 'Trưởng bộ phận'),
+(3, 'Giám đốc'),
+(4, 'Chủ sở hữu');
+
+CALL p_insert_into_employee(1, 10);
+
 
 -- T09_PAYMENT_METHOD, T10_ORDER_STATUS
+INSERT INTO T09_PAYMENT_METHOD (C09_PAYMENT_METHOD_ID, C09_PAYMENT_METHOD_TYPE) VALUES
+(1, 'Thanh toán khi nhận hàng'),
+(2, 'Thanh toán online - chuyển khoản'),
+(3, 'Thanh toán online - thẻ ghi nợ');
+
+INSERT INTO T10_ORDER_STATUS (C10_STATUS_ID, C10_STATUS_DESC) VALUES
+(1, 'Chờ xác nhận'),
+(2, 'Đang đóng gói'),
+(3, 'Đóng gói hoàn thành'),
+(4, 'Đang vận chuyển'),
+(5, 'Giao hàng thành công'),
+(6, 'Giao hàng thất bại'),
+(7, 'Hủy đơn hàng');
+
 
 -- T04_ORDER, T05_ORDER_DETAIL, T06_ORDER_STATUS_DETAIL, T07_BILL
+CALL p_insert_into_order(1, 20);
+
+INSERT INTO T05_ORDER_DETAIL (C05_ORDER_ID, C05_ITEM_DETAIL_ID, C05_AMOUNT) VALUES
+(1, 1, 2),
+(1, 3, 4),
+(2, 4, 2),
+(2, 5, 2),
+(3, 6, 4),
+(3, 2, 4),
+(4, 8, 2),
+(4, 12, 4),
+(5, 88, 1),
+(5, 22, 3),
+(5, 11, 1),
+(5, 33, 1),
+(6, 2, 1),
+(7, 1, 2),
+(8, 27, 1),
+(8, 23, 1),
+(8, 98, 2),
+(9, 100, 6),
+(9, 11, 7),
+(9, 45, 2),
+(9, 22, 2),
+(9, 32, 1),
+(10, 18, 2),
+(10, 29, 4),
+(11, 33, 2),
+(11, 65, 1),
+(11, 1, 1),
+(11, 2, 2),
+(11, 5, 5),
+(11, 7, 10),
+(12, 55, 1),
+(13, 92, 1),
+(13, 14, 2),
+(14, 5, 2),
+(14, 7, 2),
+(14, 2, 4),
+(15, 9, 5),
+(15, 44, 8),
+(16, 23, 2),
+(16, 18, 5),
+(16, 66, 3),
+(16, 77, 12),
+(17, 1, 20),
+(18, 82, 1),
+(18, 84, 7),
+(19, 12, 8),
+(19, 20, 2),
+(20, 30, 5),
+(20, 100, 9),
+(20, 70, 1);
