@@ -1,7 +1,7 @@
 -- create table logger
 CREATE TABLE T999_LOGGER(
-	C999_message TEXT,
-    c999_level TEXT
+	C999_MESSAGE TEXT,
+    C999_LEVEL TEXT
 );
 
 -- update primary key

@@ -1,5 +1,12 @@
-DELIMITER $$
 DROP PROCEDURE IF EXISTS p_insert_into_size;
+DROP PROCEDURE IF EXISTS p_insert_into_customer;
+DROP PROCEDURE IF EXISTS p_insert_into_employee;
+DROP PROCEDURE IF EXISTS p_insert_into_order;
+
+-- lưu ý khi tạo procedure với mysql workbench
+-- phải có DELIMITER $$ trước và sau
+
+DELIMITER $$
 CREATE PROCEDURE p_insert_into_size()
 BEGIN
 	DECLARE running INT DEFAULT 1;
@@ -21,11 +28,8 @@ BEGIN
 		SET running := running + 1;    
     END WHILE;
     
-END $$
+END $$;
 
--- lưu ý khi tạo procedure với mysql workbench
--- phải có DELIMITER $$ trước và sau
-DROP PROCEDURE IF EXISTS p_insert_into_customer;
 
 DELIMITER $$
 CREATE PROCEDURE p_insert_into_customer(p_from INT, p_until INT)
@@ -53,12 +57,8 @@ BEGIN
     
     SELECT * FROM t999_logger;
 	TRUNCATE TABLE t999_logger;
-END $$
+END $$;
 
-
-DROP PROCEDURE IF EXISTS p_insert_into_employee;
-SELECT * FROM t09_payment_method;
-SELECT floor(rand() * (SELECT count(*) FROM t09_payment_method)) + 1; -- [0, 3) --> [1, 4)
 
 DELIMITER $$
 CREATE PROCEDURE p_insert_into_employee(p_from INT, p_until INT)
@@ -91,10 +91,7 @@ BEGIN
     
     SELECT * FROM t999_logger;
 	TRUNCATE TABLE t999_logger;
-END 
-
-DROP PROCEDURE IF EXISTS p_insert_into_order;
-
+END $$;
 
 DELIMITER $$
 CREATE PROCEDURE p_insert_into_order(p_from INT, p_until INT)
@@ -119,7 +116,6 @@ BEGIN
 			   END AS p_customer_id;
         SET p_from := p_from + 1;
     END WHILE;
-
 END $$
 
 
