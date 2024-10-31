@@ -1,5 +1,6 @@
 -- create database/schema
 CREATE DATABASE java22_shopping CHAR SET utf8mb4;
+USE java22_shopping;
 
 -- idea to create database via db patches
 
@@ -20,3 +21,16 @@ CREATE DATABASE java22_shopping CHAR SET utf8mb4;
 
 -- java22-shopping dbp 06.sql --> liên quan đến order
 -- T04_ORDER, T05_ORDER_DETAIL, T06_ORDER_STATUS_DETAIL, T07_BILL
+
+-- java22-shopping dbp7 07.sql --> liên quan đến logger
+-- T999_LOGGER
+
+-- create test data
+
+-- java22-shopping utils.sql
+
+-- java22-shopping delete.sql
+
+-- java22-shopping insert.sql
+
+-- java22-shopping select.sql
