@@ -1,0 +1,37 @@
+-- create database/schema
+CREATE DATABASE java22_shopping CHAR SET utf8mb4;
+USE java22_shopping;
+
+-- idea to create database via db patches
+
+-- java22-shopping dbp 01.sql --> liên quan đến ITEM
+-- T01_ITEM, T02_ITEM_GROUP, T03_ITEM_DETAIL, T12_SIZE
+
+-- java22-shopping dbp 02.sql
+-- Thêm khóa ngoại cho T03_ITEM_DETAIL
+
+-- java22-shopping dbp 03.sql --> liên quan đến SUPPLIER
+-- T100_SUPPLIER, T101_SUPPLIER_CHAIN
+
+-- java22-shopping dbp 04.sql --> liên quan đến CUSTOMER, EMPLOYEE
+-- T08_CUSTOMER, T11_TITLE, T13_EMPLOYEE
+
+-- java22-shopping dbp 05.sql --> liên quan đến enum, constant
+-- T09_PAYMENT_METHOD, T10_ORDER_STATUS
+
+-- java22-shopping dbp 06.sql --> liên quan đến order
+-- T04_ORDER, T05_ORDER_DETAIL, T06_ORDER_STATUS_DETAIL, T07_BILL
+
+-- java22-shopping dbp7 07.sql --> liên quan đến logger
+-- T999_LOGGER
+
+-- create test data
+
+-- java22-shopping utils.sql
+
+-- java22-shopping delete.sql
+
+-- java22-shopping delete.sql
+
+-- java22-shopping select.sql
+
