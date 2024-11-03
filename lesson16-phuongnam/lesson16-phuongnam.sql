@@ -155,6 +155,28 @@ having COUNT(*) > 20;
 
 -- ==============================================================
 -- 21. Hiển thị mặt hàng có số lượng nhiều nhất trong mỗi loại hàng
+WITH CTE_MAX_PRICE_BY_GROUP_ITEM AS (
+SELECT  C01_ITEM_ID , C01_ITEM_NAME, C02_ITEM_GROUP_NAME,  MAX(t03_item_detail.C03_AMOUNT) as Max_Amount from t01_item
+JOIN t02_item_group 
+ON t01_item.C01_ITEM_GROUP_ID = t02_item_group.C02_ITEM_GROUP_ID
+Join t03_item_detail 
+ON t01_item.C01_ITEM_ID = t03_item_detail.C03_ITEM_ID
+GROUP BY C01_ITEM_ID , C02_ITEM_GROUP_NAME
+),
+
+ CTE_2 AS (
+SELECT C02_ITEM_GROUP_NAME,  MAX(Max_Amount) as Max_Amount_Value
+FROM CTE_MAX_PRICE_BY_GROUP_ITEM 
+GROUP BY C02_ITEM_GROUP_NAME
+)
+
+SELECT *
+FROM CTE_2 
+INNER JOIN CTE_MAX_PRICE_BY_GROUP_ITEM 
+ON CTE_MAX_PRICE_BY_GROUP_ITEM.C02_ITEM_GROUP_NAME = CTE_2.C02_ITEM_GROUP_NAME
+AND CTE_MAX_PRICE_BY_GROUP_ITEM.Max_Amount = CTE_2.Max_Amount_Value;
+
+
 
 
 -- 22. Hiển thị giá bán trung bình của mỗi loại hàng
