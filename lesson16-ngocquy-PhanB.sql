@@ -1,0 +1,36 @@
+-- Phần B. Viết các lệnh để tạo dữ liệu kiểm thử cho dự án
+-- Yêu cầu: Ít nhất 5 dòng cho mỗi bảng dữ liệu
+INSERT INTO t01_department (C01_DEPARTMENT_ID, C01_DEPARTMENT_NAME, C01_DEPARTMENT_MANAGER_ID, C01_MANAGER_STARTDAY)
+VALUES
+(1, 'Phòng Nhân Sự', 101, '2020-05-01'),
+(2, 'Phòng Kinh Doanh', 102, '2020-06-30'),
+(3, 'Phòng Marketing', 103, '2020-05-20'),
+(4, 'Phòng IT', 104, '2020-08-21'),
+(5, 'Phòng Kỹ Thuật', 105, '2020-10-01');
+
+INSERT INTO t03_employee (C03_EMPLOYEE_ID, C03_EMPLOYEE_NAME, C03_EMPLOYEE_ADDRESS, C03_EMPLOYEE_SALARY, C03_EMPLOYEE_GENDER, C03_EMPLOYEE_BIRTHDAY, C03_EMPLOYEE_JOINCOMPANY_DATE, C03_EMPLOYEE_DEPARTMENT_ID)
+VALUES 
+(104, 'Cao Ngọc Quý', 'Nghệ An', 10000000, 'Nam', '2003-02-14', '2019-01-01', 4),
+(105, 'Cao Ngọc A', 'Hà Nội', 7000000, 'Nam', '2003-02-14', '2019-01-01', 3),
+(103, 'Cao Ngọc B', 'Đà Nẵng', 4000000, 'Nam', '2003-02-14', '2019-01-01', 2),
+(102, 'Cao Ngọc C', 'Nghệ An', 8000000, 'Nam', '2003-02-14', '2019-01-01', 1),
+(101, 'Cao Ngọc D', 'Nghệ An', 9000000, 'Nam', '2003-02-14', '2019-01-01', 5),
+(106, 'Cao Ngọc E', 'Nghệ An', 5000000, 'Nam', '2003-02-14', '2019-01-01', 4),
+(107, 'Cao Ngọc F', 'Nghệ An', 6000000, 'Nam', '2003-02-14', '2019-01-01', 4);
+
+INSERT INTO t02_project (C02_PROJECT_ID, C02_PROJECT_NAME, C02_PROJECT_STARTDAY, C02_PROJECT_ENDDAY, C02_PROJECT_REVENUE)
+VALUES 
+(1, 'Dự Án A', '2023-01-01' , '2023-08-01', 500000000),
+(2, 'Dự Án B', '2023-01-01' , '2023-08-01', 500000000),
+(3, 'Dự Án C', '2023-01-01' , '2023-08-01', 500000000),
+(4, 'Dự Án D', '2023-01-01' , '2023-08-01', 500000000),
+(5, 'Dự Án E', '2023-01-01' , '2023-08-01', 500000000);
+
+INSERT INTO t04_project_employee (C04_EMPLOYEE_ID, C04_PROJECT_ID, C04_WORK_HOURS, C04_PROJECT_MANAGER_ID)
+VALUES
+(101, 1, 160 , 101 ),
+(102, 1, 140 , 101 ),
+(103, 2, 178 , 102 ),
+(104, 3, 157 , 103 ),
+(105, 4, 190 , 104 );
+
