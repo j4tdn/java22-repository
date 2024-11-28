@@ -1,0 +1,47 @@
+1. 1. Liệt kê các dự án diễn ra trong năm *?* có số tiền thu được trên *?* triệu VND
+SELECT * FROM DuAn WHERE YEAR(NgayBatDau)=2023 AND SoTienThu > 5000000;
+
+2. Liệt kê các nhân viên đã tham gia hơn ?*? giờ trong các dự án, hiển thị chi tiết số giờ trong mỗi
+dự án mà nhân viên tham gia
+
+SELECT NhanVien.HoTen, ThamGiaDuAn.MaDuAn, ThamGiaDuAn.SoGioThamGia
+FROM NhanVien
+JOIN ThamGiaDuAn ON NhanVien.MaNhanVien = ThamGiaDuAn.MaNhanVien
+WHERE ThamGiaDuAn.SoGioThamGia >100;
+
+3. Liệt kê các nhân viên có mức lương >= mức lương của người giám sát/quản lý trực tiếp nhân
+viên đó
+
+select NV1.HoTen As NhanVien, NV2.HoTen As GiamSat, NV1.Luong
+from NhanVien NV1
+Join NhanVien NV2 on NV1.GiamSat = NV2.MaNhanVien
+where NV1.Luong >= NV2.Luong;
+
+4. Liệt kê các phòng ban có số lượng nhân viên lớn hơn *?*
+
+select PhongBan.TenPhongBan, COUNT(NhanVien.MaNhanVien) AS SoNhanVien
+from PhongBan
+Join NhanVien On PhongBan.MaPhongBan= NhanVien.MaPhongBan
+Group By PhongBan.TenPhongBan
+Having COUNT(NhanVien.MaNhanVien) >5;
+
+5. Liệt kê các nhân viên đã làm việc cho công ty hơn ?*? năm
+
+select HoTen, DATEDIFF(YEAR, NgayVaoCongTy, GETDate()) AS SoNam
+from NhanVien
+where DATEDIFF(year, NgayVaoCongTy,GETDate())  >5;
+
+6. Liệt kê các nhân viên vừa là trưởng phòng ban, và là quản lý dự án
+
+select NV.HoTen
+From NhanVien NV
+Join PhongBan PB on NV.MaNhanVien = PB.TruongPhong
+Join DuAn DA On NV.MaNhanVien= DA.QuanLyDuAn;
+
+7. Liệt kê các nhân viên quản lý nhiều hơn 1 dự án
+
+SELECT QuanLyDuAn, Count(*) As SoDuAn
+FROM DuAn
+Group By QuanLyDuAn
+Having COUNT(*) >1;
+
