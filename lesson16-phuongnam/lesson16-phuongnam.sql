@@ -65,8 +65,63 @@ SELECT * FROM t01_item inner Join t03_item_detail
 SELECT * from t01_item WHERE C01_ITEM_GROUP_ID IN 
 		(SELECT C02_ITEM_GROUP_ID FROM t02_item_group 
          WHERE C02_ITEM_GROUP_NAME IN ('Mũ', 'Thắt lưng'));
+         
+Select * from t01_item t01 
+WHERE not EXISTS (SELECT * from t02_item_group t02 
+					where C02_ITEM_GROUP_NAME in ('Thắt lưng' , 'Mũ')
+                    AND t01.C01_ITEM_GROUP_ID = t02.C02_ITEM_GROUP_ID);
+
+
 -- 10. Liệt kê các đơn hàng được đặt trong ngày (28/11/2019, 14/12/2019)
 SELECT * FROM t04_order WHERE C04_ORDER_TIME BETWEEN '2024-11-28 00:00:00' AND '2024-12-14 23:59:59';
+
+-- =============================================================================================
+select @@sql_mode;
+SET sql_mode=(SELECT replace(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
+SET sql_mode=(SELECT CONCAT(@@sql_mode, 'ONLY_FULL_GROUP_BY', ''));
+
+-- 100% dùng ONLY __ mode
+-- KHi có group by , thuộc tính xuất hiện ở SELECT thì phải thuộc trong group by , ngoại trừ các hàm 
+-- để xử lý dữ liệu trên từng nhóm 
+
+-- COUNT(*): Đếm số lượng 
+-- COUNT(columen_name) : Đếm số dòng có colume_name value != null
+
+SELECT * from t999_logger;
+INSERT INTO t999_logger(C999_MESSAGE, C999_LEVEL)
+VALUES ('M1', 'L1'),
+	   ('M2', 'L2'),
+       (null, null),
+       (null, 'L3');
+SELECT COUNT(*) FROM t999_logger;
+SELECT COUNT(C999_MESSAGE) FROM t999_logger;
+SELECT COUNT(C999_LEVEL) FROM t999_logger;
+
+-- câu hỏi 1: Đếm số lượng mặt hàng trên từng mặt hàng trên từng loại hàng 
+SELECT  C01_ITEM_GROUP_ID, 
+		COUNT(*) AMOUNT_OF_ITEMS,
+        GROUP_CONCAT(C01_ITEM_NAME SEPARATOR ', ') ITEM_NAMES
+from t01_item
+GROUP BY C01_ITEM_GROUP_ID
+HAVING AMOUNT_OF_ITEMS > 2;
+;
+
+
+-- Câu hỏi 2 : Liệt kê các mặt hàng thuộc loại hàng that lưng, quần có giá trung bình > 300
+-- thông tin trả về gồm MaMH, TenMH, GiaTrungBinh,  TenLoaiHang
+
+SELECT t01.C01_ITEM_ID,
+	t01.C01_ITEM_NAME,
+AVG(t03.C03_SALES_PRICE) AVG_PRICE   ,
+t02.C02_ITEM_GROUP_NAME
+from t01_item t01 
+JOIN t03_item_detail t03 ON t03.C03_ITEM_ID = t01.C01_ITEM_ID
+JOIN t02_item_group t02 ON t02.C02_ITEM_GROUP_ID = t01.C01_ITEM_GROUP_ID
+WHERE t02.C02_ITEM_GROUP_NAME IN ('Thắt lưng', 'Quần')
+GROUP BY t01.C01_ITEM_ID, t01.C01_ITEM_NAME, t02.C02_ITEM_GROUP_NAME
+HAVING AVG_PRICE > 300
+ORDER BY AVG_PRICE DESC;
+
 
 
 -- ======================= REFRESH DATA - DEMO MULTI TABLES AND GROUPING =======================
@@ -74,10 +129,19 @@ SELECT * FROM t04_order WHERE C04_ORDER_TIME BETWEEN '2024-11-28 00:00:00' AND '
  SELECT * FROM t01_item
  INNER JOIN t03_item_detail ON t01_item.C01_ITEM_ID = t03_item_detail.C03_ITEM_ID
  ORDER BY C03_SALES_PRICE;
--- 12. Sắp xếp các mặt hàng với giá mua giảm dần
+-- 12. Sắp xếp các mặt hàng với giá mua (mới nhất, nếu thời gian trùng nhau --> só lượng lớn hơn) giảm dần
 SELECT * FROM t01_item
  INNER JOIN t101_supplier_chain ON t01_item.C01_ITEM_ID = t101_supplier_chain.C101_ITEM_ID
  ORDER BY C01_BUY_PRICE DESC;
+ 
+ SELECT t01.C01_ITEM_ID 
+		MAX(t01.C101_ENTERING_DATE)
+ FROM t01_item
+ INNER JOIN t101_supplier_chain ON t01_item.C01_ITEM_ID = t101_supplier_chain.C101_ITEM_ID
+ GROUP BY C01_ITEM_ID
+ ORDER BY C01_BUY_PRICE DESC
+ 
+ 
 -- 13. Sắp xếp các mặt hàng với giá bán tăng dần, giá mua giảm dần
  SELECT T01_ITEM.C01_ITEM_ID, T03_ITEM_DETAIL.C03_SALES_PRICE, T101_SUPPLIER_CHAIN.C01_BUY_PRICE FROM t01_item
  INNER JOIN t03_item_detail ON t01_item.C01_ITEM_ID = t03_item_detail.C03_ITEM_ID
