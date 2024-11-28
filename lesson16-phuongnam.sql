@@ -111,10 +111,18 @@ VALUES
 SELECT C02_NAME_EMP, C04_WORKING_HOURS FROM t02_employee 
 JOIN t04_project_detail
 WHERE t02_employee.C02_ID_EMP = t04_project_detail.C04_ID_EMP 
-AND C04_WORKING_HOURS > 8
+AND C04_WORKING_HOURS > 8;
 --
 -- 3. Liệt kê các nhân viên có mức lương >= mức lương của người giám sát/quản lý trực tiếp nhân viên đó
---
+SELECT employee.C02_ID_EMP,
+	   employee.C02_NAME_EMP,
+	   manager.C02_EMP_MANAGER_ID
+from t02_employee employee
+JOIN t02_employee manager
+ON employee.C02_ID_EMP = manager.C02_ID_EMP
+AND employee.C02_SALARY >= manager.C02_SALARY
+
+
 -- 4. Liệt kê các phòng ban có số lượng nhân viên lớn hơn *?*
 --
 -- 5. Liệt kê các nhân viên đã làm việc cho công ty hơn ?*? năm
