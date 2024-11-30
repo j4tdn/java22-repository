@@ -73,7 +73,8 @@ VALUES
 (3, "Nguyễn Thị C", "Quảng Nam", "900000", 0, "1997-04-02", "2023-09-08", 2 , 2 ),
 (4, "Nguyễn Văn B", "Quảng Nam", "800000", 1, "1997-12-10", "2023-09-08", 0 , 1 ),
 (5, "Nguyễn Văn D", "Huế", "800000", 1, "1998-06-20", "2024-07-08", 0 , 3 ),
-(6, "Nguyễn Văn E", "Huế", "800000", 1, "1999-06-10", "2024-07-12", 5 , 3 );
+(6, "Nguyễn Văn E", "Huế", "800000", 1, "1999-06-10", "2024-07-12", 5 , 3 ),
+(7, "Nguyễn Thị F", "TPHCM", "700000", 1, "1998-03-10", "2024-03-29", 0 , 2 );
 
 INSERT INTO t03_project
 VALUES
@@ -105,27 +106,60 @@ VALUES
 (17, 5, 3, 4);
 
 -- 1. Liệt kê các dự án diễn ra trong năm *?* có số tiền thu được trên *?* triệu VND
- SELECT * FROM t03_project where year(C03_BEGIN_DATE) = 2024 AND C03_PROCEEDS > 8000000;
+SELECT * FROM t03_project where year(C03_BEGIN_DATE) = 2024 AND C03_PROCEEDS > 8000000;
 -- 2. Liệt kê các nhân viên đã tham gia hơn ?*? giờ trong các dự án, hiển thị chi tiết số giờ trong mỗi
 -- dự án mà nhân viên tham gia
-SELECT C02_NAME_EMP, C04_WORKING_HOURS FROM t02_employee 
+SELECT C02_NAME_EMP, C04_WORKING_HOURS, C04_ID_PROJECT FROM t02_employee 
 JOIN t04_project_detail
 WHERE t02_employee.C02_ID_EMP = t04_project_detail.C04_ID_EMP 
 AND C04_WORKING_HOURS > 8;
 --
 -- 3. Liệt kê các nhân viên có mức lương >= mức lương của người giám sát/quản lý trực tiếp nhân viên đó
+
 SELECT employee.C02_ID_EMP,
 	   employee.C02_NAME_EMP,
-	   manager.C02_EMP_MANAGER_ID
-from t02_employee employee
-JOIN t02_employee manager
-ON employee.C02_ID_EMP = manager.C02_ID_EMP
-AND employee.C02_SALARY >= manager.C02_SALARY
+       employee.C02_SALARY,
+	   manager.C02_EMP_MANAGER_ID,
+       manager.C02_SALARY
+FROM t02_employee employee
+LEFT JOIN t02_employee manager
+ON employee.C02_EMP_MANAGER_ID = manager.C02_ID_EMP
+AND employee.C02_SALARY >= manager.C02_SALARY;
 
 
 -- 4. Liệt kê các phòng ban có số lượng nhân viên lớn hơn *?*
---
+
+SELECT C01_ID_DEPT, C01_DEPT_NAME, count(C01_ID_DEPT) AS Employee_Amount
+FROM t02_employee
+JOIN t01_department
+ON t02_employee.C02_ID_DEPT = t01_department.C01_ID_DEPT
+GROUP BY C02_ID_DEPT
+HAVING COUNT(C02_ID_EMP) > 1;
+
+
 -- 5. Liệt kê các nhân viên đã làm việc cho công ty hơn ?*? năm
+SELECT C02_NAME_EMP,
+	   TIMESTAMPDIFF(YEAR, C02_JOIN_DATE, CURDATE()) AS YearsWorked
+FROM t02_employee
+WHERE TIMESTAMPDIFF(YEAR, C02_JOIN_DATE, CURDATE()) > 1;
+
+-- 6. Liệt kê các nhân viên vừa là trưởng phòng ban, và là quản lý dự án
+
+SELECT DISTINCT C02_ID_EMP, C02_NAME_EMP
+FROM t01_department 
+JOIN t02_employee
+ON t01_department.C01_ID_HEAD_DEPT= t02_employee.C02_ID_EMP
+JOIN t03_project
+ON t02_employee.C02_ID_EMP = t03_project.C03_ID_PROJECT_MANAGER;
+
+-- 7. Liệt kê các nhân viên quản lý nhiều hơn 1 dự án
+SELECT C02_ID_EMP, C02_NAME_EMP, COUNT(C02_ID_DEPT) As Amount_Project 
+FROM t02_employee
+JOIN t03_project
+ON t02_employee.C02_ID_EMP = t03_project.C03_ID_PROJECT_MANAGER
+GROUP BY C02_ID_EMP
+HAVING COUNT(C02_ID_EMP) > 1
+
 
 
 
