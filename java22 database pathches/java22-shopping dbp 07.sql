@@ -1,0 +1,8 @@
+-- create table logger
+CREATE TABLE T999_LOGGER(
+	C999_MESSAGE TEXT,
+    C999_LEVEL TEXT
+);
+
+-- update primary key
+-- ALTER TABLE T05_ORDER_DETAIL DROP PRIMARY KEY;
