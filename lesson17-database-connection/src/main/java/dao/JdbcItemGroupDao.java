@@ -1,0 +1,78 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import connection.DbConnection;
+import persistence.ItemGroup;
+import utils.SqlUtils;
+
+public class JdbcItemGroupDao implements ItemGroupDao{
+
+	private static final String Q_GET_ALL = ""
+			+ "SELECT C02_ITEM_GROUP_ID AS groupId,\n "
+			+ "		C02_ITEM_GROUP_NAME AS groupName\n"
+			+ " FROM T02_ITEM_GROUP";
+	
+	private static final String Q_GET_ITEM_GROUP_BY_ID = ""
+			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_ID = " ;
+		
+	private Connection connection;
+	private Statement st; // thực thi câu sql hoàn chỉnh: createStatement() --> ...executeQuery...(sql)
+	
+	private ResultSet rs;
+	
+	public JdbcItemGroupDao() {
+		connection = DbConnection.getConnection();
+	}
+	
+	@Override
+	public List<ItemGroup> getAll() {
+		List<ItemGroup> groups = new ArrayList<ItemGroup>();
+		try {
+			st = connection.createStatement();
+			rs = st.executeQuery(Q_GET_ALL);
+			while(rs.next()) {
+				// hoạt động với column hoặc alias
+//				Integer id = rs.getInt("C02_ITEM_GROUP_ID");
+				Integer id = rs.getInt("groupId");
+				String name = rs.getString("groupName");		
+				ItemGroup group = new ItemGroup(id, name);
+				groups.add(group);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) {
+				SqlUtils.close(rs, st);
+			}
+		}
+		
+		return groups;
+	}
+
+	@Override
+	public ItemGroup get(Integer id) {
+		ItemGroup group = null; 
+		String sql = Q_GET_ITEM_GROUP_BY_ID + id;
+		try {
+			st = connection.createStatement();
+			rs = st.executeQuery(Q_GET_ALL);
+			if(rs.next()) {
+				group = new ItemGroup(rs.getInt("C02_ITEM_GROUP_ID"), rs.getString("C02_ITEM_GROUP_NAME"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) {
+				SqlUtils.close(rs, st);
+			}
+		}
+		return group;
+	}
+	
+}
