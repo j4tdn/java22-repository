@@ -13,6 +13,8 @@ public class JdbcExam {
 	}
 	public static void main(String[] args) {
 //		generate("1. List all student by class id", studentService.getStudent(2));
+		generate("1. List all student by class id", studentService.getStudent(2));
+//		studentService.getStudent(2);
 		
 		System.out.println("\n3.Count/Statistic amount of students per class");
 		studentService.amountOfStudent(2);

@@ -49,16 +49,17 @@ public class Student {
 		this.classId = classId;
 	}
 
-//	@Override
-//	public boolean equals(Object o) {
-//		if(this == o) {
-//			return true;
-//		}
-//		if(!(o instanceof Student that)) {
-//			return false;
-//		}
-//		return getId() == that.getId();
-//	}
+
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) {
+			return true;
+		}
+		if(!(o instanceof Student that)) {
+			return false;
+		}
+		return getId() == that.getId();
+	}
 	
 	@Override
 	public String toString() {

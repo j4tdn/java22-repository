@@ -16,7 +16,7 @@ public class JdbcStudentDao implements StudentDao{
 	private PreparedStatement pst;
 	private ResultSet rs;
 	
-	private static String Q_GET_STUDENT = "" + "SELECT * FROM STUDENT = ?";
+	private static String Q_GET_STUDENT = "" + "SELECT * FROM STUDENT WHERE ID = ?";
 	
 	private static String Q_GET_AMOUNT = "" + "select count(id) from student where student.class_id = ?";
 	
@@ -31,6 +31,8 @@ public class JdbcStudentDao implements StudentDao{
 		try {
 			pst = connection.prepareStatement(Q_GET_STUDENT);
 			pst.setInt(1, id);
+
+			rs = pst.executeQuery();
 			while(rs.next()) {
 				Integer idd = rs.getInt("ID");
 				String name = rs.getString("NAME");
