@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Class"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.Driver"/>
+    <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.protocol.Resultset"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.lang.AutoCloseable"/>
+    <fullyQualifiedTypeName name="dao.JdbcItemGroupDao"/>
+    <fullyQualifiedTypeName name="service.ItemGroupService"/>
+    <fullyQualifiedTypeName name="service.ItemGroupServiceImpl"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="E"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.jdbc.CallableStatement"/>
+    <fullyQualifiedTypeName name="java.sql.CallableStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Types"/>
+    <fullyQualifiedTypeName name="java.lang.IllegalAccessError"/>
+    <fullyQualifiedTypeName name="dao.ItemGroupDao"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="connection.DbConnection"/>
+    <fullyQualifiedTypeName name="dao.base.GenericDao"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.mysql.cj.x.protobuf.MysqlxConnection.Close"/>
+    <fullyQualifiedTypeName name="utils.SqlUtils"/>
+    <fullyQualifiedTypeName name="service.ItemService"/>
+    <fullyQualifiedTypeName name="service.ItemServiceImpl"/>
+    <fullyQualifiedTypeName name="utils.PrintUtils"/>
+    <fullyQualifiedTypeName name="dao.ItemDao"/>
+    <fullyQualifiedTypeName name="dao.JdbcItemDao"/>
+    <fullyQualifiedTypeName name="persistence.Item"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
+    <fullyQualifiedTypeName name="persistence.ItemGroup"/>
+</qualifiedTypeNameHistroy>

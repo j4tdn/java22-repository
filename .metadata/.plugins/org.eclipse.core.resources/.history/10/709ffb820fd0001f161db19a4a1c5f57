@@ -1,0 +1,22 @@
+package view;
+
+import service.ItemService;
+import service.ItemServiceImpl;
+
+import static utils.PrintUtils.*;
+
+public class Ex03ItemView {
+
+	private static ItemService itemService;
+	
+	static {
+		itemService = new ItemServiceImpl();
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Bắt đầu chương trình");
+		System.out.println("==================\n");
+		
+		generate("7. Liệt kê tất cả loại hàng", itemService.getAll());
+	}
+}

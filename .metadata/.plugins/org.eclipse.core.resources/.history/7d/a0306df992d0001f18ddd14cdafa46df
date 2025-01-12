@@ -1,0 +1,79 @@
+package persistence.dto;
+
+import java.util.Objects;
+
+import persistence.Item;
+
+public class ItemGroupDto {
+
+	private Integer id;
+	private String name;
+	private Integer amountOfItem;
+	private String details;
+	
+	public ItemGroupDto() {
+	}
+
+	public ItemGroupDto(Integer id, String name, Integer amountOfItem, String details) {
+		this.id = id;
+		this.name = name;
+		this.amountOfItem = amountOfItem;
+		this.details = details;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Integer getAmountOfItem() {
+		return amountOfItem;
+	}
+
+	public void setAmountOfItem(Integer amountOfItem) {
+		this.amountOfItem = amountOfItem;
+	}
+
+	
+	public String getDetails() {
+		return details;
+	}
+
+	public void setDetails(String details) {
+		this.details = details;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if(this == o) {
+			return true;
+		}
+		if(!(o instanceof ItemGroupDto that)) {
+			return false;
+		}
+		return getId() == that.getId();
+	}
+
+	
+	@Override
+	public String toString() {
+		return "ItemGroupDto [id=" + id + ", name=" + name + ", amountOfItem=" + amountOfItem + 
+				", details=" + details+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
+	}
+}

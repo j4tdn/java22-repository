@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+D:\java22\4. Database Connection\.metadata\.plugins\org.eclipse.jdt.core
+577052942.index
+4238912947.index
+1865797976.index
+151954762.index
+2216368847.index
