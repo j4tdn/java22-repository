@@ -1,0 +1,15 @@
+Thông thường 
+
+tìm và download thư viện về máy
+
+import thư viện đó vào dự án cần dùng 
+
+maven 
+
+khai báo trong file pom.xml các thư viênj ̣ dependency cần dùng vào dự án 
+
+save pom kiểm tra trong đường dẫn ở ổ c 
+	 nếu denpendency chưa có trong m2 download từ maven central 
+	 nếu đã có rồi thì ko cần download 
+import thư viện đó vào dự án cần dùng 
+
