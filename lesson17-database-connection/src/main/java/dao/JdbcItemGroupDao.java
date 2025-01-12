@@ -1,0 +1,136 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import connection.DbConnection;
+import persistence.ItemGroup;
+import utils.SqlUtils;
+
+public class JdbcItemGroupDao implements ItemGroupDao {
+
+	private static final String Q_GET_ALL = "SELECT * FROM T02_ITEM_GROUP";
+	private static final String Q_GET_ITEM_GROUP_BY_ID = ""
+			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_ID = ?";
+	
+	private static final String Q_GET_ITEM_GROUP_BY_NAME = ""
+			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_NAME = ?";
+	
+	private static final String Q_INSERT_INTO_ITEM_GROUP = ""
+			+ "INSERT INTO T02_ITEM_GROUP(C02_ITEM_GROUP_NAME)"
+			+ "VALUES(?)";
+	
+	private static final String Q_UPDATE_ITEM_GROUP = ""
+			+ "UPDATE T02_ITEM_GROUP\n"
+			+ "  SET C02_ITEM_GROUP_NAME = ?\n"
+			+ " WHERE C02_ITEM_GROUP_ID = ?"; 
+	
+	private Connection connection;
+	private Statement st;           //Thực thi câu sql hoàn chỉnh: createStatement() -> execute...(sql)
+	private PreparedStatement pst;  //Thực thi câu sql có tham số, trước khi execute .. truyền giá trị cho tham số rồi execute
+	private ResultSet rs;
+	
+	
+	public JdbcItemGroupDao() {
+		connection = DbConnection.getConnection();
+		
+		
+	}
+	
+	@Override
+	public List<ItemGroup> getAll() {
+		List<ItemGroup> groups = new ArrayList<>();
+		try {
+			st = connection.createStatement(); // tao doi tuong statement
+			rs = st.executeQuery(Q_GET_ALL);
+			while(rs.next()) {
+				Integer id = rs.getInt("C02_ITEM_GROUP_ID");
+				String name = rs.getString("C02_ITEM_GROUP_NAME");
+				ItemGroup group = new ItemGroup(id, name);
+				groups.add(group);		}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(rs, st);
+		}
+		return groups;
+	}
+	
+	@Override
+	public ItemGroup get(Integer id) {
+		ItemGroup group = null;
+//		String sql = Q_GET_ITEM_GROUP_BY_ID + id;
+		try {
+			pst = connection.prepareStatement(Q_GET_ITEM_GROUP_BY_ID); // tao doi tuong statement
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+			
+				group = new ItemGroup(rs.getInt("C02_ITEM_GROUP_ID"), rs.getString("C02_ITEM_GROUP_NAME"));
+			}		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(rs, pst);
+		}
+		return group;
+		
+	}
+
+	@Override
+	public void save(ItemGroup group) {
+		
+		try {
+			pst = connection.prepareStatement(Q_INSERT_INTO_ITEM_GROUP);
+			pst.setString(1, group.getName());
+			pst.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(pst);
+		}
+	}
+
+	@Override
+	public void update(ItemGroup group) {
+		try {
+			pst = connection.prepareStatement(Q_UPDATE_ITEM_GROUP);
+			pst.setString(1, group.getName());
+			pst.setInt(2, group.getId());
+			pst.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(pst);
+		}
+		
+	}
+	
+	@Override
+	public ItemGroup get(String name) {
+		ItemGroup group = null;
+//		String sql = Q_GET_ITEM_GROUP_BY_ID + id;
+		try {
+			pst = connection.prepareStatement(Q_GET_ITEM_GROUP_BY_NAME); // tao doi tuong statement
+			pst.setString(1, name);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+			
+				group = new ItemGroup(rs.getInt("C02_ITEM_GROUP_ID"), rs.getString("C02_ITEM_GROUP_NAME"));
+			}		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(rs, pst);
+		}
+		return group;
+		
+	}
+
+}
