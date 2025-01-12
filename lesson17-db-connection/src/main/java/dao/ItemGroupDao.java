@@ -3,10 +3,13 @@ package dao;
 import java.util.List;
 
 import persistence.ItemGroup;
+import persistence.dto.ItemGroupDto;
 
 public interface ItemGroupDao {
 	
 	List<ItemGroup> getAll(); // Get All item group 
+	
+	List<ItemGroupDto> getItemGroupDetails();
 	
 	ItemGroup get(Integer id);
 	
