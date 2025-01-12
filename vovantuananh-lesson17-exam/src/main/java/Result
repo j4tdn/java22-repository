@@ -1,0 +1,19 @@
+1. Khóa chính của bảng Result là Cột dùng để nhận diện các hàng dữ liệu trong bảng
+(Phân biệt các hàng dữ liệu với nhau nếu như có các bảng có một số trường dữ liệu trùng nhau)
+
+2. SELECT Student.name student_name,
+	Student.gender student_gender,
+    Class.teacher teacher
+FROM Student
+JOIN Class
+ON Student.class_id = Class.id;
+
+3.SELECT Class.teacher,
+	COUNT(Student.id)
+FROM Class
+JOIN Student
+ON Class.id = Student.class_id
+WHERE Class.name = '12C'
+GROUP BY Class.teacher;
+
+4.
