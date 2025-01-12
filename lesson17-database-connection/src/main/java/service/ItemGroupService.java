@@ -20,5 +20,53 @@ public interface ItemGroupService {
 	 * @return available {@link ItemGroup} or null if not exist
 	 */
 	
-	ItemGroup get(Integer id);	
+	ItemGroup get(Integer id);
+	
+	/**
+	 * Get unique {@link ItemGroup} with given name
+	 * @param name the name
+	 * @return available {@link ItemGroup} or null if not exist
+	 */
+	
+	ItemGroup get(String name);
+	
+	/**
+	 * Save group to database
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 * TODO: need validate before saving ...
+	 */
+	void save(ItemGroup group);
+	
+	/**
+	 * Save groups to database
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 * TODO: need validate before saving ...
+	 */
+	void save(List<ItemGroup> groups);
+	
+	/**
+	 * Update item group
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 */
+	void update(ItemGroup group);
+	
+	/**
+	 * Save or Update item group
+	 * 
+	 * @param group the group
+	 */
+	void saveOfUpdate(ItemGroup group);
+	
+	/**
+	 * Merge item group
+	 * 
+	 * @param group the group
+	 */
+	void merge(ItemGroup group);
 }

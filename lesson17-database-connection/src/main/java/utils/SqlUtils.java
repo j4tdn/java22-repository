@@ -5,7 +5,7 @@ public class SqlUtils {
 	private SqlUtils() {
 	}
 	
-	public static void close(AutoCloseable ...objectsTobeClosed) {
+	public static void close(AutoCloseable ... objectsTobeClosed) {
 		try {
 			for(AutoCloseable object: objectsTobeClosed) {
 				if(object != null) {

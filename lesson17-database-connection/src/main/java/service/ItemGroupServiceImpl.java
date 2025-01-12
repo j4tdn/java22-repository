@@ -25,5 +25,52 @@ public class ItemGroupServiceImpl implements ItemGroupService{
 		Objects.requireNonNull(id, "group id should not be null !");
 		return itemGroupDao.get(id);
 	}
-
+	
+	@Override
+	public ItemGroup get(String name) {
+		Objects.requireNonNull(name, "group name should not be null !");
+		return itemGroupDao.get(name);
+	}
+	
+	@Override
+	public void save(ItemGroup group) {
+		Objects.requireNonNull(group, "group id should not be null !");
+		String gname = group.getName();
+		if(get(gname) == null) {	
+			itemGroupDao.save(group);
+		} else {
+			// should be throw exception
+			System.out.println(">>> Exp: Group '" + gname + "' is existed already");
+		}
+	}
+	
+	@Override
+	public void save(List<ItemGroup> groups) {
+		if(groups == null || groups.isEmpty()) {
+			throw new IllegalArgumentException("Parameter 'groups' is invalid ....");
+		}
+		itemGroupDao.save(groups);
+	}
+	
+	@Override
+	public void update(ItemGroup group) {
+		Objects.requireNonNull(group, "group id should not be null !");
+		itemGroupDao.update(group);
+	}
+	
+	@Override
+	public void saveOfUpdate(ItemGroup group) {
+		Objects.requireNonNull(group, "group id should not be null !");
+		if(group.getId() == null) {
+			save(group);
+		}else {
+			update(group);
+		}
+	}
+	
+	@Override
+	public void merge(ItemGroup group) {
+		Objects.requireNonNull(group, "group id should not be null !");
+		itemGroupDao.merge(group);
+	}
 }

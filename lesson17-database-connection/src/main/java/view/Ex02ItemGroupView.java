@@ -5,6 +5,10 @@ import service.ItemGroupServiceImpl;
 
 import static utils.PrintUtils.*;
 
+import java.util.List;
+
+import persistence.ItemGroup;
+
 public class Ex02ItemGroupView {
 	
 	private static ItemGroupService itemGroupService;	
@@ -13,15 +17,48 @@ public class Ex02ItemGroupView {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println("Bắt đầu chương trình");
+		System.out.println("\n==================\n");
+		
 		generate(
 				"1. Liệt kê tất cả các loại hàng", 
 				itemGroupService.getAll()
 		);
 		
 		generate(
-				"2. Liệt kê loại hàng có mã loại = 4", 
-				itemGroupService.get(4)
+				"2. Liệt kê loại hàng có mã loại = 62", 
+				itemGroupService.get(62)
 		);
+		
+		 System.out.println("\n3. Thêm mới loại hàng\n");
+		 itemGroupService.merge(new ItemGroup("Balo học sinh"));
+		
+		System.out.println("\n4. Cập nhật loại hàng\n");
+		itemGroupService.merge(new ItemGroup(1, "Áo trẻ em"));
+		
+		// sql injection
+		// escape: if letter matches ' "" ; * .... -> convert to unicode ...\\u ...
+		//		   make sure all pasing text is normal letter
+		generate(
+				"5. Liệt kê loại hàng có tên loại = Quần", 
+				itemGroupService.get("Quần")
+		);
+		
+		// Thêm N phần tử
+		// Nếu có 1/x phần tử lỗi --> các phần tử còn lại vẫn được thêm vào
+		// Yêu cầu: Nếu tồn tại 1 loại hàng bị lỗi --> rollback toàn bộ dữ liệu về ban đầu
+		System.out.println("\n6.Thêm mới N loại hàng\n");
+		itemGroupService.save(
+			List.of(
+				new ItemGroup("Loại Hàng G6"),
+				new ItemGroup("Loại Hàng G7"),
+				new ItemGroup("Loại Hàng G3"),
+				new ItemGroup("Loại Hàng G8")
+			)
+		);
+		
+		System.out.println("\n==================\n");
+		System.out.println("Kết thúc chương trình");
 	}
 	
 }

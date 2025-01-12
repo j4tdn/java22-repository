@@ -1,10 +1,13 @@
 package dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import connection.DbConnection;
@@ -19,11 +22,27 @@ public class JdbcItemGroupDao implements ItemGroupDao{
 			+ " FROM T02_ITEM_GROUP";
 	
 	private static final String Q_GET_ITEM_GROUP_BY_ID = ""
-			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_ID = " ;
+			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_ID = ?" ;
+	
+	private static final String Q_GET_ITEM_GROUP_BY_NAME = ""
+			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_NAME = ?" ;
+	
+	private static final String Q_INSERT_INTO_ITEM_GROUP = ""
+			+ "INSERT INTO T02_ITEM_GROUP(C02_ITEM_GROUP_NAME)"
+			+ "VALUES(?)";
+	
+	private static final String Q_UPDATE_INTO_ITEM_GROUP = ""
+			+ "UPDATE T02_ITEM_GROUP\n"
+			+ "  SET C02_ITEM_GROUP_NAME = ?\n"
+			+ " WHERE C02_ITEM_GROUP_ID = ?";
+	
+	private static final String Q_MERGE_ITEM_GROUP = ""
+			+ "CALL mergeNewItemGroup(?,?)";
 		
 	private Connection connection;
-	private Statement st; // thực thi câu sql hoàn chỉnh: createStatement() --> ...executeQuery...(sql)
-	
+	private Statement st; // thực thi câu sql hoàn chỉnh: createStatement() --> ...execute...(sql)
+	private PreparedStatement pst; // Thực thi câu sql có tham số, trước khi execute... truyền giá trị cho tham số rồi execute
+	private CallableStatement cst; // Thực thi stored procedure, function
 	private ResultSet rs;
 	
 	public JdbcItemGroupDao() {
@@ -32,12 +51,12 @@ public class JdbcItemGroupDao implements ItemGroupDao{
 	
 	@Override
 	public List<ItemGroup> getAll() {
-		List<ItemGroup> groups = new ArrayList<ItemGroup>();
+		List<ItemGroup> groups = new ArrayList<>();
 		try {
 			st = connection.createStatement();
 			rs = st.executeQuery(Q_GET_ALL);
 			while(rs.next()) {
-				// hoạt động với column hoặc alias
+				// hoạt động với column name hoặc alias
 //				Integer id = rs.getInt("C02_ITEM_GROUP_ID");
 				Integer id = rs.getInt("groupId");
 				String name = rs.getString("groupName");		
@@ -47,9 +66,7 @@ public class JdbcItemGroupDao implements ItemGroupDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(rs != null) {
-				SqlUtils.close(rs, st);
-			}
+			SqlUtils.close(rs, st);
 		}
 		
 		return groups;
@@ -57,22 +74,97 @@ public class JdbcItemGroupDao implements ItemGroupDao{
 
 	@Override
 	public ItemGroup get(Integer id) {
-		ItemGroup group = null; 
-		String sql = Q_GET_ITEM_GROUP_BY_ID + id;
+		ItemGroup group = null;
 		try {
-			st = connection.createStatement();
-			rs = st.executeQuery(Q_GET_ALL);
+			pst = connection.prepareStatement(Q_GET_ITEM_GROUP_BY_ID); //sql có tham số	
+			pst.setInt(1, id); // set giá trị cho tham số
+			rs = pst.executeQuery(); // thực thi câu sql của pst
 			if(rs.next()) {
 				group = new ItemGroup(rs.getInt("C02_ITEM_GROUP_ID"), rs.getString("C02_ITEM_GROUP_NAME"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			if(rs != null) {
-				SqlUtils.close(rs, st);
-			}
+			SqlUtils.close(rs, pst);
 		}
 		return group;
+	}
+	
+	@Override
+	public ItemGroup get(String name) {
+		ItemGroup group = null;
+		try {
+			pst = connection.prepareStatement(Q_GET_ITEM_GROUP_BY_NAME); 
+			pst.setString(1, name);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				group = new ItemGroup(rs.getInt("C02_ITEM_GROUP_ID"), rs.getString("C02_ITEM_GROUP_NAME"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(rs, pst);
+		}
+		return group;
+	}
+
+	@Override
+	public void save(ItemGroup group) {
+		try {
+			pst = connection.prepareStatement(Q_INSERT_INTO_ITEM_GROUP); 
+			pst.setString(1, group.getName()); 
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(pst);
+		}
+	}	
+	
+	@Override
+	public void save(List<ItemGroup> groups) {
+		try {
+			pst = connection.prepareStatement(Q_INSERT_INTO_ITEM_GROUP); //no change
+			for(ItemGroup group: groups) {
+				pst.setString(1, group.getName());
+				pst.addBatch(); // mới
+			}
+			int[] affectedRows = pst.executeBatch(); // mới
+			System.out.println("affectedRows --> " + Arrays.toString(affectedRows));
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(pst);
+		}
+	}
+	
+	@Override
+	public void update(ItemGroup group) {
+		try {
+			pst = connection.prepareStatement(Q_UPDATE_INTO_ITEM_GROUP); 
+			pst.setString(1, group.getName());
+			pst.setInt(2, group.getId());
+			pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(pst);
+		}
+	}
+	
+	@Override
+	public void merge(ItemGroup group) {
+		try {
+			cst = connection.prepareCall(Q_MERGE_ITEM_GROUP); 
+			//cst.setInt(1, group.getId()); //  Cannot invoke "java.lang.Integer.intValue()" because the return value of "persistence.ItemGroup.getId()" is null
+			cst.setObject(1, group.getId());
+			cst.setString(2, group.getName());
+			cst.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(cst);
+		}
 	}
 	
 }

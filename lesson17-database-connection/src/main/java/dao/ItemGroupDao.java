@@ -23,4 +23,44 @@ public interface ItemGroupDao {
 	
 	ItemGroup get(Integer id);
 	
+	/**
+	 * Get unique {@link ItemGroup} with given name
+	 * @param id the id
+	 * @return available {@link ItemGroup} or null if not exist
+	 */
+	
+	ItemGroup get(String name);
+	
+	/**
+	 * Save group to database
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 */
+	void save(ItemGroup group);
+	
+	/**
+	 * Save groups to database
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 * TODO: need validate before saving ...
+	 */
+	void save(List<ItemGroup> groups);
+	
+	/**
+	 * Update item group
+	 * 
+	 * @param group the group
+	 * throw Exception if group name is overlapped
+	 */
+	void update(ItemGroup group);
+	
+	/**
+	 * Merge item group
+	 * 
+	 * @param group the group
+	 */
+	void merge(ItemGroup group);
+	
 }
