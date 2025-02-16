@@ -113,6 +113,24 @@ SELECT C02_NAME_EMP, C04_WORKING_HOURS, C04_ID_PROJECT FROM t02_employee
 JOIN t04_project_detail
 WHERE t02_employee.C02_ID_EMP = t04_project_detail.C04_ID_EMP 
 AND C04_WORKING_HOURS > 8;
+
+
+SELECT 
+    e.C02_ID_EMP AS EmployeeID,
+    e.C02_NAME_EMP AS EmployeeName,
+    p.C03_ID_PROJECT AS ProjectID,
+    p.C03_NAME_PROJECT AS ProjectName,
+    pd.C04_WORKING_HOURS AS WorkingHours
+FROM 
+    T02_EMPLOYEE e
+JOIN 
+    T04_PROJECT_DETAIL pd ON e.C02_ID_EMP = pd.C04_ID_EMP
+JOIN 
+    T03_PROJECT p ON pd.C04_ID_PROJECT = p.C03_ID_PROJECT
+WHERE 
+    pd.C04_WORKING_HOURS > 5
+ORDER BY 
+    e.C02_ID_EMP, p.C03_ID_PROJECT;
 --
 -- 3. Liệt kê các nhân viên có mức lương >= mức lương của người giám sát/quản lý trực tiếp nhân viên đó
 
@@ -126,6 +144,20 @@ LEFT JOIN t02_employee manager
 ON employee.C02_EMP_MANAGER_ID = manager.C02_ID_EMP
 AND employee.C02_SALARY >= manager.C02_SALARY;
 
+SELECT 
+    emp.C02_ID_EMP AS EmployeeID,
+    emp.C02_NAME_EMP AS EmployeeName,
+    emp.C02_SALARY AS EmployeeSalary,
+    mgr.C02_ID_EMP AS ManagerID,
+    mgr.C02_NAME_EMP AS ManagerName,
+    mgr.C02_SALARY AS ManagerSalary
+FROM 
+    T02_EMPLOYEE emp
+JOIN 
+    T02_EMPLOYEE mgr ON emp.C02_EMP_MANAGER_ID = mgr.C02_ID_EMP
+WHERE 
+    emp.C02_SALARY >= mgr.C02_SALARY;
+
 
 -- 4. Liệt kê các phòng ban có số lượng nhân viên lớn hơn *?*
 
@@ -135,6 +167,19 @@ JOIN t01_department
 ON t02_employee.C02_ID_DEPT = t01_department.C01_ID_DEPT
 GROUP BY C02_ID_DEPT
 HAVING COUNT(C02_ID_EMP) > 1;
+
+SELECT 
+    d.C01_ID_DEPT AS DepartmentID,
+    d.C01_DEPT_NAME AS DepartmentName,
+    COUNT(e.C02_ID_EMP) AS EmployeeCount
+FROM 
+    T01_DEPARTMENT d
+JOIN 
+    T02_EMPLOYEE e ON d.C01_ID_DEPT = e.C02_ID_DEPT
+GROUP BY 
+    d.C01_ID_DEPT, d.C01_DEPT_NAME
+HAVING 
+    COUNT(e.C02_ID_EMP) > 1;
 
 
 -- 5. Liệt kê các nhân viên đã làm việc cho công ty hơn ?*? năm
