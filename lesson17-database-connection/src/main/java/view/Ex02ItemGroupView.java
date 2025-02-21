@@ -48,13 +48,21 @@ public class Ex02ItemGroupView {
 		// Nếu có 1/x phần tử lỗi --> các phần tử còn lại vẫn được thêm vào
 		// Yêu cầu: Nếu tồn tại 1 loại hàng bị lỗi --> rollback toàn bộ dữ liệu về ban đầu
 		System.out.println("\n6.Thêm mới N loại hàng\n");
-		itemGroupService.save(
-			List.of(
-				new ItemGroup("Loại Hàng G6"),
-				new ItemGroup("Loại Hàng G7"),
-				new ItemGroup("Loại Hàng G3"),
-				new ItemGroup("Loại Hàng G8")
-			)
+//		itemGroupService.save(
+//			List.of(
+//				new ItemGroup("Loại Hàng G6"),
+//				new ItemGroup("Loại Hàng G7"),
+//				new ItemGroup("Loại Hàng G3"),
+//				new ItemGroup("Loại Hàng G8")
+//			)
+//		);
+
+		System.out.println("\n8. Liệt kê các loại hàng(kèm danh sách mặt hàng)");
+		itemGroupService.getGroupOfItems()
+			.forEach(group -> group.logging());
+		
+		generate("\n10.Đếm số lượng các mặt hàng theo từng loại hàng", 
+				itemGroupService.getItemGroupDetails()
 		);
 		
 		System.out.println("\n==================\n");

@@ -3,6 +3,7 @@ package service;
 import java.util.List;
 
 import persistence.ItemGroup;
+import persistence.dto.ItemGroupDto;
 
 public interface ItemGroupService {
 	
@@ -13,6 +14,20 @@ public interface ItemGroupService {
 	 */
 	
 	List<ItemGroup> getAll();
+	
+	/**
+	 * Get details info of each item group
+	 * 
+	 * @return list of {@link ItemGroupDto}
+	 */
+	List<ItemGroupDto> getItemGroupDetails();
+	
+	/**
+	 * Get all group of items
+	 * 
+	 * @return list of {@link ItemGroup}
+	 */
+	List<ItemGroup> getGroupOfItems();
 	
 	/**
 	 * Get unique {@link ItemGroup} with given id

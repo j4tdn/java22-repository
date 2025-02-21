@@ -1,0 +1,29 @@
+package dao.base;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+/**
+ * Generic base for all DAO classes
+ */
+import connection.DbConnection;
+
+/**
+ * Generic base for all DAO classes
+ */
+public class GenericDao {
+	
+	protected Connection connection;
+	protected Statement st; // thực thi câu sql hoàn chỉnh: createStatement() --> ...execute...(sql)
+	protected PreparedStatement pst; // Thực thi câu sql có tham số, trước khi execute... truyền giá trị cho tham số rồi execute
+	protected CallableStatement cst; // Thực thi stored procedure, function
+	protected ResultSet rs;
+	
+	public GenericDao() {
+		connection = DbConnection.getConnection();
+	}
+
+}
