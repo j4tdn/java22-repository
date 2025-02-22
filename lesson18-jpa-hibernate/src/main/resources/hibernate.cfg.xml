@@ -26,6 +26,8 @@
 		<mapping class="persistence.Tag"/>
 		<mapping class="persistence.Store"/>
 		<mapping class="persistence.ItemStoreRel"/>
+		<mapping class="persistence.ItemDetail"/>
+		<mapping class="persistence.Size"/>
 	</session-factory>
 
 </hibernate-configuration>

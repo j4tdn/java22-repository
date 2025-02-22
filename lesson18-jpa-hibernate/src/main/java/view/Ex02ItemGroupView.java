@@ -16,6 +16,14 @@ public class Ex02ItemGroupView {
 		System.out.println("Bắt đầu chương trình");
 		System.out.println("\n==================\n");
 		
+		
+		generate(
+			"5. Thống kê số lượng mặt hàng của từng loại hàng", 
+			itemGroupService.statisticItemGroupDetails()
+		);
+		
+		
+		/*
 		final var groups = itemGroupService.getAll();
 		
 		
@@ -29,7 +37,6 @@ public class Ex02ItemGroupView {
 			groups.get(0).getItems()
 		);
 		
-		/*
 		generate(
 			"1B. Liệt kê loại hàng theo mã loại", 
 			itemGroupService.get(2)

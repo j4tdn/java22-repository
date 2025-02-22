@@ -6,6 +6,7 @@ import java.util.Objects;
 import dao.HibernateItemGroupDao;
 import dao.ItemGroupDao;
 import persistence.ItemGroup;
+import persistence.dto.ItemGroupDto;
 
 public class ItemGroupServiceImpl implements ItemGroupService{
 
@@ -18,6 +19,11 @@ public class ItemGroupServiceImpl implements ItemGroupService{
 	@Override
 	public List<ItemGroup> getAll() {
 		return itemGroupDao.getAll();
+	}
+	
+	@Override
+	public List<ItemGroupDto> statisticItemGroupDetails() {
+		return itemGroupDao.statisticItemGroupDetails();
 	}
 	
 	@Override

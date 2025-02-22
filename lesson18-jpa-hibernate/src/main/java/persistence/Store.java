@@ -19,7 +19,7 @@ public class Store{
 	@Column(name = "C17_STORE_NAME")
 	private String name;
 	
-	@Column(name = "C17_STORE_ADDRESS")
+	@Column(name = "C17_ADDRESS")
 	private String address;
 	
 	@OneToMany(mappedBy = "store")
