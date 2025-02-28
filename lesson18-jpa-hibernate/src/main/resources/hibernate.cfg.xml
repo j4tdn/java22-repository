@@ -19,6 +19,11 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">false</property>
 		
+		<!-- 2nd level cache -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>
+		
 		<!-- Scan Entities -->
 		<mapping class="persistence.ItemGroup"/>
 		<mapping class="persistence.Item"/>
@@ -26,5 +31,7 @@
 		<mapping class="persistence.Tag"/>
 		<mapping class="persistence.Store"/>
 		<mapping class="persistence.ItemStoreRel"/>
+		<mapping class="persistence.ItemDetail"/>
+		<mapping class="persistence.Size"/>
 	</session-factory>
 </hibernate-configuration>

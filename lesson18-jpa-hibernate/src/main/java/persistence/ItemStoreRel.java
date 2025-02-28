@@ -72,6 +72,13 @@ public class ItemStoreRel {
 	public void setAssignedDate(LocalDate assignedDate) {
 		this.assignedDate = assignedDate;
 	}
+	
+	@Override
+	public String toString() {
+		return "ItemStoreRel [id=" + id + ", item=" + item + ", store=" + store + ", amountOfItems=" + amountOfItems
+				+ ", assignedDate=" + assignedDate + "]";
+	}
+
 
 	@Embeddable
 	public static class Id {
