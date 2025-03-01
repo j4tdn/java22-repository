@@ -10,10 +10,10 @@ import connection.DbConnection;
 
 public class GenericDao {
 	protected Connection connection;
-	protected Statement st;
-	protected PreparedStatement pst;// câu truy vấn có tham số
+	protected Statement st; // Thực thi câu sql hoàn chỉnh: createStatement() --> execute...(sql)
+	protected PreparedStatement pst;// Thực thi câu sql có tham số, trước khi execute... truyền giá trị cho tham số protected rồi execute
 	protected ResultSet rs;
-	protected CallableStatement cst;
+	protected CallableStatement cst; // Thực thi stored procedure, function
 	
 	public GenericDao() {
 		connection = DbConnection.getConnection();

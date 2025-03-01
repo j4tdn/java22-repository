@@ -48,6 +48,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="lesson18-jpa-hibernate"/>
 			<item value="lesson17-db-connection"/>
 			<item value="lesson17-database-connection"/>
 		</list>
