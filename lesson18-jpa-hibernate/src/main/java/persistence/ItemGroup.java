@@ -4,13 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedNativeQueries;
 import jakarta.persistence.NamedNativeQuery;
-import jakarta.persistence.NamedQueries;
-import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -26,6 +29,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "T02_ITEM_GROUP")
+@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @NamedNativeQueries(
 	@NamedNativeQuery(
 			name = ItemGroup.Q_GET_ALL,
@@ -37,6 +41,7 @@ public class ItemGroup {
 	public static final String Q_GET_ALL = "Q_GET_ALL";
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "C02_ITEM_GROUP_ID")
 	private Integer id;
 	
