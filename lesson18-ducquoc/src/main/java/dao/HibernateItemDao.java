@@ -35,6 +35,7 @@ public class HibernateItemDao extends GenericDao implements ItemDao {
 	public List<Item> getItemSoldOnDate(LocalDate date) {
 		return openSession()
 				.createNativeQuery(Q_GET_SOLD_ON_DATE,getEntityClass())
+				.setParameter("date", date) 
 				.getResultList();
 	}
 	
@@ -42,6 +43,7 @@ public class HibernateItemDao extends GenericDao implements ItemDao {
 	public List<Item> getItemsInYear(int year) {
 		return openSession()
 				.createNativeQuery(Q_GET_ITEM_IN_YEAR,getEntityClass())
+				.setParameter("year", year)
 				.getResultList();
 	}
 	
