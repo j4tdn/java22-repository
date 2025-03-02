@@ -25,8 +25,4 @@ public class PrintUtils {
 			);
 	}
 	
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9890bad (lesson18 02.03.2025)

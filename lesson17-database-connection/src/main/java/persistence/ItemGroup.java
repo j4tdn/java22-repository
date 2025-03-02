@@ -1,11 +1,19 @@
 package persistence;
 
+<<<<<<< HEAD
+=======
+import java.util.List;
+>>>>>>> 9890bad (lesson18 02.03.2025)
 import java.util.Objects;
 
 public class ItemGroup {
 	
 	private Integer id;
 	private String name;
+<<<<<<< HEAD
+=======
+	private List<Item> items;
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	
 	public ItemGroup() {
 	}
@@ -35,6 +43,17 @@ public class ItemGroup {
 		this.name = name;
 	}
 	
+<<<<<<< HEAD
+=======
+	public List<Item> getItems() {
+		return items;
+	}
+	
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+	
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) {
@@ -52,6 +71,18 @@ public class ItemGroup {
 	public int hashCode() {
 		return Objects.hash(getId());
 	}
+<<<<<<< HEAD
+=======
+	
+	public void logging() {
+		System.out.printf("Group(id=%s, name=%s)\n", getId(), getName());
+		System.out.println("------------------------------");
+		items.forEach(item -> {
+			System.out.printf("    + Item(id=%s, name=%s)\n", item.getId(), item.getName() );
+		});
+		System.out.println("\n");
+	}
+>>>>>>> 9890bad (lesson18 02.03.2025)
 
 	@Override
 	public String toString() {

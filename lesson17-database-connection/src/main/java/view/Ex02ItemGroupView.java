@@ -1,5 +1,6 @@
 package view;
 
+<<<<<<< HEAD
 import service.ItemGroupService;
 import service.ItemGroupServiceImpl;
 
@@ -8,6 +9,13 @@ import static utils.PrintUtils.*;
 import java.util.List;
 
 import persistence.ItemGroup;
+=======
+import static utils.PrintUtils.generate;
+
+import persistence.ItemGroup;
+import service.ItemGroupService;
+import service.ItemGroupServiceImpl;
+>>>>>>> 9890bad (lesson18 02.03.2025)
 
 public class Ex02ItemGroupView {
 	
@@ -50,18 +58,41 @@ public class Ex02ItemGroupView {
 		// Nếu có 1/x phần tử lỗi --> các phần tử còn lại vẫn được thêm vào
 		// Yêu cầu: nếu tồn tại 1 loại hàng bị lỗi --> rollback toàn bộ dữ liệu về ban đầu
 		System.out.println("\n6. Thêm mới N loại hàng\n");
+<<<<<<< HEAD
 		itemGroupService.save(
 			List.of(
 				new ItemGroup("Loại Hàng G8"),
 				new ItemGroup("Loại Hàng G9"),
 				new ItemGroup("Loại Hàng G10")
 			)
+=======
+//		itemGroupService.save(
+//			List.of(
+//				new ItemGroup("Loại Hàng G8"),
+//				new ItemGroup("Loại Hàng G9"),
+//				new ItemGroup("Loại Hàng G10")
+//			)
+//		);
+		
+		System.out.println("\n8. Liệt kê các loại hàng(kèm danh sách mặt hàng)");
+		itemGroupService.getGroupOfItems()
+			.forEach(group -> group.logging());
+		
+		generate(
+			"\n10. Đếm số lượng các mặt hàng theo từng loại hàng", 
+			itemGroupService.getItemGroupDetails()
+>>>>>>> 9890bad (lesson18 02.03.2025)
 		);
 		
 		System.out.println("\n==================");
 		System.out.println("Kết thúc chương trình");
+<<<<<<< HEAD
 		
 
 	}
 
 }
+=======
+	}
+}
+>>>>>>> 9890bad (lesson18 02.03.2025)

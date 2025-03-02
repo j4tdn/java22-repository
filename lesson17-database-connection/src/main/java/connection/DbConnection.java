@@ -15,6 +15,10 @@ public class DbConnection {
 	public static Connection getConnection() {
 		if (connection == null) {
 			Properties props = DbProvider.getProperties();
+<<<<<<< HEAD
+=======
+			
+>>>>>>> 9890bad (lesson18 02.03.2025)
 			try {
 				connection = DriverManager.getConnection(
 						props.getProperty("DB_CONFIG_URL"), 

@@ -1,0 +1,5 @@
+<!--<mapping class="persistence.Item"/>
+			 <mapping class="persistence.Post"/>
+		<mapping class="persistence.Tag"/>
+		<mapping class="persistence.Store"/>
+		<mapping class="persistence.ItemStoreRel"/>-->

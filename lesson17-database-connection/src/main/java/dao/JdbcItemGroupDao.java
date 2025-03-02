@@ -1,5 +1,6 @@
 package dao;
 
+<<<<<<< HEAD
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,21 +9,46 @@ import java.sql.SQLException;
 import java.sql.SQLType;
 import java.sql.Statement;
 import java.sql.Types;
+=======
+import java.sql.SQLException;
+>>>>>>> 9890bad (lesson18 02.03.2025)
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+<<<<<<< HEAD
 import connection.DbConnection;
 import persistence.ItemGroup;
 import utils.SqlUtils;
 
 public class JdbcItemGroupDao implements ItemGroupDao {
+=======
+import dao.base.GenericDao;
+import persistence.ItemGroup;
+import persistence.dto.ItemGroupDto;
+import utils.SqlUtils;
+
+public class JdbcItemGroupDao extends GenericDao implements ItemGroupDao {
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	
 	private static final String Q_GET_ALL = ""
 			+ "SELECT C02_ITEM_GROUP_ID AS groupId,\n"
 			+ "       C02_ITEM_GROUP_NAME AS groupName\n"
 			+ "  FROM T02_ITEM_GROUP";
 	
+<<<<<<< HEAD
+=======
+	private static final String Q_GET_ITEM_GROUP_DETAILS = ""
+			+ "SELECT t2.C02_ITEM_GROUP_ID groupId,\n"
+			+ "       t2.C02_ITEM_GROUP_NAME groupName,\n"
+			+ "       COUNT(*) amountOfItems,\n"
+			+ "       GROUP_CONCAT(C01_ITEM_NAME SEPARATOR ', ') details\n"
+			+ "  FROM t01_item t1\n"
+			+ "  JOIN t02_item_group t2\n"
+			+ "    ON t1.C01_ITEM_GROUP_ID = t2.C02_ITEM_GROUP_ID\n"
+			+ " GROUP BY C01_ITEM_GROUP_ID";
+	
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	private static final String Q_GET_ITEM_GROUP_BY_ID = ""
 			+ "SELECT * FROM T02_ITEM_GROUP WHERE C02_ITEM_GROUP_ID = ?";
 	
@@ -41,6 +67,7 @@ public class JdbcItemGroupDao implements ItemGroupDao {
 	private static final String Q_MERGE_ITEM_GROUP = ""
 			+ "CALL mergeNewItemGroup(?, ?)";
 	
+<<<<<<< HEAD
 	private Connection connection;
 	
 	private Statement st; // Thực thi câu sql hoàn chỉnh: createStatement() --> execute...(sql)
@@ -53,6 +80,8 @@ public class JdbcItemGroupDao implements ItemGroupDao {
 		connection = DbConnection.getConnection();
 	}
 	
+=======
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	@Override
 	public List<ItemGroup> getAll() {
 		List<ItemGroup> groups = new ArrayList<>();
@@ -75,6 +104,33 @@ public class JdbcItemGroupDao implements ItemGroupDao {
 	}
 	
 	@Override
+<<<<<<< HEAD
+=======
+	public List<ItemGroupDto> getItemGroupDetails() {
+		List<ItemGroupDto> groups = new ArrayList<>();
+		try {
+			st = connection.createStatement();
+			rs = st.executeQuery(Q_GET_ITEM_GROUP_DETAILS);
+			while(rs.next()) {
+				Integer id = rs.getInt("groupId");
+				String name = rs.getString("groupName");
+				Integer amountOfItems = rs.getInt("amountOfItems");
+				String details = rs.getString("details");
+				
+				ItemGroupDto group = new ItemGroupDto(id, name, amountOfItems, details);
+				groups.add(group);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			SqlUtils.close(rs, st);
+		}
+		
+		return groups;
+	}
+	
+	@Override
+>>>>>>> 9890bad (lesson18 02.03.2025)
 	public ItemGroup get(Integer id) {
 		ItemGroup group = null;
 		try {

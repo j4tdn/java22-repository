@@ -1,26 +1,20 @@
 package utils;
 
-<<<<<<< HEAD
-=======
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.Objects;
 
->>>>>>> 9890bad (lesson18 02.03.2025)
 public class SqlUtils {
 
 	private SqlUtils() {
 	}
 
-<<<<<<< HEAD
-=======
 	public static java.sql.Date toSqlDate(LocalDate ldate) {
 		Objects.requireNonNull("ldate", "ldate should not be null");
 		return java.sql.Date.valueOf(ldate);
 	}
 
->>>>>>> 9890bad (lesson18 02.03.2025)
 	public static void close(AutoCloseable... objectsTobeClosed) {
 		try {
 			for (AutoCloseable object : objectsTobeClosed) {
@@ -32,10 +26,6 @@ public class SqlUtils {
 			e.printStackTrace();
 		}
 	}
-<<<<<<< HEAD
-
-}
-=======
 	
 	public static void rollback(Connection connection) {
 		if (connection != null) {
@@ -48,4 +38,3 @@ public class SqlUtils {
 	}
 
 }
->>>>>>> 9890bad (lesson18 02.03.2025)
