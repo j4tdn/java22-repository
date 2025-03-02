@@ -1,0 +1,81 @@
+package persistence;
+
+import java.util.Objects;
+
+public class Item {
+
+	private Integer id;
+	private String name;
+
+	// Quan hệ 1-1
+	private ItemGroup group;
+
+	public Item() {
+	}
+	
+	public Item(Integer id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+
+	public Item(Integer id, String name, ItemGroup group) {
+		this.id = id;
+		this.name = name;
+		this.group = group;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public ItemGroup getGroup() {
+		return group;
+	}
+
+	public void setGroup(ItemGroup group) {
+		this.group = group;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) {
+			return true;
+		}
+
+		if (!(o instanceof Item that)) {
+			return false;
+		}
+
+		return getId() == that.getId();
+	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
+	}
+	
+	public void logging() {
+		System.out.println(
+				"Item [id=" + id 
+				+ ", name=" + name 
+				+ ", group(id=" + getGroup().getId() + ", name=" + getGroup().getName() + ")]"
+		);
+	}
+
+	@Override
+	public String toString() {
+		return "Item [id=" + id + ", name=" + name + "]"; 
+	}
+}
