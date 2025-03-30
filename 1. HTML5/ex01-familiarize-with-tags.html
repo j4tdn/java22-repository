@@ -1,271 +1,271 @@
-		<!DOCTYPE html>
-		<html>
-		   <head>
-		      <link rel="icon" href="images/header.png">
-			   <title>Ex01: Familiar with HTML tags</title>
-			   <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="icon" href="images/header.png">
+	   <title>Ex01: Familiar with HTML tags</title>
+	   <meta charset="utf-8">
 
-			   <style>
-					/*
-						an + b
-						a: chu kì lặp lại
-						b: vị trí bắt đầu
-					*/
-					table#student_list tbody tr:nth-child(2n + 1) {
-						background-color: rgb(206, 214, 218 , 0.6);
-					}
+	   <style>
+			/*
+				an + b
+				a: chu kì lặp lại
+				b: vị trí bắt đầu
+			*/
+			table#student_list tbody tr:nth-child(2n + 1) {
+				background-color: rgb(206, 214, 218 , 0.6);
+			}
 
-					a {
-						color: black;
-						text-decoration: none;
-					}
+			a {
+				color: black;
+				text-decoration: none;
+			}
 
-					a:hover {
-						color: orange;
-					}
+			a:hover {
+				color: orange;
+			}
 
-					html {
-						scroll-behavior: smooth;
-					}
-					span {
-						color: red;
-					}
-				</style>
+			html {
+				scroll-behavior: smooth;
+			}
+			span {
+				color: red;
+			}
+		</style>
 
-		   </head>
-		   <body>
-		      <!-- 
-					Lưu ý khi sử dụng HTML tags
-					
-					Sử dụng thẻ đang sử dụng giá trị mặc định của các thuộc tính bên trong thẻ đó
-					Quan trọng: sử dụng thẻ đúng ngữ nghĩa, đúng chức năng
-					
-					Vì: có thể dùng thẻ p cho tiêu đề và h cho đoạn hội thoại sau đó custom lại
-					    giá trị các tt bên trong để p biến thành h và ngược lại nhưng cách làm đó
-					    không 'ngữ nghĩa', code khó hình dung
+   </head>
+   <body>
+      <!-- 
+			Lưu ý khi sử dụng HTML tags
+			
+			Sử dụng thẻ đang sử dụng giá trị mặc định của các thuộc tính bên trong thẻ đó
+			Quan trọng: sử dụng thẻ đúng ngữ nghĩa, đúng chức năng
+			
+			Vì: có thể dùng thẻ p cho tiêu đề và h cho đoạn hội thoại sau đó custom lại
+			    giá trị các tt bên trong để p biến thành h và ngược lại nhưng cách làm đó
+			    không 'ngữ nghĩa', code khó hình dung
 
-					Phân loại thẻ
-					
-					+ Coding: Đôi - Đơn
-					+ Hiện thị: Inline - kích thước chiếm vừa đủ nội dung bên trong
-					          : Block  - chiếm hết kích thước chiều ngang của màn hình   
-				-->
+			Phân loại thẻ
+			
+			+ Coding: Đôi - Đơn
+			+ Hiện thị: Inline - kích thước chiếm vừa đủ nội dung bên trong
+			          : Block  - chiếm hết kích thước chiều ngang của màn hình   
+		-->
 
-				<h3>Mục lục</h3>
-				<ul>
-					<li><a href="htpps://cnn.com" target="_blank">🚹 CNN page</a></li>
-					<li><a href="tel:84961278873">🚹 Call me</a></li>
-					<li><a href="#Lorem">🚹 Paragraph</a></li>
-					<li><a href="#student_list">🚹 Table</a></li>
-					<li><a href="relativef/index.html">🚹 Index page</a></li>
-					<li><a href="relativef/sub/base.html">🚹 Base page</a></li>
-				</ul>
+		<h3>Mục lục</h3>
+		<ul>
+			<li><a href="htpps://cnn.com" target="_blank">🚹 CNN page</a></li>
+			<li><a href="tel:84961278873">🚹 Call me</a></li>
+			<li><a href="#Lorem">🚹 Paragraph</a></li>
+			<li><a href="#student_list">🚹 Table</a></li>
+			<li><a href="relativef/index.html">🚹 Index page</a></li>
+			<li><a href="relativef/sub/base.html">🚹 Base page</a></li>
+		</ul>
 
-				<hr>
+		<hr>
 
 
-				<!-- Thẻ tiêu đề -->
-				<h1>Code for fun 01</h1>
-				<h2>Code for fun 02</h2>
-				<h3>Code for fun 03</h3>
-				<h4>Code for fun 04</h4>
-				<h5>Code for fun 05</h5>
-				<h6>Code for fun 06</h6>
+		<!-- Thẻ tiêu đề -->
+		<h1>Code for fun 01</h1>
+		<h2>Code for fun 02</h2>
+		<h3>Code for fun 03</h3>
+		<h4>Code for fun 04</h4>
+		<h5>Code for fun 05</h5>
+		<h6>Code for fun 06</h6>
 
-				<hr>
+		<hr>
 
-				<!-- Thẻ hình ảnh -->
-				<div align="center">
-					<img src="images/cupcake.png" alt="Bánh" width="300" height="300px">
-					<img src="images/nf.png" alt="Không tìm thấy">
-					<img src="images/candies.jpg" alt="Kẹo" width="300" height="300px">
-				</div>
+		<!-- Thẻ hình ảnh -->
+		<div align="center">
+			<img src="images/cupcake.png" alt="Bánh" width="300" height="300px">
+			<img src="images/nf.png" alt="Không tìm thấy">
+			<img src="images/candies.jpg" alt="Kẹo" width="300" height="300px">
+		</div>
 
-		      <hr>
+      <hr>
 
-				<!-- Thẻ đoạn hội thoại -->
-				<p align="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<!-- Thẻ đoạn hội thoại -->
+		<p align="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-				<hr>
+		<hr>
 
-				<br><br>
+		<br><br>
 
-				<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-				<hr>
+		<hr>
 
-				<!-- Thẻ danh sách phần tử -->
-				<h3>Thứ tự các môn học</h3>
-				<ol>
-					<li>GIT</li>
-					<li>JAVA</li>
-					<li>Database</li>
-					<li>JDBC JPA/Hibernate</li>
-					<li>FrontEnd</li>
-				</ol>
+		<!-- Thẻ danh sách phần tử -->
+		<h3>Thứ tự các môn học</h3>
+		<ol>
+			<li>GIT</li>
+			<li>JAVA</li>
+			<li>Database</li>
+			<li>JDBC JPA/Hibernate</li>
+			<li>FrontEnd</li>
+		</ol>
 
-				<h3>Các thành phần trong món ăn</h3>
-				<ul>
-					<li>Trứng gà</li>
-					<li>Dầu ăn</li>
-					<li>Cà chua</li>
-					<li>Hành lá</li>
-				</ul>
+		<h3>Các thành phần trong món ăn</h3>
+		<ul>
+			<li>Trứng gà</li>
+			<li>Dầu ăn</li>
+			<li>Cà chua</li>
+			<li>Hành lá</li>
+		</ul>
 
-				<hr>
+		<hr>
 
-				<h3>Thực hành với media tags</h3>
-				<video src="video/video.mp4" controls loop poster= "images/cake.jpg" width="320" height ="220"></video>
+		<h3>Thực hành với media tags</h3>
+		<video src="video/video.mp4" controls loop poster= "images/cake.jpg" width="320" height ="220"></video>
 
-				<audio src="audio/audio.mp3" controls></audio>
+		<audio src="audio/audio.mp3" controls></audio>
 
-				<iframe width="320" height="220" src="https://www.youtube.com/embed/rWnB9kPZJE0?si=MxmYNSXoNAsjbWrB" title="Thoi su" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<iframe width="320" height="220" src="https://www.youtube.com/embed/rWnB9kPZJE0?si=MxmYNSXoNAsjbWrB" title="Thoi su" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-				<iframe width='853' height='480' src='https://embed.coggle.it/diagram/XcGUOYumpE_Kg8Fn/cc054918e3e1a27fb209b447a0a55e6f6270ffc9259fffea267b90f874605005' frameborder='0' allowfullscreen></iframe>
+		<iframe width='853' height='480' src='https://embed.coggle.it/diagram/XcGUOYumpE_Kg8Fn/cc054918e3e1a27fb209b447a0a55e6f6270ffc9259fffea267b90f874605005' frameborder='0' allowfullscreen></iframe>
 
-		      <hr>
+      <hr>
 
-		      <h3>Thực hành với <span>form</span> tags</h3>
+      <h3>Thực hành với <span>form</span> tags</h3>
 
-		      <from>
-		          <table>
-		            <tr>
-							<td>Username</td>
-							<td><input type="text" placeholder="@john"></td>
-						</tr>
-						<tr>
-							<td>Password</td>
-							<td><input type="text"></td>
-						</tr>
-						<tr>
-							<td>Gender</td>
-							<td>
-								<input type="radio" checked name="gender-group">Male
-								<input type="radio" name="gender-group">Female
-							</td>
-						</tr>
-						<tr>
-							<td>University</td>
-							<td>
-									<select>
-									<option>A1</option>
-									<option>A2</option>
-									<option>A3</option>
-									<option>A4</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-						<td>
-							<input type="button" value="Gửi đi">
-							<input type="reset" value="Xóa">
-						</td>
+      <from>
+          <table>
+            <tr>
+					<td>Username</td>
+					<td><input type="text" placeholder="@john"></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="text"></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<input type="radio" checked name="gender-group">Male
+						<input type="radio" name="gender-group">Female
+					</td>
+				</tr>
+				<tr>
+					<td>University</td>
+					<td>
+							<select>
+							<option>A1</option>
+							<option>A2</option>
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+				<td>
+					<input type="button" value="Gửi đi">
+					<input type="reset" value="Xóa">
+				</td>
+			</tr>
+          </table>
+
+      </from>
+
+      <hr>
+
+		<h3>Thực hành với <span>table</span> tags</h3>
+			<table id="student_list" border="1" cellspacing="0" cellpadding="8px">
+				<thead>
+					<tr>
+						<th rowspan="2">No.</th>
+						<th rowspan="2">Name</th>
+						<th rowspan="2">Age</th>
+						<th rowspan="2">Color</th>
+						<th Colspan="2">Phone</th>
 					</tr>
-		          </table>
-
-		      </from>
-
-		      <hr>
-
-				<h3>Thực hành với <span>table</span> tags</h3>
-					<table id="student_list" border="1" cellspacing="0" cellpadding="8px">
-						<thead>
-							<tr>
-								<th rowspan="2">No.</th>
-								<th rowspan="2">Name</th>
-								<th rowspan="2">Age</th>
-								<th rowspan="2">Color</th>
-								<th Colspan="2">Phone</th>
-							</tr>
-							<tr>
-								<th>Fax 1</th>
-								<th>Fax 2</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Peter</td>
-								<td>18</td>
-								<td>Red</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Kate</td>
-								<td>22</td>
-								<td>Blue</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>Oliver</td>
-								<td>20</td>
-								<td>Red</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>Piss</td>
-								<td>18</td>
-								<td>Blue</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>Teda</td>
-								<td>18</td>
-								<td>Green</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>Richard</td>
-								<td>18</td>
-								<td>Yellow</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>Smith</td>
-								<td>18</td>
-								<td>Blue</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-							<tr>
-								<td>8</td>
-								<td>Suso</td>
-								<td>18</td>
-								<td>Blue</td>
-								<td>123</td>
-								<td>456</td>
-							</tr>
-						</tbody>
-					</table>
+					<tr>
+						<th>Fax 1</th>
+						<th>Fax 2</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Peter</td>
+						<td>18</td>
+						<td>Red</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>Kate</td>
+						<td>22</td>
+						<td>Blue</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>Oliver</td>
+						<td>20</td>
+						<td>Red</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>Piss</td>
+						<td>18</td>
+						<td>Blue</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>Teda</td>
+						<td>18</td>
+						<td>Green</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>Richard</td>
+						<td>18</td>
+						<td>Yellow</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>Smith</td>
+						<td>18</td>
+						<td>Blue</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+					<tr>
+						<td>8</td>
+						<td>Suso</td>
+						<td>18</td>
+						<td>Blue</td>
+						<td>123</td>
+						<td>456</td>
+					</tr>
+				</tbody>
+			</table>
 
 
-		   </body>
+   </body>
 
-		</html>
+</html>

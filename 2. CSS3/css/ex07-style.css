@@ -1,0 +1,43 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 72%;
+	height: 520px;
+
+	border: 2px dashed black;
+	/*
+	Trên dưới: 
+	Trái phải: ra giữa so với element 
+	*/
+
+	margin: 50px auto;
+	padding: 200px;
+
+    overflow: hidden;
+
+
+	.block {
+		width: 160px;
+	    height: 120px;
+	    float: left;
+	}
+
+	.block-1 {
+		border: 2px solid orange;
+		margin-right: 60px;
+        margin-bottom: 60px;
+	}
+
+	.block-2 {
+		border: 2px solid green;
+		margin-left: 60px;
+	}
+
+	.block-3 {
+		border: 2px solid red;
+		clear: left;
+        margin-top: 60px;
+	}
+}

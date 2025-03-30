@@ -1,0 +1,12 @@
+.block-1 {
+	width: 220px;
+	height: 120px;
+
+	float: left;
+}
+
+.block-test-2 {
+	/*Tại vị trí nào, ko muốn eleament nào nhảy 
+	lên trên vì thuộc tính trước đó --> clear */
+	clear: left;
+}

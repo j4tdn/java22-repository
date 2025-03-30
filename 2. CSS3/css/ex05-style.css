@@ -1,0 +1,19 @@
+.block-1 {
+	width: 220px;
+	height: 120px;
+}
+
+.ing-size-md {
+	width: 320px;
+	height: 220px;
+}
+
+.float-left {
+	float: left;
+
+}
+
+.clear-left {
+	clear: left;
+
+}

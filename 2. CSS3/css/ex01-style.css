@@ -1,0 +1,15 @@
+p {
+	font-weight: bold;
+	color: blue;
+}
+
+.highlight-text {
+	font-size: 32px;
+	text-decoration: underline;
+	color: black;
+}
+
+#signature {
+	font-style: italic;
+	color: black;
+}
