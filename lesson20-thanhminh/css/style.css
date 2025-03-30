@@ -30,11 +30,14 @@ body {
 .page-links li {
 	float: left;
 	margin-left: 44px;
-	line-height: 66px;
+	line-height: 33px;
 }
 
 .page-links li a {
+	font-family: corbel;
+	font-size: 32px-2rem;
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #fff;
+	margin: 44px;
 }
