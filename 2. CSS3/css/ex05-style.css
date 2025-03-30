@@ -1,0 +1,21 @@
+.block-1 {
+	width: 220px;
+	height: 120px;
+}
+
+.img-size-md {
+	width: 320px;
+	height: 280px;
+}
+
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+.clear-left {
+	clear: left;
+}

@@ -1,0 +1,33 @@
+@font-face {
+	font-family: Courier;
+	src: url(../webfonts/Courier Prime Code.ttf) format('truetype');
+}
+
+.title {
+	color: green;
+	text-transform: uppercase;
+}
+
+.bg-orange {
+	background-color: orange;
+}
+
+.bg-green {
+	background-color: green;
+}
+
+.bg-pink {
+	background-color: pink;
+}
+
+.bg-blue {
+	background-color: blue;
+}
+
+.bg-red {
+	background-color: red;
+}
+
+.clearfix {
+	clear: both;
+}
