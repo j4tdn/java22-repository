@@ -1,0 +1,20 @@
+.title{
+	color: green;
+	text-transform: uppercase;
+}
+
+@font-face{
+	font-family: Courier;
+	src: url(../webfonts/Courier Prime Code.ttf) format('truetype');
+}
+
+.block{
+	width: 150px;
+	height: 150px;
+
+	float: left;
+}
+
+.block:nth-last-child(-n+2){
+	clear: left;
+}
