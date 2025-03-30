@@ -1,0 +1,31 @@
+.container {
+	.header {
+		height: 66px;
+    	background: #2b2b2b;
+    	display: flex;
+    	align-items: center;
+	}
+	.header-left{
+		width: 35%;
+	}
+	.header-right {
+		width: auto;
+	}
+	.logo {
+		height: 20px;
+    	width: auto;
+    	margin-left: 200px;
+	}
+	.links {
+    	list-style: none;
+    	display: flex;
+	}
+	.links a {
+    	font-family: corbel;
+    	text-decoration: none;
+    	color: white;
+    	font-size: 32px-2rem;
+    	text-transform: uppercase;
+    	margin: 44px;
+	}
+}
