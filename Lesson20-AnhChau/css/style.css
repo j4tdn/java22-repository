@@ -1,0 +1,26 @@
+body {
+    margin: 44px;
+    font-family: Corbel;
+}
+
+.blackbar {
+    background-color: #2b2b2b;
+    padding: 10px 20px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.blackbar img {
+    height: 10px;
+    margin-right: 200px;
+    margin-left: 100px;
+
+}
+.blackbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 44px;
+    font-size: 32px - 2rem; 
+
+}
