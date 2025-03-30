@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: corbel;
+}
+
+.header {
+  background-color: #2b2b2b;
+  height: 66px;
+  width: 100%;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  width: 100px;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.nav {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav li {
+  display: inline-block;
+  margin: 44px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  font-family: corbel;
+}
