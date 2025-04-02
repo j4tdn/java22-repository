@@ -1,0 +1,10 @@
+.title{
+	color: green;
+	text-transform: uppercase;
+}
+
+@font-face{
+	font-family: Courier;
+	src:url(../webfonts/Boldonse-Regular.ttf) format('truetype');
+
+}

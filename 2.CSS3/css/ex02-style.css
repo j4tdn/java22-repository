@@ -1,0 +1,23 @@
+body{
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+.sfont{
+	font-family: Courier;
+}
+
+.gfont{
+	  font-family: "Boldonse", system-ui;
+	  font-weight: 700;
+	  font-style: normal;
+}
+
+.buzz{
+	font-size:22px;
+	line-height:42px;
+}
+
+.task{
+	list-style-type: square;
+	list-style-image:url(../images/world.png);
+}
