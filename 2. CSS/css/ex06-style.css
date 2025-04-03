@@ -1,0 +1,10 @@
+.container {
+	.block {
+		width: 50px;
+		height: 70px;
+		float: left;
+	}
+	.block:nth-last-child(-n+2) {
+		clear: left;
+	}
+}

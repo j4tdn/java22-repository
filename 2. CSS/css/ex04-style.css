@@ -1,0 +1,14 @@
+.block-1 {
+	width: 220px;
+	height: 120px;
+
+	float: left;
+}
+.block-text-1 {
+	
+}
+.block-text-2 {
+	/*Tại vị trí nào không muốn element nhảy lên trên
+	 vì thuộc tính trước đó float --> clear	*/
+	clear: left;
+}
