@@ -4,6 +4,35 @@
 		<link rel="icon" href="images/header.png">
 		<title>Ex01: Familiar with HTML tags</title>
 		<meta charset="utf-8">
+
+		<style>
+			/*
+				an + b
+				a: chu kỳ lặp lại
+				b: vị trí bắt đầu(mặc định bằng 0)
+			*/
+			table#student-list tbody tr:nth-child(2n + 1){
+				background-color: rgba(206, 214, 218, 0.6);
+			}
+
+			a {
+				color: black;
+				text-decoration: none;
+			}
+
+			a:hover {
+				color: red;
+			}
+
+			html {
+				scroll-behavior: smooth;
+			}
+
+			span {
+				color: red;
+			}
+
+		</style>
 	</head>
 	<body>
 
@@ -24,6 +53,20 @@
 					  : Block  - chiếm hết kích thước chiều ngang của màn hình
 
 		 -->
+
+		 <h3>Mục lục</h3>	
+		 
+		 <ul>
+		 	<li><a href="https://cnn.com" target="_blank">🚹 CNN page</a></li>
+		 	<li><a href="tel:0347672501">🚹 Call me</a></li>
+		 	<li><a href="#lorem">🚹 Paragraph</a></li>
+		 	<li><a href="#student-list">🚹 Table</a></li>
+		 	<li><a href="relativef/index.html">🚹 Index page</a></li>
+		 	<li><a href="relativef/sub/base.html">🚹 Base page</a></li>
+		 </ul>
+
+		 <hr>
+
 
 		<!-- Thẻ tiêu đề -->
 		<h1>Code for fun 01</h1>
@@ -63,7 +106,7 @@
 		<br> <br>
 
 
-		<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit, sed do eiusmod
+		<p id="lorem">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -101,7 +144,146 @@
 			<li>Hành lá</li>
 		</ul>
 
+		<hr>
 
+		<h3>Thực hành với media tags</h3>
+		<video src="video/video.mp4" controls loop poster="images/cake.jpg" width="320" height="220"></video>
+
+		<audio src="audio/audio.mp3" controls></audio>
+
+		<iframe width="320" height="220" src="https://www.youtube.com/embed/sFCfHr9ptP8?si=iN5nTmRbZZPxTyav" title="Badminton Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+		<iframe width='853' height='480' src='https://embed.coggle.it/diagram/XcGUOYumpE_Kg8Fn/cc054918e3e1a27fb209b447a0a55e6f6270ffc9259fffea267b90f874605005' frameborder='0' allowfullscreen></iframe>
+
+
+		<hr>	
+
+		<h3>Thực hành với <span>form</span> tags</h3>
+
+		<form>
+			<table cellpadding="8">
+				<tr>
+					<td>Username</td>
+					<td><input type="text" placeholder="@john"/></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td><input type="Password"/></td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<input type="radio" checked name="gender-group"> Male
+						<input type="radio" name="gender-group"> FeMale  
+					</td>
+				</tr>
+				<tr>
+					<td>University</td>
+					<td>
+						<select>
+							<option>A1</option>
+							<option>A2</option>
+							<option>A3</option>
+							<option>A4</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="button" value="Gửi đi">
+						<input type="reset" value="Xóa">
+					</td>
+				</tr>
+
+			</table>
+		</form>
+
+		<hr>	
+
+		<h3>Thực hành với <span>table</span> tags</h3>
+
+		<table id="student-list" border="1" cellspacing="0" cellpadding="8px">
+			<thead>
+				<tr>
+					<th rowspan="2">No.</th>
+					<th rowspan="2">Name</th>
+					<th rowspan="2">Age</th>
+					<th rowspan="2">Color</th>
+					<th colspan="2">Phone</th>
+				</tr>
+				<tr>
+					<th>Fax 1</th>
+					<th>Fax 2</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Peter</td>
+					<td>18</td>
+					<td>Blue</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Kate</td>
+					<td>18</td>
+					<td>Blue</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>	
+				<tr>
+					<td>3</td>
+					<td>Oliver</td>
+					<td>18</td>
+					<td>Red</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>	
+				<tr>
+					<td>4</td>
+					<td>Piss</td>
+					<td>18</td>
+					<td>Green</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Teda</td>
+					<td>18</td>
+					<td>Blue</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Richard</td>
+					<td>18</td>
+					<td>Yellow</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Smith</td>
+					<td>18</td>
+					<td>Blue</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Suso</td>
+					<td>28</td>
+					<td>Gray</td>
+					<td>123</td>
+					<td>456</td>
+				</tr>
+
+			</tbody>
+		</table>	
 
 	</body>
 
