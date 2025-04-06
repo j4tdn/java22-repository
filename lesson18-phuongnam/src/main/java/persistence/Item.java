@@ -23,13 +23,6 @@ public class Item {
 	@Column(name = "C01_ITEM_NAME")
 	private String name;
 	
-	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name = "C01_ITEM_GROUP_ID", referencedColumnName = "C02_ITEM_GROUP_ID")
-//	private ItemGroup group;
-//	
-//	@OneToMany(mappedBy = "item")
-//	private List<ItemStoreRel> relations;
 		
 	/**
 	 * Hibernate constructor
@@ -58,21 +51,6 @@ public class Item {
 		this.name = name;
 	}
 	
-//	public ItemGroup getGroup() {
-//		return group;
-//	}
-//	
-//	public void setGroup(ItemGroup group) {
-//		this.group = group;
-//	}
-//	
-//	public List<ItemStoreRel> getRelations() {
-//		return relations;
-//	}
-//	
-//	public void setRelations(List<ItemStoreRel> relations) {
-//		this.relations = relations;
-//	}
 	
 	@Override
 	public boolean equals(Object o) {
