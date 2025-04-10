@@ -1,24 +1,24 @@
-body{
+body {
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
-.sfont{
+.sfont {
 	font-family: Courier;
 }
 
-.gfont{
-	  font-family: "Oswald", sans-serif;
-	  font-optical-sizing: auto;
-	  font-weight: 400;
-	  font-style: normal;
-	}
-
-.buzz{
-	font-size: 22px;
-	line-height: 42px;
-	color: darkred;
+.gfont {
+	font-family: "Dancing Script", cursive;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
 }
 
-.tasks{
+.buzz {
+	font-size: 22px;
+	line-height: 42px;
+	color: #ce2622;
+}
+
+.tasks {
 	list-style-image: url(../images/world.png);
 }

@@ -1,184 +1,193 @@
-	<!DOCTYPE html>
-	<html>
-		<head>
-			<link rel="icon" href="images\header.png">
-			<title>Ex01: Familiar with HTML tags</title>\
-			<meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="icon" href="images/header.png">
+		<title>Ex01: Familiar with HTML tags</title>
+		<meta charset="utf-8">
 
-			<style type="text/css">
-				table#student-list tbody tr:nth-child(2n+1){
-					background-color: lightgray;
-				}
+		<style>
+			/*
+				an + b
+				a: chu kỳ lặp lại
+				b: vị trí bắt đầu(mặc định bằng 0)
+			*/
+			table#student-list tbody tr:nth-child(2n + 1) {
+				background-color: rgba(206, 214, 218, 0.6);
+			}
 
-				a {
-					color: black;
-					text-decoration: none;
-				}
-				a:hover {
-					color: cyan;
-				}
+			a {
+				color: black;
+				text-decoration: none;
+			}
 
-				html {
-					scroll-behavior: smooth;
-				}
+			a:hover {
+				color: red;
+			}
 
-				span{
-					color: red;
-				}
-			</style>
-		</head>
+			html { 
+				scroll-behavior: smooth;
+			}
 
-		<body>
+			span {
+				color: red;
+			}
 
-			<!-- Lưu ý khi sử dụng HTML Tags
-				
-				Sử dụng thẻ đang sử dụng giá trị mặc định của các thuộc tính bên trong thẻ đó
-				Sử dụng thẻ đúng ngữ nghĩa đúng chức năng
 
-				Vì : có thẻ dùng thẻ p cho tiêu đề và h cho đoạn hội thoại sau đó chỉnh các tt ben trong để p thành h và ngược nhưng cách làm đó không ngữ nghĩa và code khó hình 
+		</style>
+	</head>
+	<body>
+		
+		<!-- 
+			Lưu ý khi sử dụng HTML tags
+			
+			Sử dụng thẻ đang sử dụng giá trị mặc định của các thuộc tính bên trong thẻ đó
+			Quan trọng: sử dụng thẻ đúng ngữ nghĩa, đúng chức năng
+			
+			Vì: có thể dùng thẻ p cho tiêu đề và h cho đoạn hội thoại sau đó custom lại
+			    giá trị các tt bên trong để p biến thành h và ngược lại nhưng cách làm đó
+			    không 'ngữ nghĩa', code khó hình dung
 
-				Coding : đơn - đôi
-				Hiển thị : Inline - kích thước chiếm vừa đủ nội dung
-					Block - chiếm hết kích thước chiều ngang 
-			 -->
+			Phân loại thẻ
+			
+			+ Coding: Đôi - Đơn
+			+ Hiện thị: Inline - kích thước chiếm vừa đủ nội dung bên trong
+			          : Block  - chiếm hết kích thước chiều ngang của màn hình   
+		-->
 
-			 <h3>Mục lục</h3>
+		<h3>Mục lục</h3>
 
-			 <ul>
-			 	<li><a href="http://cnn.com" target="_blank">CNN page</a><br></li>
-			 	<li><a href="tel: 0347672501">Call me</a></li>
-			 	<li><a href="#lorem">Paragraph</a></li>
-			 	<li><a href="#student-list">table</a></li>
-			 	<li><a href="relativef/index.html">Index page</a></li>
-			 	<li><a href="relativef/sub/base.html">Base page</a></li>
-			 </ul>	
-			 
-			 
-
-			<!-- Thẻ tiêu đề-->
-			<h1> Code for fun 01 </h1>
-			<h2> Code for fun 02 </h2>
-			<h3> Code for fun 03 </h3>
-			<h4> Code for fun 04 </h4>
-			<h5> Code for fun 05 </h5>
-			<h6> Code for fun 06 </h6>
-
-			<hr>
-
-			<!-- Thẻ đoạn hội thoại -->
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<br>
-			<br>
-
-			<p id="lorem">Lorem ipsum dolor sit amet, <strong> consectetur </strong>adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in <em> reprehenderit </em>in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-			<hr>
-
-			<h3>Thứ tự các môn học</h3>
-			<ol>
-				<li>Git</li>
-				<li>Java</li>
-				<li>Database</li>
-				<li>JDBC JPA/Hibernate</li>
-				<li>FrontEnd</li>
-			</ol>
-
-			<h3>Các thành phần trong món ăn</h3>
-			<ul>
-				<li>Git</li>
-				<li>Java</li>
-				<li>Database</li>
-				<li>JDBC JPA/Hibernate</li>
-				<li>FrontEnd</li>
-			</ul>
+		<ul>
+			<li><a href="https://cnn.com" target="_blank">🚹 CNN page</a></li>
+			<li><a href="tel:0347672501">🚹 Call me</a></li>
+			<li><a href="#lorem">🚹 Paragraph</a></li>
+			<li><a href="#student-list">🚹 Table</a></li>
+			<li><a href="relativef/index.html">🚹 Index page</a></li>
+			<li><a href="relativef/sub/base.html">🚹 Base page</a></li>
+		</ul>
 
 		<hr>
 
-		<h3>Thực hành với  tags</h3>
-
-		<video src="video/video.mp4" loop controls poster="images/cupcake.png" width="320px" height="220px"> </video>
-
-		<audio src="audio/audio.mp3" controls></audio>
-
-		<iframe width="320" height="205" src="https://www.youtube.com/embed/zX1Xss71Plc?si=WeFYEHt4TLx4vhT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		<!-- Thẻ tiêu đề -->
+		<h1>Code for fun 01</h1>
+		<h2>Code for fun 02</h2>
+		<h3>Code for fun 03</h3>
+		<h4>Code for fun 04</h4>
+		<h5>Code for fun 05</h5>
+		<h6>Code for fun 06</h6>
 
 		<hr>
 
 		<!-- Thẻ hình ảnh -->
 		<div align="center">
-		<img src="images/cupcake.png" alt="Banh" width="300" height="300px">
-		<img src="images/nf.png" alt="Khong tim thay" width="300" height="300px">
-		<img src="images/candies.jpg" alt="Keo" width="300" height="300px">
-
+			<img src="images/cupcake.png" alt="Bánh" width="300" height="300px">
+			<img src="images/nf.png" alt="Không tìm thấy">
+			<img src="images/candies.jpg" alt="Kẹo" width="300" height="300px">
 		</div>
+
 		<hr>
 
-		<h3>Thuc hanh voi form</h3>
+
+		<!-- Thẻ đoạn hội thoại -->
+		<p align="center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur.<br>Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<hr>
+
+		<br> <br>
+
+		<p id="lorem">Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. <em>Excepteur</em> sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+		<hr>
+
+		<!-- Thẻ danh sách phần tử -->
+		<h3>Thứ tự các môn học</h3>
+		<ol>
+			<li>GIT</li>
+			<li>JAVA</li>
+			<li>Database</li>
+			<li>JDBC JPA/Hibernate</li>
+			<li>FrontEnd</li>
+		</ol>
+
+		<h3>Các thành phần trong món ăn</h3>
+		<ul>
+			<li>Trứng gà</li>
+			<li>Dầu ăn</li>
+			<li>Cà chua</li>
+			<li>Hành lá</li>
+		</ul>
+
+		<hr>
+
+		<h3>Thực hành với media tags</h3>
+		<video src="video/video.mp4" controls loop poster="images/cake.jpg" width="320" height="220"></video>
+
+		<audio src="audio/audio.mp3" controls></audio>
+
+		<iframe width="320" height="220" src="https://www.youtube.com/embed/sFCfHr9ptP8?si=iN5nTmRbZZPxTyav" title="Badminton Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+		<iframe width='853' height='480' src='https://embed.coggle.it/diagram/XcGUOYumpE_Kg8Fn/cc054918e3e1a27fb209b447a0a55e6f6270ffc9259fffea267b90f874605005' frameborder='0' allowfullscreen></iframe>
+
+		<hr>
+
+		<h3>Thực hành với <span>form</span> tags</h3>
 
 		<form>
-			<table>
+			<table cellpadding="8">
 				<tr>
-					<td>Username:</td>
-					<td><input type="text" placeholder="@john">
-					</td>
+					<td>Username</td>
+					<td><input type="text" placeholder="@john"></td>
 				</tr>
-
 				<tr>
-					<td>Passwork:</td>
+					<td>Password</td>
 					<td><input type="password"></td>
-				</tr>	
-
+				</tr>
 				<tr>
-					<td>Gender:</td>
+					<td>Gender</td>
 					<td>
-						<input type="radio" name="gender-group" checked> Male
-						<input type="radio"	name="gender-group"> Female
+						<input type="radio" checked name="gender-group"> Male
+						<input type="radio" name="gender-group"> Female
 					</td>
 				</tr>
-
 				<tr>
-					<td>University:</td>
+					<td>University</td>
 					<td>
 						<select>
 							<option>A1</option>
 							<option>A2</option>
 							<option>A3</option>
 							<option>A4</option>
-							<option>A5</option>
 						</select>
 					</td>
-				</tr>	
-				
+				</tr>
 				<tr>
 					<td>
-						<input type ="submit" value="Gui di">
-						<input type ="reset" value="Xoa">
+						<input type="button" value="Gửi đi">
+						<input type="reset" value="Xóa">
 					</td>
 				</tr>
 			</table>
@@ -186,9 +195,9 @@
 
 		<hr>
 
-		<h3>Thực hành với <span> table </span> tags </h3>
+		<h3>Thực hành với <span>table</span> tags</h3>
 
-		<table id="student-list" border="1px" cellspacing="0" cellpadding="8px" >
+		<table id="student-list" border="1" cellspacing="0" cellpadding="8px">
 			<thead>
 				<tr>
 					<th rowspan="2">No.</th>
@@ -202,7 +211,6 @@
 					<th>Fax 2</th>
 				</tr>
 			</thead>
-
 			<tbody>
 				<tr>
 					<td>1</td>
@@ -210,23 +218,23 @@
 					<td>18</td>
 					<td>Blue</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>2</td>
 					<td>Kate</td>
-					<td>18</td>
+					<td>22</td>
 					<td>Blue</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>3</td>
 					<td>Oliver</td>
-					<td>18</td>
-					<td>Blue</td>
+					<td>20</td>
+					<td>Red</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>4</td>
@@ -234,42 +242,43 @@
 					<td>18</td>
 					<td>Blue</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>5</td>
 					<td>Teda</td>
 					<td>18</td>
-					<td>Yellow</td>
+					<td>Green</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>6</td>
 					<td>Richard</td>
 					<td>18</td>
-					<td>White</td>
+					<td>Yellow</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>7</td>
 					<td>Smith</td>
 					<td>18</td>
-					<td>Red</td>
+					<td>Blue</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 				<tr>
 					<td>8</td>
 					<td>Suso</td>
 					<td>28</td>
-					<td>Blue</td>
+					<td>Gray</td>
 					<td>123</td>
-					<td>864</td>
+					<td>456</td>
 				</tr>
 			</tbody>
 		</table>
 
-		</body>
-	</html>
+
+	</body>
+</html>

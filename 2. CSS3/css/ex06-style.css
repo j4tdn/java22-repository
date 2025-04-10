@@ -1,23 +1,12 @@
-.bg-pink{
-	background: pink;
-}
+.container {
+	.block {
+		width: 150px;
+		height: 150px;
 
-.bg-blue{
-	background: blue;
-}
+		float: left;
+	}
 
-.bg-orange{
-	background: orange;
-}
-
-.bg-red{
-	background: red;
-}
-
-.bg-green{
-	background: green;
-}
-
-.container{
-	
+	.block:nth-last-child(-n+2) {
+		clear: left;
+	}
 }
