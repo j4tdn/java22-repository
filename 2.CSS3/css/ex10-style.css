@@ -1,0 +1,37 @@
+.container{
+	position: relative	;
+	width: 400px;
+	height: 300px;
+	margin: 50px auto;
+
+	border: 2px dotted gray;
+
+	.block{
+		width: 60px;
+		height: 60px;
+	}
+}
+
+.block11{
+	background-color: red;
+}
+
+.block12{
+	background-color: green;
+	position: relative;
+	left: 60px;
+}
+ 
+.block13{
+	background-color: blue;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.block13{
+	background-color: blue;
+	position: fixed;
+	top: 30px;
+	left: 100px;
+}

@@ -1,0 +1,9 @@
+.block{
+	width:150px;
+	height:150px;
+	float:left
+}
+
+.block:nth-child(n+6){
+	clear: left;
+}
