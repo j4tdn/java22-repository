@@ -1,0 +1,28 @@
+.block {
+	width: 100px;
+	height: 100px;
+	display: inline-block;/*tự động tách ra 1 space*/
+	margin: 0 -2;
+}
+
+.block-01 {
+	background-color: green;
+}
+
+.block-02 {
+	background-color: orange;
+}
+
+.block-03 {
+	background-color: blue;
+}
+/*
+Dispaly:
+- inline: mặc định ko có w/h: tự động tăng giảm
+- block: mặc định width là 100px, hight là 0 và tự động thay đổi
+- inline-block: ko tự xuống hàng, có thẻ set w/h
+- none: ko hiển thị, ko chiếm diện tích
+
+Visibility
+- hidden: ko hiển thị, chiếm diện tich
+*/

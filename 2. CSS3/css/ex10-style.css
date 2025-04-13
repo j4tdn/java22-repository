@@ -1,0 +1,48 @@
+.align-top {
+	padding-top: 4rem;
+}
+
+
+.container {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	margin: 50px auto;
+	border: 2px dotted gray;
+
+	.block {
+	width: 60px;
+	height: 60px;
+    }
+
+    .block-11 {
+    	background-color: red;
+    }
+
+    .block-12 {
+    	background-color: green;
+    	position: relative;
+    	left: 60px;
+    	z-index: 999;
+
+    }
+
+    .block-13 {
+    	background-color: blue;
+    	position: absolute;
+    	top: 30px;
+    	left: 30px;
+    }
+
+    .block-14 {
+    	background-color: yellow;
+    	position: fixed;
+    	left: 10px;
+    	top: 100px;
+    }
+
+    .p {
+    	margin: 100px 0;
+    }
+}
+

@@ -6,7 +6,7 @@
 }
 
 .block-test-2 {
-	/*Tại vị trí nào, ko muốn eleament nào nhảy 
-	lên trên vì thuộc tính trước đó --> clear */
+	/*Tại vị trí nào, ko muốn eleament nhảy lên 
+	trên vì thuộc tính trước đó --> clear */
 	clear: left;
 }

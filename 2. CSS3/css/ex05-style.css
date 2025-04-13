@@ -3,17 +3,20 @@
 	height: 120px;
 }
 
-.ing-size-md {
+.img-size-md {
 	width: 320px;
-	height: 220px;
+	height: 280px;
 }
 
 .float-left {
 	float: left;
-
 }
+
+.float-right {
+	float: right;
+}
+
 
 .clear-left {
 	clear: left;
-
 }

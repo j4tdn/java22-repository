@@ -17,8 +17,17 @@ body {
   font-size: 22px;
   line-height: 42px;
   color: #CE2622;
+
+  text-shadow: 2px 2px grey;
 }
 
 .tasks {
   list-style-image: url(../images/world.png);
+}
+
+.shadow-block {
+  width: 100px;
+  height: 200px;
+  background-color: orange;
+  box-shadow: 20px 20px 20px -2px red;
 }

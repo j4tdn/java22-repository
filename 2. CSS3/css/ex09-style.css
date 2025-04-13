@@ -1,0 +1,47 @@
+.block {	
+	margin: 100px;
+	border: 2px solid red;
+}
+
+.block-1 {
+	width: 300px;
+	height: 200px;
+	background-color: orange;
+	background-image: url(../images/cupcake.png);
+	background-size: 100px 100px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+/*
+   tag: w300 h200
+   image: w315 h365
+   cover: fix hình ảnh với tag thì -> w/h của tag và bimage 
+   phải có tỷ lệ rating với nh -> cover 
+*/
+
+.block-2 {
+	width: 175px;
+	height: 175px;
+	background-color: green;
+	background-image: url(../images/cupcake.png);
+	background-size: cover;
+}
+
+.block-3 {
+	width: 280px;
+	height: 320px;
+	background-image: linear-gradient(150deg, yellow, blueviolet, green);
+}
+
+.block-4 {
+	width: 280px;
+	height: 320px;
+	background-image: radial-gradient(ellipse ,yellow, blueviolet, green);
+
+}
+
+.block-5 {
+	width: 280px;
+	height: 320px;
+	background: linear-gradient(105deg, yellow, blueviolet, green);
+}
