@@ -15,9 +15,16 @@ body{
 .buzz{
 	font-size:22px;
 	line-height:42px;
+
+	text-shadow: 2px 2px 10px gray;
 }
 
 .task{
 	list-style-type: square;
 	list-style-image:url(../images/world.png);
+}
+
+.shadow-block{
+	background-color: orange;
+	box-shadow: 20px 20px 20px -2px red;
 }

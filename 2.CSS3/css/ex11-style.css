@@ -1,0 +1,20 @@
+.block{
+	width: 120px;
+	height: 100px;
+	display: inline-block;
+	margin: 0 -2;
+}
+
+.block-01{
+	background-color: green;
+	visibility: hidden;
+}
+
+.block-02{
+	background-color: orange;
+	
+}
+
+.block-03{
+	background-color: blue;
+}
