@@ -43,5 +43,5 @@
 .block-5 {
 	width: 280px;
 	height: 320px;
-	background: linear-gradient(105deg, yellow, blueviolet, green);
+	background: linear-gradient(105deg, #ffffff 0%, #00ff00 50%, #000000 51%, #ff0000 100%);
 }
