@@ -13,4 +13,12 @@ SELECT * FROM T10_ORDER_STATUS;
 SELECT * FROM T11_TITLE;
 SELECT * FROM T12_SIZE;
 SELECT * FROM T13_EMPLOYEE;
-SELECT * FROM t999_logger; -- not data should be
+SELECT * FROM t14_post;
+SELECT * FROM t15_post_tag;
+SELECT * FROM t16_tag;
+SELECT * FROM t17_store;
+SELECT * FROM t18_store_item_rel;
+SELECT * FROM t999_logger; -- no data should be saved
+
+-- 1: 215
+-- 2: 165
