@@ -1,0 +1,19 @@
+.image-block {
+	margin: 100px auto;
+	width: 250px;
+	height: 375px;
+	background-image: url(../images/cat.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	/*transform: rotate(180deg) scale(1.5);*/
+
+	/*transition: property duration delay function*/
+
+	transition: all 3s 1s cubic-bezier(0.1, 0.7, 1, 0.1);
+
+	&:hover {
+		transform: rotate(180deg) scale(1.5) translate(300px, 50px);
+		border-radius: 50%;
+	}
+}

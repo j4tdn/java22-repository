@@ -1,0 +1,68 @@
+ul a {
+	color: red;
+}
+
+ol > a {
+	color: green;
+}
+
+/*Tìm the p gần nhất cùng level với h1*/
+h1 + p {
+	background-color: yellow;
+}
+
+/*Tìm the p cùng level với h1*/
+h1 ~ p:not(.banking) {
+	font-weight: bold;
+}
+
+/*Tìm label gần nhất của checkbox khi check vào*/
+#user-info {
+	input[type="checkbox"]:checked + label {
+		color: green;
+	}
+}
+
+li[class^="ol"] {
+	text-transform: uppercase;
+}
+
+/*Not work locally*/
+a:visited {
+	color: red;
+}
+
+/*Tìm element p là element con đầu tiên bên trong block1*/
+.block1 {
+	p:first-child {
+		text-decoration: underline;
+	}
+}
+
+/*Tìm thẻ p xuất hiện đầu tiên bên trong block2*/
+.block2 {
+	p:first-of-type {
+		background-color: pink;
+	}
+
+	p:last-of-type {
+		background-color: yellow;
+	}
+}
+
+.end {
+	&::before {
+		content: '';
+		display: block;
+		width: 180px;
+		height: 2px;
+		background-color: red;
+		margin-bottom: 14px;
+	}
+
+	&::after {
+		content: '🌹';
+		margin-left: 6px;
+	}
+}
+
