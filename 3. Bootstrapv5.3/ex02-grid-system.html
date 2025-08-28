@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ex02 - Bootstrap - Grid System</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <style>
+      *[class*='col'] {
+        background: #a8b4f1;
+        border: 1px solid #bb128a;
+
+        height: 4rem;
+      }
+
+      .row {
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .text-bg-orange {
+        *[class*='col'] {
+          background-color: orange;
+        }
+      }     
+    </style>
+
+  </head>
+  <body>
+    <h1 class="text-primary"> LESSON21: Bootstrap Grip System</h1>
+
+    <hr>
+
+    <ul>
+      <li>Columns: 12</li>
+      <li>Tier: 6 xs sm md lg xl xxl</li>
+      <li>Container: fluid, breakpoint</li>
+      <li>Window witdth: <span class="text-danger wdwidth"></span>px</li>
+    </ul>
+
+    <hr>
+
+    <!-- Ưu tiên đi từ trái sang phải, nếu element không khai báo tier(breakpoint), tự động ăn 100% hoặc col- của element nhỏ hơn trước no-->
+
+    <div class="container">
+      <!-- Row: 1 element chiếm 100% - 12 columns -->
+      <div class="row">
+        <div class="col-12"></div>
+      </div>
+
+      <!-- Row: 2 element chia làm 2 phần -->
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6"></div>
+      </div>
+
+      <!-- Row: 2 element chia làm 2 phần tính từ breakpoint tablet(md)-->
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-6"></div>
+      </div>
+
+      <!--      
+        Row: Có 4 elements:
+        - Từ xs 0px  : chia tỉ lệ 3 3 1 và còn lai 
+        - Từ md 768px: chia thành components bằng nhau trên 2 hang
+        - Từ lg 992px: chia thành components bằng nhau trên 1 hang
+       -->
+
+       <div class="row text-bg-orange">
+         <div class="col-3 col-md-6 col-lg-3"></div>
+         <div class="col-3 col-md-6 col-lg-3"></div>
+         <div class="col-1 col-md-6 col-lg-3"></div>
+         <div class="col   col-md-6 col-lg-3"></div>
+       </div>
+
+      <!--      
+        Row: Có 4 elements:
+        - Từ xl  : chia làm 4 phần bằng nhau
+        - Từ lg: chia tỷ lệ 2 1 1 2
+        - Từ sm: chia thành 2 hàng
+                 hàng 1: 1 element chiếm 12 columns
+                 hàng 2: chia tỉ lệ 2 1 1
+       -->
+
+       <div class="row">
+         <div class="col-sm-12 col-lg-4 col-xl-3"></div>
+         <div class="col-sm-6  col-lg-2 col-xl-3"></div>
+         <div class="col-sm-3  col-lg-2 col-xl-3"></div>
+         <div class="col-sm-3  col-lg-4 col-xl-3"></div>
+       </div>
+
+       <div class="row text-bg-orange">
+         <div class="col">1</div>
+         <div class="col">2</div>
+         <div class="col">3</div>
+         <div class="col">4</div>
+         <div class="col">5</div>
+         <div class="col">6</div>
+         <div class="col">7</div>
+         <div class="col">8</div>
+         <div class="col">9</div>
+         <div class="col">10</div>
+         <div class="col">11</div>
+         <div class="col">12</div>
+       </div>
+
+       <div class="row">
+         <div class="col-4 offset-md-4"></div>
+       </div>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
