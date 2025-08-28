@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Travel</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-primary" href="#">Let's Travel</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacts</a>
+            </li>
+          </ul>
+
+          <div class="d-flex">
+            <input
+              type="text"
+              class="form-control me-2"
+              placeholder="Phone number"
+              style="width: 200px"
+            />
+            <button class="btn btn-outline-primary">Call me</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero-section position-relative">
+      <div class="hero-slider">
+        <div class="hero-slide active">
+          <img src="img/slider-1.jpg" alt="Stonehenge" class="w-100" />
+          <div class="slide-content">
+            <h1 class="display-4 fw-bold mb-2">Stonehenge</h1>
+            <p class="fs-5">Wiltshire, England</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/slider-2.jpg" alt="Eiffel Tower" class="w-100" />
+          <div class="slide-content">
+            <h1 class="display-4 fw-bold mb-2">Eiffel Tower</h1>
+            <p class="fs-5">Paris, France</p>
+          </div>
+        </div>
+
+        <div class="hero-slide">
+          <img src="img/slider-3.jpg" alt="Big Ben" class="w-100" />
+          <div class="slide-content">
+            <h1 class="display-4 fw-bold mb-2">Big Ben</h1>
+            <p class="fs-5">London, England</p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="hero-overlay position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+      >
+        <div class="text-center text-white">
+          <div class="hero-dots mt-4">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-btn prev-btn" onclick="changeSlide(-1)">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="slider-btn next-btn" onclick="changeSlide(1)">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img
+                src="img/img-1.jpg"
+                class="card-img-top"
+                alt="Eiffel Tower"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Eiffel Tower</h5>
+                <p class="card-text text-muted">
+                  The Eiffel Tower is a wrought-iron lattice tower on the Champ
+                  de Mars in Paris, France.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img src="img/img-2.jpg" class="card-img-top" alt="Big Ben" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Big Ben</h5>
+                <p class="card-text text-muted">
+                  Big Ben is the nickname for the Great Bell of the clock at the
+                  north end of the Palace of Westminster in London.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img src="img/img-3.jpg" alt="Statue of Liberty" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Statue of Liberty</h5>
+                <p class="card-text text-muted">
+                  The Statue of Liberty is a colossal neoclassical sculpture on
+                  Liberty Island in New York Harbor in New York City, in the
+                  United States.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img
+                src="img/img-4.jpg"
+                class="card-img-top"
+                alt="Sydney Opera House"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Sydney Opera House</h5>
+                <p class="card-text text-muted">
+                  The Sydney Opera House is a multi-venue performing arts centre
+                  in Sydney, Australia. It is one of the 20th century's most
+                  famous and distinctive buildings.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img src="img/img-5.jpg" alt="Parliament Hill" />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Parliament Hill</h5>
+                <p class="card-text text-muted">
+                  Parliament Hill, colloquially known as The Hill, is an area of
+                  Crown land on the southern banks of the Ottawa River in
+                  downtown Ottawa, Ontario. Its Gothic Revival suite of
+                  buildings is the home of the Parliament of Canada and has
+                  architectural elements of national symbolic importance.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card destination-card h-100 shadow-sm">
+              <img
+                src="img/img-6.jpg"
+                class="card-img-top"
+                alt="Great Wall of China"
+              />
+              <div class="card-body">
+                <h5 class="card-title fw-bold">Great Wall of China</h5>
+                <p class="card-text text-muted">
+                  The Great Wall of China is a series of fortifications made of
+                  stone, brick, rammed earth, wood, and other materials,
+                  generally built to protect the Chinese states and empires
+                  against the raids and invasions.
+                </p>
+                <button class="btn btn-primary">Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav aria-label="Page navigation" class="mt-5">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active">
+              <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <footer class="bg-light py-4 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p class="mb-0 text-muted">© 2023, All Rights Reserved</p>
+          </div>
+          <div class="col-md-6 text-end">
+            <button class="btn btn-primary">Contact Us</button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".hero-slide");
+      const dots = document.querySelectorAll(".dot");
+      const totalSlides = slides.length;
+
+      function showSlide(index) {
+        slides.forEach((slide) => slide.classList.remove("active"));
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+      }
+
+      function changeSlide(direction) {
+        currentSlide += direction;
+
+        if (currentSlide >= totalSlides) {
+          currentSlide = 0;
+        } else if (currentSlide < 0) {
+          currentSlide = totalSlides - 1;
+        }
+
+        showSlide(currentSlide);
+      }
+
+      setInterval(() => {
+        changeSlide(1);
+      }, 5000);
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+          currentSlide = index;
+          showSlide(currentSlide);
+        });
+      });
+
+      document.querySelectorAll(".destination-card").forEach((card) => {
+        card.addEventListener("mouseenter", function () {
+          this.style.transform = "translateY(-5px)";
+        });
+
+        card.addEventListener("mouseleave", function () {
+          this.style.transform = "translateY(0)";
+        });
+      });
+    </script>
+  </body>
+</html>
