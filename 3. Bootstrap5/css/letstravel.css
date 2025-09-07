@@ -1,0 +1,14 @@
+.br-5 {
+	border-radius: 5px;
+}
+
+footer {
+	height: 80px;
+
+	.container {
+		.row {
+			height: 80px;
+		}
+
+	}
+}
