@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>JS Core Index Page</title>
+
+	<style>
+		.todo-item {
+			width: 200px;
+
+			display: flex;
+			justify-content: space-between;
+
+		}
+		.removal {
+			color: red;
+		}
+
+		.add, .removal {
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="title">LESSON 22: JavaScipt - Todo App</h1>
+
+	<hr>
+
+	<div class="todo-block">
+		
+		<form class="todo-header">
+			<input type="text" placeholder="A task you want to complete" class="input-text">
+			<input type="button" value="+" class="add">
+		</form>
+
+		<div class="todo-body">
+			<div class="todo-item">
+				<p>Task 01</p>
+				<p class="removal">x</p>
+			</div>
+			<div class="todo-item">
+				<p>Task 02</p>
+				<p class="removal">x</p>
+			</div>
+			<div class="todo-item">
+				<p>Task 03</p>
+				<p class="removal">x</p>
+			</div>
+			<div class="todo-item">
+				<p>Task 04</p>
+				<p class="removal">x</p>
+			</div>
+		</div>
+
+	</div>
+
+	<script>
+		let todoList = document.querySelector('.todo-body');
+		let btnAdd = document.querySelector('.add');
+
+		btnAdd.addEventListener('click', function() {
+			let todoItem = document.createElement('div');
+			todoItem.className = 'todo-item';
+
+			let sub1 = document.createElement('p');
+			let val = document.querySelector('.input-text').value;
+			sub1.textContent = val;
+
+			let sub2 = document.createElement('p');
+			sub2.textContent = 'x';
+			sub2.className = 'removal';
+
+			todoItem.appendChild(sub1);
+			todoItem.appendChild(sub2);
+
+			
+			todoList.appendChild(todoItem);
+			val.value = '';
+		});
+
+		
+		todoList.addEventListener('click', function(e) {
+			let target = e.target;
+			let classList = target.classList;
+			if (classList.contains('removal')) {
+				target.parentElement.remove();
+			}
+		})
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,1 @@
+alert('K22: Welcome to JavaScript lesson');
